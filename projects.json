@@ -1,0 +1,240 @@
+{
+    "work":{ 
+        "Mirror Selfie":{
+            "name":"Mirror Selfie",
+            "year":"2025",
+            "info":"Through this project, I explored the interaction between people and mirrors. When walking by mirrors, I noticed that people tend to subconsciously stare at the mirrors back to themselves to check their own appearance or to take mirror pictures. However, after I learnt about spy two-way mirrors, I felt more cautious interacting with mirrors due to my paranoia of being spied on. For this project titled “Mirror-Selfie”, I am embodying my fear of being stared back at by the mirror or anything behind the mirror. Using a camera with the OpenCV Python library, I detect faces and print out a frame of the moment when anyone looks into the mirror.",
+            "material":["Python","Bash","Webcam","Printer","Mirror"],
+            "link":"",
+            "haveLink": false,
+            "documentation":{
+                "thumbnail":"assets/Documentation/mirror-selfie-thumbnail.jpeg",
+                "doc1":"assets/Documentation/mirror-selfie demo video.mov",
+                "doc2":"assets/Documentation/mirror-selfie-hardware.jpeg",
+                "doc3":"assets/Documentation/open-cv test.mov",
+                "doc4":"assets/Documentation/mirror-selfie back.jpeg",
+                "doc5":"assets/Documentation/mirror-selfie testprint.jpeg",
+                "doc6":"assets/Documentation/mirror-selfie installation.jpeg"
+                
+            }
+        },
+        "LABYRINTH":{
+            "name":"LABYRINTH",
+            "year":"2025",
+            "info":"Collaboration project with Ziye An, Jaiden Brown, and Eve",
+            "material":["Unity","LEAP Motion","Joystick","Arduino","Electronics","Hardware"],
+            "link":"",
+            "haveLink": false,
+            "documentation":{
+                "thumbnail":"assets/Documentation/Labyrinth9.jpg",
+                "doc1":"assets/Documentation/LabyrinthE.jpg",
+                "doc2":"assets/Documentation/Labyrinth8.jpg",
+                "doc3":"assets/Documentation/Labyrinth6.jpg"
+            }
+        },
+        "Odd Fellow Says Hello":{
+            "name":"Odd Fellow Says Hello",
+            "year":"2024",
+            "info":"Put your wits to the test with Odd Fellow Says Hello, a game of wordplay and fun! In each round, you’ll face four words—but one doesn’t belong. Is it a trick of meaning or a subtle twist of context? Gather your friends or challenge yourself to find the Odd Fellow before time runs out. Perfect for quick thinkers, word lovers, and anyone who loves a clever challenge. Are you sharp enough to spot the odd fellow? Odd fellow says hello!",
+            "material":["HTML","CSS","Javascript","Typescript"],
+            "link":"https://odd-one-out-game.deno.dev/",
+            "haveLink": true,
+            "documentation":{
+                "thumbnail":"assets/Documentation/Odd Fellow Says Hello cover.png",
+                "doc1":"assets/Documentation/Process/Odd Fellow Says Hello sketch.jpg",
+                "doc2":"assets/Documentation/Process/Odd fellow says hello sketch + color map.png",
+                "doc3":"assets/Documentation/Process/Odd Fellow Says Hello Flow Chart.png"
+            }
+        },
+        "Hue Hunter":{
+            "name":"Hue Hunter",
+            "year":"2024",
+            "info":"Sight and hearing exercise game designed specifically with visual designer and/or musician in mind. User's are prompted to find the red square by following the transition of color and pitch. As users level up, the game becomes harder.",
+            "material":["HTML","CSS","Javascript"],
+            "link":" https://carbudar.github.io/hue-hunter/",
+            "haveLink": true,
+            "documentation":{
+                "thumbnail":"assets/Documentation/hue hunter cover.png",
+                "doc1":"assets/Documentation/Process/Hue Hunter sketch.jpg",
+                "doc2":"assets/Documentation/Process/Hue Hunter color sketch.png"
+            }
+        },
+        "Photo Archive":{
+            "name":"Photo Archive",
+            "year":"2024",
+            "info":"This website serves as an archival hub for my personal photography portfolio, offering detailed insights into each piece. The collection is presented in an organized grid format, allowing for a visually cohesive and engaging browsing experience.",
+            "material":["HTML","CSS","Javascript"],
+            "link":"https://carbudar.github.io/Photo-Archive/",
+            "haveLink": true,
+            "documentation":{
+                "thumbnail":"assets/Documentation/Photo Archive cover.png",
+                "doc1":"assets/Documentation/Process/Photo Archive main page sketch.png",
+                "doc2":"assets/Documentation/Process/Photo Archive Expanded Sketch.png"
+            }
+        },
+        "Sircle App":{
+            "name":"Sircle",
+            "year":"2022",
+            "info":"Mobile app concept and prototype to maximize the New York City waste management system.",
+            "material":["Figma","Adobe Illustrator","Adobe Photoshop"],
+            "link":"",
+            "haveLink": false,
+            "documentation":{
+                "thumbnail":"https://portfolio.newschool.edu/cbdr/files/2023/05/Screenshot-2023-05-14-at-6.39.38-AM.png",
+                "doc1":"assets/Documentation/Process/Sircle Color Palette.png",
+                "doc2":"assets/Documentation/Process/Sircle Buttons.png",
+                "doc3":"assets/Documentation/Process/Sircle Logo.png",
+                "doc4":"assets/Documentation/Process/Sircle App Define Stage.png",
+                "doc5":"assets/Documentation/Process/Sircle Ideate.png",
+                "doc6":"assets/Documentation/Process/Sircle Prioritation.png",
+                "doc7":"assets/Documentation/Process/Sircle Greybox 1.png",
+                "doc8":"assets/Documentation/Process/Sircle Greybox 2.png",
+                "doc9":"assets/Documentation/Process/Sircle wireframe.png",
+                "doc10":"assets/Documentation/Process/Sircle App Demo.mov"
+            }
+        }
+        
+       
+
+    },
+    "play":{
+        "Rock Paper Scissor":{
+            "name":"Rock Paper Scissor",
+            "year":"2023",
+            "info":"Rock-Paper-Scissors generator that displays a random symbol (rock, paper, or scissors) upon each mouse click, featuring pixelated visual language and retro-inspired design.",
+            "material":["Javascript (p5.js)"],
+            "link":"https://editor.p5js.org/carbudar/full/1BuASB3_M",
+            "haveLink": true,
+            "isPhysical":false,
+            "documentation":{
+                "thumbnail":"assets/Documentation/Rock Paper Scissors cover.png",
+                "doc1":"assets/Documentation/Process/rps sketch 2.png",
+                "doc2":"assets/Documentation/Process/rps sketch v1.png",
+                "doc3":"assets/Documentation/Process/hand design.png"
+            }
+        },
+        "Data Portrait":{
+            "name":"Data Portrait",
+            "year":"2023",
+            "info":"For this project, I spent a week tracking my personal habit to create a data-self portrait. This sketch is divided into 7 different parts (shown by the guidelines in the background); the first section determines the first day which was Wednesday. The section goes up until the last day, which is Tuesday and the days change based on the mouse location. The density and the size of the orange form is the amount of time that I spent talking to people on the phone (in minutes), while the density and size or the purple form is based on the total minutes I spent interacting with people in real life. Lastly, the row of squares that travels from left to right shows the amount of people I interacted with per day.",
+            "material":["Javascript (p5.js)"],
+            "link":"https://editor.p5js.org/carbudar/full/Zlm2QO95a",
+            "haveLink": true,
+            "isPhysical":false,
+            "documentation":{
+                "thumbnail":"assets/Documentation/Data Portrait cover.png",
+                "doc1":"assets/Documentation/Process/Data Portrait Data.png",
+                "doc2":"assets/Documentation/Process/Data Portrait Sketch.png"
+            }
+        },
+        "Time Keeper":{
+            "name":"Time Keeper",
+            "year":"2023",
+            "info":"Conventional clocks mark seconds, minutes, and hours according to a 24 hour cycle. This segmented, discrete, and regimented approach to parsing time is not universal in terms of capturing and measuring of experience. <br> Time often feels fluid and variable, moving swiftly at moments and slowing to a near standstill at others. This time-keeper clock experimentation seeks to visualize these fluctuations in the perceived speed of time. This project explores the potential of design as a tool for psychological time modulation, offering a unique perspective on the relationship between time perception and mental states.<br> <br><b>Dial when mouse is on the left side of the screen:</b><br>Slower paced<br><b>Dial when mouse is on the right side of the screen:</b><br>Faster paced",
+            "material":["Javascript (p5.js)"],
+            "link":"https://editor.p5js.org/carbudar/full/JqymTsA1K",
+            "haveLink": true,
+            "isPhysical":false,
+            "documentation":{
+                "thumbnail":"assets/Documentation/Time Keeper cover.png",
+                "doc1":"",
+                "doc2":""
+            }
+        
+    },
+"Sunrise":{
+    "name":"Sunrise",
+    "year":"2023",
+    "info":"The rapid development of technology is slowly affecting how people go about their daily task. It has been deeply incorporated in the everyday life seamlessly like it is natural. Since nature and technology are two contradicting topics I wondered what is the true relationship between nature and technology? Is it true that technologies can take over natural resources and to what extent? How can technology be useful as a substitution of natural resources? and what about nature is irreplaceable? <br>I attempted to build an artificial sun replacement with leds and a motor running it. The idea is to have the led illuminate brighter as the space gets darker, vice-versa.<br>As some people have trouble managing time between the night and day time, I expected this project to bridge that transition, bringing the sunlight indoors when it is gone from the outdoors.",
+    "material":["3D printed parts", "Electronics"],
+    "link":"https://drive.google.com/file/d/18Hf118F1rqCgy8O9wfQegCZ4uNfXq8RU/preview",
+    "haveLink": true,
+    "isPhysical":true,
+    "documentation":{
+        "thumbnail":"assets/Documentation/Sunrise cover.png",
+        "doc1":"assets/Documentation/Sunrise demo.mov",
+        "doc2":"assets/Documentation/sun vid 3.MOV",
+        "doc3":"assets/Documentation/sun vid 4.mov",
+        "doc4":"assets/Documentation/Sunrise cover.png",
+        "doc5":"assets/Documentation/sun 3d1.png"
+        
+    }
+
+},
+"Time Machine":{
+    "name":"Time Machine",
+    "year":"2023",
+    "info":"Time is a universal yet profoundly subjective experience, perceived differently depending on individual circumstances and contexts. Although every person has the same 24 hours in a day, the passage of time can feel faster or slower based on activities, environments, and interpersonal interactions. This variability highlights the surreal and fluid nature of time. <br> In philosophy, time is often regarded as a metaphysical concept, defying material definition. The progression of moments—the future becoming the present and the present transitioning into the past—creates a dynamic interplay that can distort our perception of time. In group settings, for example, the flow of conversation and actions can seemingly compress time, reducing the perceived gaps between past, present, and future. <br>This reflection underscores the intangible and abstract nature of time. It extends beyond the numerical representation of hours on a clock, often relying on intuition and perception. This abstraction challenges traditional notions of time, emphasizing its fluid and subjective essence.",
+    "material":["Acrylic", "Electronics"],
+    "link":"https://drive.google.com/file/d/1KI50alFyTDo_FiOeD25Qpnj2dFwuVhwJ/preview",
+    "haveLink": true,
+    "isPhysical":true,
+    "documentation":{
+        "thumbnail":"assets/Documentation/Time Machine cover.jpeg",
+        "doc1":"",
+        "doc2":""
+    }
+
+},
+"Nod And Smile":{
+    "name":"Nod And Smile",
+    "year":"2023",
+    "info":"While being well-exposed working with p5.js as a digital medium, I was intrigued in combining the interaction between physical and digital components. In this project, I took an existing object and turning it into a new interactive toy; what once was a solar-powered kinetic toy is now turned into a light-triggered form with a digital output.",
+    "material":["Plastic cat toy","3D printed parts", "Electronics"],
+    "link":"https://drive.google.com/file/d/18466Ue0UrrTXQf4fHdW9cTzqpgjgrEya/preview",
+    "haveLink": true,
+    "isPhysical":true,
+    "documentation":{
+        "thumbnail":"assets/Documentation/Nod And Smile Cover.png",
+        "doc1":"",
+        "doc2":""
+    }
+
+}
+}, 
+"highlight":{ 
+    "Highlight1":{
+        "name":"Odd Fellow Says Hello",
+        "year":"2024",
+        "info":"Put your wits to the test with Odd Fellow Says Hello, a game of wordplay and fun! In each round, you’ll face four words—but one doesn’t belong. Is it a trick of meaning or a subtle twist of context? Gather your friends or challenge yourself to find the Odd Fellow before time runs out. Perfect for quick thinkers, word lovers, and anyone who loves a clever challenge. Are you sharp enough to spot the odd fellow? Odd fellow says hello!",
+        "material":["HTML","CSS","Javascript","Typescript"],
+        "link":"https://odd-one-out-game.deno.dev/",
+        "haveLink": true,
+        "documentation":{
+            "thumbnail":"assets/Documentation/Odd Fellow Says Hello cover.png",
+            "doc1":"assets/Documentation/Process/Odd Fellow Says Hello sketch.jpg",
+            "doc2":"assets/Documentation/Process/Odd fellow says hello sketch + color map.png",
+            "doc3":"assets/Documentation/Process/Odd Fellow Says Hello Flow Chart.png"
+        },
+        "highlight": true
+    },
+    "Highlight2":{
+        "name":"Hue Hunter",
+        "year":"2024",
+        "info":"Sight and hearing exercise game designed specifically with visual designer and/or musician in mind. User's are prompted to find the red square by following the transition of color and pitch. As users level up, the game becomes harder.",
+        "material":["HTML","CSS","Javascript"],
+        "link":" https://carbudar.github.io/hue-hunter/",
+        "haveLink": true,
+        "documentation":{
+            "thumbnail":"assets/Documentation/hue hunter cover.png",
+            "doc1":"assets/Documentation/Process/Hue Hunter sketch.jpg",
+            "doc2":"assets/Documentation/Process/Hue Hunter color sketch.png"
+        }
+    },
+    "Highlight3":{
+        "name":"Photo Archive",
+        "year":"2024",
+        "info":"This website serves as an archival hub for my personal photography portfolio, offering detailed insights into each piece. The collection is presented in an organized grid format, allowing for a visually cohesive and engaging browsing experience.",
+        "material":["HTML","CSS","Javascript"],
+        "link":"https://carbudar.github.io/Photo-Archive/",
+        "haveLink": true,
+        "documentation":{
+            "thumbnail":"assets/Documentation/Photo Archive cover.png",
+            "doc1":"assets/Documentation/Process/Photo Archive main page sketch.png",
+            "doc2":"assets/Documentation/Process/Photo Archive Expanded Sketch.png"
+        }
+        
+    }
+    
+}
+}
