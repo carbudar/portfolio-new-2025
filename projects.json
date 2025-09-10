@@ -98,6 +98,21 @@
 
     },
     "play":{
+        "Pinterest Case Study":{
+            "name":"Pinterest Case Study",
+            "year":"2025",
+            "info":"",
+            "material":[""],
+            "link":"",
+            "haveLink": false,
+            "isPhysical":false,
+            "documentation":{
+                "thumbnail":"assets/Documentation/Pinterest Web.png",
+                "doc1":"",
+                "doc2":"",
+                "doc3":""
+            }
+        },
         "Rock Paper Scissor":{
             "name":"Rock Paper Scissor",
             "year":"2023",

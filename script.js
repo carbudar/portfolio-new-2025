@@ -329,5 +329,18 @@ nameBtn.addEventListener('click', () => {
         }, 3000); // 3000 milliseconds = 3 seconds
     }
     
+    function checkPassword() {
+        const correctPassword = "12345"; // **WARNING: Store passwords securely in real applications!**
+        const enteredPassword = document.getElementById("password-input").value;
+        const passwordPrompt = document.getElementById("password-prompt");
+        const protectedContent = document.getElementById("protected-content");
+        const errorMessage = document.getElementById("error-message");
 
+        if (enteredPassword === correctPassword) {
+            passwordPrompt.style.display = "none";
+            protectedContent.style.display = "block";
+        } else {
+            errorMessage.style.display = "block";
+        }
+    }
 
