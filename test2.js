@@ -126,19 +126,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 
             createButton("h3", "More Info", "moreInfoBtn", "#EDED14", "#126889", moreInfoBtn);
 
-            
-if (projectKey === "Pinterest Case Study") {
-    // Special case: static password-protected page
-    moreInfoBtn.addEventListener('click', () => {
-        window.location.href = `pinterest-casestudy.html`;
-    });
-} else {
-    // Normal case: dynamic page with query param
-    moreInfoBtn.addEventListener('click', () => {
-        window.location.href = `project-info.html?project=${projectKey}`;
-    });
-}
-
+            moreInfoBtn.addEventListener('click', () => {
+                window.location.href = `project-info.html?project=${projectKey}`;
+            });
 
             if (project.link) {
                 const visitBtn = document.createElement('div');

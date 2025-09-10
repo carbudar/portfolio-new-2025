@@ -75,8 +75,6 @@ h1{
     z-index: 1000;
     width: 100vw;
     font-size: 1rem;
-    position: relative;
-    bottom: 0;
 }
 
 .header-left, .header-center, .header-right {
@@ -633,7 +631,6 @@ h1{
 
 #project-info-container{
     min-height: 92vh;
-    height: auto;
     box-sizing: border-box;
     top: 8vh;
     position: relative;
@@ -646,19 +643,6 @@ h1{
     
 }
 
-#pinterest-info-container{
-    min-height: 92vh;
-    height: 750vh;
-    box-sizing: border-box;
-    top: 8vh;
-    position: relative;
-    padding: 5vw;
-    background-color: #F9F7F2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 7vh;
-}
 
 
 #content,
@@ -672,22 +656,6 @@ h1{
     margin: 2vh;
     position: relative;
 }
-
-#pinterest-content{
-    display: flex;
-    height: auto;
-    width: 100%;
-    gap: 3vw;
-    margin: 2vh;
-    position: relative;
-}
-
-.title{
-    min-width: 30vw;
-    height: auto;
-}
-
-
 .progress{
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1;
@@ -705,7 +673,6 @@ h1{
     color: #126889;
 }
 
-.pinterest-content-center,
 .content-center,
 .content-left,
 .content-right,.progressTitle,.progressPhoto,.button-left,.button-center,.button-right{
@@ -713,7 +680,7 @@ h1{
     list-style: none;
 }
 
-.content-center,.content-right,.pinterest-content-center{
+.content-center,.content-right{
     font-size: 1rem;
     line-height: 200%;
 }
@@ -729,8 +696,7 @@ h1{
 
 }
 .progressTitle,
-.reflectionTitle,
-.title h1{
+.reflectionTitle{
     font-size: 2.5rem;
     padding: 1vh;
     width: 100%;
@@ -950,17 +916,8 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2vh;
-    color: #F9F7F2;
 }
 
-#thumbnail-right,
-#thumbnail-left{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 300;
-}
 
 .test{
     z-index: 10000;
@@ -1022,61 +979,9 @@ video.progressPhoto:hover {
 
 .content-left,
 .progressTitle,
-.reflectionTitle,
-.title h1{
+.reflectionTitle{
     width: 30vw;
     color: #126889;
-}
-
-#password-prompt{
-    background-color: #F9F7F2;
-    width: fit-content;
-    height: fit-content;
-    padding: 5vh;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 1vh;
-    color: #323F2F;
-    justify-self: center;
-    align-items: center;
-    margin-top: 30vh;
-}
-
-#password-prompt, #protected-content {
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-input[type="password"] {
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 15vw;
-}
-
-input[type="password"]:focus {
-    border-color: #FFD2FF; 
-    border-width: 2px; 
-    outline: none; 
-}
-
-button {
-    padding: 8px 15px;
-    background-color: #126889;
-    color:#F9F7F2;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#protected-content{
-    width: 100vw;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    border: 0;
 }
 
 
@@ -1381,7 +1286,7 @@ button {
  
     #projectPhotoBanner{
         margin-top: 8vh;
-        height: 30vh;      
+        height: 30vh;
     }
  
     .projectThumbnail{
@@ -1395,17 +1300,13 @@ button {
         width: 60vw;
     }
 
-    .pinterest-content-center{
-        background-color: #323F2F;
-    }
-
     #content {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto; 
-        /* grid-template-areas:
+        grid-template-areas:
             "left center"
-            "right center";  */
+            "right center"; 
         gap: 20px;
     }
 
@@ -1413,14 +1314,12 @@ button {
         height: fit-content;
     }
     
-    .content-left h2{
+    .content-left h2 {
         white-space: normal; 
         overflow-wrap: break-word; 
         word-wrap: break-word;
         font-size: 1.8rem;
     }
-
- 
 
     .content-left h3{
         font-size: 1.5rem;
