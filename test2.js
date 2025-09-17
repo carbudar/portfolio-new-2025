@@ -132,7 +132,12 @@ if (projectKey === "Pinterest Case Study") {
     moreInfoBtn.addEventListener('click', () => {
         window.location.href = `pinterest-casestudy.html`;
     });
-} else {
+} else if (projectKey === "UX Startup") {
+    // Special case: static password-protected page
+    moreInfoBtn.addEventListener('click', () => {
+        window.location.href = `ux_research.html`;
+    });
+} else{
     // Normal case: dynamic page with query param
     moreInfoBtn.addEventListener('click', () => {
         window.location.href = `project-info.html?project=${projectKey}`;
