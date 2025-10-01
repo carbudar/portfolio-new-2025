@@ -1044,6 +1044,10 @@ video.progressPhoto:hover {
     transform: scale(1.05);
 }
 
+.wireframe img{
+    height: 60vh;
+    width: auto;
+}
 
 
 .content-left,
