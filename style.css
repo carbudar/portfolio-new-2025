@@ -1043,12 +1043,18 @@ img.progressPhoto:hover,
 video.progressPhoto:hover {
     transform: scale(1.05);
 }
-
+.wireframe-container{
+    display: flex;
+    flex-direction: column;
+}
 .wireframe img{
     height: 60vh;
     width: auto;
 }
 
+.IA *{
+    width: 100%;
+}
 
 .content-left,
 .progressTitle,
