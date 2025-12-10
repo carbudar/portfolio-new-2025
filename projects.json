@@ -191,8 +191,8 @@
     }
 
 },
-"UX Startup":{
-    "name":"UX Startup",
+"Stroll":{
+    "name":"Stroll",
     "year":"2025",
     "info":"",
     "material":[""],
@@ -200,7 +200,7 @@
     "haveLink": false,
     "isPhysical":false,
     "documentation":{
-        "thumbnail":"",
+        "thumbnail":"assets/Documentation/Stroll/Stroll Thumbnail.png",
         "doc1":"",
         "doc2":"",
         "doc3":""
