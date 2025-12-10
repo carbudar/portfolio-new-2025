@@ -135,7 +135,7 @@ if (projectKey === "Pinterest Case Study") {
 } else if (projectKey === "Stroll") {
     // Special case: static password-protected page
     moreInfoBtn.addEventListener('click', () => {
-        window.location.href = `testing.html`;
+        window.location.href = `stroll.html`;
     });
 } else{
     // Normal case: dynamic page with query param
