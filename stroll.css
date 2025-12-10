@@ -1,0 +1,314 @@
+
+h1{
+  font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+h2{
+  font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.7rem;
+}
+
+h3{
+  font-family: "DM Sans", sans-serif;
+    font-weight: 200;
+    font-size: 1.5rem;
+    line-height: 200%;
+}
+
+p{
+  font-family: "DM Sans", sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+}
+#stroll-container{
+    background-color: #262626;
+    color: white;
+    scroll-behavior: smooth;
+    overflow-x:visible;
+    font-family: 'DM Sans';
+}
+
+#stroll-header{
+    min-height: 30vh;
+    padding-top: 8vh;
+    display: flex;
+    background-color: #262626;
+    color: white;
+    width: 100vw;
+    padding-bottom: 5vh;
+}
+#stroll-title{
+justify-self: center;
+align-self: flex-end;
+
+}
+.stroll-column-left{
+    width: 50vw;
+    padding-left: 10vh;
+}
+
+.stroll-column-right{
+    width: 50vw;
+    padding-right: 10vh;
+}
+#stroll-date{
+    align-self: flex-end;
+    text-align: end;
+}
+
+#stroll-splash-image img{
+    width: 100vw;
+    height: auto;
+}
+#stroll-general-info{
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+    gap: 10vh;
+    background-color: #262626;
+    color: white;
+
+}
+
+#stroll-overview{
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+}
+
+#stroll-details{
+    justify-content: center;
+
+}
+#stroll-problem-statement{
+    height: fit-content;
+    padding: 10vh;
+    background-color: white;
+    color: #262626;
+    border-radius: 20px;
+
+}
+
+#stroll-marketing-video{
+    height: fit-content;
+    padding: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+#stroll-breather-1{
+    height: fit-content;
+    padding: 10vh;
+
+}
+
+#stroll-breather-1 img{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+
+#stroll-solution{
+    display: flex;
+    height: fit-content;
+}
+
+#stroll-solution *{
+    padding: 3vh;
+    text-align: center;
+}
+
+#stroll-key-features{
+    height: 45vh;
+    padding-left: 10vh;
+    padding-right: 10vh;
+    display: flex;
+    gap: 3vh;
+    text-align: center;
+    padding-top: 0;
+}
+#key-feature-title{
+    padding-left: 10vh;
+    padding-top: 10vh;
+}
+.key-feature{
+    width: 20vw;
+}
+.key-feature-images{
+    border-radius: 1vh;
+    width: 100%;
+}
+
+#stroll-competitor-analysis{
+    height: fit-content;
+    padding: 10vh;
+}
+
+#stroll-competitor-analysis-image{
+    display: flex;
+    justify-content: center;
+}
+#stroll-competitor-analysis img{
+    height: auto;
+    margin: auto;
+    width: 100%;
+    
+}
+#user-persona-title,
+#empathy-map-title,
+#stroll-ia-feature-title,
+#stroll-user-testing-title,
+#stroll-user-ranking-stats-title,
+#stroll-brand-competitor-analysis-title{
+    padding-left: 10vh;
+}
+#stroll-user-persona,
+#stroll-empathy-map,
+#stroll-ia-feature,
+#stroll-user-ranking-stats{
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    padding: 10vh;
+    padding-top: 0;
+    gap: 3vh;
+}
+
+#stroll-user-persona *,
+#stroll-empathy-map *,
+#stroll-ia-feature *,
+#stroll-user-ranking-stats *{
+    width: 50vw;
+}
+
+#stroll-user-persona img,
+#stroll-empathy-map img,
+#stroll-ia-feature img,
+#stroll-user-ranking-stats img{
+    width: 100%;
+}
+
+#stroll-user-journey{
+    height: fit-content;
+    padding: 10vh;
+}
+
+#stroll-user-journey img{
+    width: 100%;
+}
+#stroll-business-carousel{
+     display: flex;
+    overflow-x: auto;          /* horizontal scroll only */
+    overflow-y: hidden;        /* no vertical scroll */
+    scroll-snap-type: x mandatory;
+    width: 100%;               /* full width of parent */
+    padding: 10vh;
+    background-color: #262626;
+    color: white;
+    gap: 5vh;
+
+}
+#stroll-business-carousel *{
+    scroll-snap-align: center;
+
+}
+#stroll-business-carousel img{
+    width: 80vw;
+}
+#stroll-user-testers{
+    height: fit-content;
+    padding: 10vh;
+    display: flex;
+    gap: 3vh;
+    background-color: #262626;
+    color: white
+    ;
+}
+.user-testers{
+    width: 20vw;
+    text-align: center;
+}
+.user-tester-profile{
+    width: 60%;
+    height: auto;
+    border-radius: 10vh;
+}
+
+#stroll-user-ranking-stats-title{
+    padding-top: 8vh;
+}
+
+#stroll-testing-solutions{
+    height: fit-content;
+    padding: 10vh;
+    background-color: antiquewhite;
+    display: flex;
+    gap: 3vh;
+}
+
+.testing-solution{
+    background-color: aqua;
+    text-align: center;
+    width: 30vw;
+}
+
+#stroll-brand-competitor-analysis-title,
+#stroll-user-testing-title{
+    background-color: #262626;
+    color: white;
+    padding-top: 8vh;
+}
+#stroll-brand-competitor-analysis {
+    display: flex;
+    overflow-x: auto;          /* horizontal scroll only */
+    overflow-y: hidden;        /* no vertical scroll */
+    scroll-snap-type: x mandatory;
+    width: 100%;               /* full width of parent */
+    padding: 10vh;
+    background-color: #262626;
+}
+
+#stroll-brand-competitor-analysis::-webkit-scrollbar {
+    height: 10px; /* optional: scrollbar height */
+}
+
+.competitor-analysis-1 {
+    flex: 0 0 auto;
+    width: 60vw;
+    scroll-snap-align: center;
+    margin-right: 2vh;
+}
+
+
+/* 
+picture |
+video 
+Overview, responsibilities, tools |
+Problem statement 
+Value proposition |
+How might we |
+Key features |
+-> Daily prompts, gallery, tier list, stroll community, challenges
+Competitor analysis |
+User persona |
+Empathy map |
+User Journey |
+Business Plan |
+User testing data + User testing video
+before + after |
+statistics |
+competitor analysis |
+Vision + mision statement |
+Branding + UI design
+key takeaways
+
+ */
