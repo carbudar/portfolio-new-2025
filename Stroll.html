@@ -337,5 +337,26 @@
 
     <script src="script.js"></script>
     <script src="test2.js"></script>
+    <script>
+        // hide default cursor
+document.body.style.cursor = 'none';
+
+// create image element
+const cursor = document.createElement('img');
+cursor.src = 'assets/Documentation/Stroll/Flower Pink.png';
+cursor.style.position = 'fixed';
+cursor.style.pointerEvents = 'none'; // so it doesn't block clicks
+cursor.style.width = '50px'; // adjust size
+cursor.style.height = '30px';
+cursor.style.zIndex = '10000';
+document.body.appendChild(cursor);
+
+// follow the mouse
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
+
+    </script>
 </body>
 </html>
