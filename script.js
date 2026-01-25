@@ -4,11 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     backBtn();
     makeFooter()
     backToTop();
-
     contactBtn();
     DateAndTime();
     floorDirectory()
     hoverIndicator()
+    photoArchive()
+    expandProjectHighlight()
+    directoryButton()
+
+
 
     const infoContainer = document.querySelector('#project-info-container')
 const testingH1 = document.createElement('h1')
@@ -251,26 +255,26 @@ nameBtn.addEventListener('click', () => {
         floors.forEach((container, index) => {
             container.style.zIndex = floors.length - index; // Reverse the order for z-index
         });
-    const pages = [scrollToAbout,
-                    "content2.html?section=play",
-                    "content2.html?section=work"]  // Function reference for the first element
+    // const pages = [scrollToAbout,
+    //                 "content2.html?section=play",
+    //                 "content2.html?section=work"]  // Function reference for the first element
 
-    // Directory navigation
-    for (let dirNum = 1; dirNum <= pages.length; dirNum++) {
-        const container = document.querySelector(`#dirContainer${dirNum}`);
-        container.addEventListener('click', () => {
-            const action = pages[dirNum - 1];
-            if (typeof action === "function") {
-                // If the action is a function, execute it (e.g., scrollToAbout)
-                action();
-            } else if (typeof action === "string") {
-                // Redirect to the page with the query parameter
-                window.location.href = action; // Use the URL string directly
-            }
-        });
+    // // Directory navigation
+    // for (let dirNum = 1; dirNum <= pages.length; dirNum++) {
+    //     const container = document.querySelector(`#dirContainer${dirNum}`);
+    //     container.addEventListener('click', () => {
+    //         const action = pages[dirNum - 1];
+    //         if (typeof action === "function") {
+    //             // If the action is a function, execute it (e.g., scrollToAbout)
+    //             action();
+    //         } else if (typeof action === "string") {
+    //             // Redirect to the page with the query parameter
+    //             window.location.href = action; // Use the URL string directly
+    //         }
+    //     });
 
 
-    }
+    // }
 
     }
     function DateAndTime(){
@@ -299,12 +303,12 @@ nameBtn.addEventListener('click', () => {
     setInterval(updateTime, 1000);
     }
     function scrollToAbout() {
-        // Scroll smoothly to the div with the id 'targetDiv'
         document.getElementById('aboutMe').scrollIntoView({
             behavior: 'smooth',
             block: 'start'
         });
     }
+
    
     function backToTop() {
         // Select both back-to-top buttons
@@ -329,18 +333,47 @@ nameBtn.addEventListener('click', () => {
         }, 3000); // 3000 milliseconds = 3 seconds
     }
     
-    function checkPassword() {
-        const correctPassword = "12345"; // **WARNING: Store passwords securely in real applications!**
-        const enteredPassword = document.getElementById("password-input").value;
-        const passwordPrompt = document.getElementById("password-prompt");
-        const protectedContent = document.getElementById("protected-content");
-        const errorMessage = document.getElementById("error-message");
+    function photoArchive(){
+        const photoArchiveButton = document.querySelector('.photo-archive-btn')
+        photoArchiveButton.addEventListener('click',() =>{
+            window.location.href = 'https://carbudar.github.io/Photo-Archive/index.html#pageContainer';
 
-        if (enteredPassword === correctPassword) {
-            passwordPrompt.style.display = "none";
-            protectedContent.style.display = "block";
-        } else {
-            errorMessage.style.display = "block";
-        }
+        })
     }
 
+
+function expandProjectHighlight(){
+   window.addEventListener("scroll", () => {
+  const section = document.querySelector(".project-highlight");
+  const rect = section.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  const progress = (windowHeight * 0.6 - rect.top) / (windowHeight * 0.2);
+
+  const clamped = Math.min(Math.max(progress, 0), 1);
+
+  section.style.transform = `scale(${0.9 + clamped * 0.1})`;
+
+});
+
+
+}
+
+function scrollToProjectHighlight(){
+        document.querySelector('.project-highlight').scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+}
+
+function directoryButton(){
+    const aboutMeDirectory = document.querySelector('#dirContainer1')
+    aboutMeDirectory.addEventListener('click',()=>{
+        scrollToAbout();
+    })
+
+    const highlightDirectory = document.querySelector('#dirContainer3');
+    highlightDirectory.addEventListener('click',()=>{
+        scrollToProjectHighlight()
+    })
+}

@@ -52,7 +52,7 @@ h1{
     position: relative;
 }
 .page-container{
-    height: auto;
+    height: 80vh;
     min-height: 100vh;
     width: 100vw;
     transition: background-color 0.5s ease;
@@ -110,7 +110,7 @@ h1{
 /* --- */
 
 .main-container{
-    height:100vh;
+    height:95vh;
     width: 100vw;
     position: relative;
     padding: 4vw;
@@ -184,25 +184,281 @@ h1{
     margin-bottom: 5vh;
 }
 
-#about-paragraph{
-    border-bottom: 1px solid #bbb;
-    padding-bottom: 5vh;
+
+.project-highlight{
+    width: 100vw;
+      min-height: 50vh; 
+  height: auto;
+
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
 }
 
+
+.project-highlight {
+  transform: scale(0.9);
+  transition:
+    transform 0.8s cubic-bezier(.2,.7,.2,1);
+
+  transform-origin: center top;
+}
+
+.main-container, .project-highlight {
+  scroll-snap-type: y mandatory; /* vertical snapping */
+  overflow-y: scroll; /* make sure container scrolls */
+}
+
+/* On each child section */
+.project-highlight {
+  scroll-snap-align: center; /* align in center when snapping */
+}
+
+.project-highlight.in-view {
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+.project-highlight h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+.projects-flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2vh;
+}
+.project-flex-each {
+  display: flex;
+  flex: 1;
+  min-width: 25vw;
+    stroke-width: 1px;
+    stroke: #126889;
+  border-radius: 60px;
+min-height: 10vh;
+
+ border: 1px solid #126889;
+  justify-content: center;
+  align-items: center;
+
+    transition:
+    flex-grow 0.4s ease,
+    min-height 0.35s ease;
+
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  flex-wrap: wrap;
+
+  padding: 2vh 3vw;
+
+  min-height: 10vh;
+
+}
+
+
+.project-flex-each:nth-child(1) { flex-basis: 15%; }
+.project-flex-each:nth-child(2) { flex-basis: 25%; }
+.project-flex-each:nth-child(3) { flex-basis: 17%; }
+.project-flex-each:nth-child(4) { flex-basis: 13%; }
+.project-flex-each:nth-child(5) { flex-basis: 12%; }
+.project-flex-each:nth-child(6) { flex-basis: 28%; }
+
+
+
+
+.projects-flex:hover .project-flex-each {
+  flex-grow: 1;
+}
+
+.projects-flex:hover .project-flex-each:hover {
+  flex-grow: 4;
+}
+
+.project-flex-each:hover {
+  min-height: 30vh;
+}
+
+
+.project-flex-each :hover{
+      flex-grow: 4;
+  min-height: 16vh;
+}
+
+
+.project-flex-filler{
+    height: 10vh;
+    width: 10vh;
+     border: 1px solid #126889;
+
+    border-radius: 50px;
+}
+
+
+/* --- */
+.project-flex-each {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.project-flex-each::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(18, 104, 137, 0.3);
+  transition: background 0.4s ease;
+  z-index: 1;
+}
+
+.project-flex-each:hover::before {
+  background: rgba(18, 104, 137, 0.6);
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2vh 2vw;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  color: #fff;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+}
+
+.project-overlay h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.project-overlay p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.project-flex-each:hover .project-overlay {
+  transform: translateY(0);
+}
+
+.project-flex-each:hover {
+  background-size: 110% !important;
+}
+
+/* Smooth background transition */
+.project-flex-each {
+  transition: 
+    flex-grow 0.4s ease,
+    min-height 0.35s ease,
+    background-size 0.4s ease;
+}
+/* --- */
+
+
 #skills{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+    display: flex;
     width: 100%;
     height: auto;
-    font-size: 0.8em;
-    gap: 2vw;
+    flex-direction: column;
+    margin-bottom: 10vh;
+    gap: 5vh;
+
 }
+
 
 .skill-title{
     font-size: 1.5em;
     text-decoration-line: underline;
     text-decoration-thickness: 1px;
 }
+
+#creative-software,
+#technologies{
+    height:15vh;
+    
+}
+
+.skill-icon-carousel{
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    flex-shrink: 0;
+    width: 60vw;
+    overflow: hidden;
+
+     mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+
+}
+
+
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: marquee-scroll 22s linear infinite;
+  gap: 2rem;
+}
+
+.marquee-set {
+  display: flex;
+  gap: 2rem;
+}
+
+.marquee-set img {
+  height: 48px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+
+/* move exactly ONE set */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+#creative-software .marquee-track {
+  animation-duration: 26s;
+}
+
+#technologies .marquee-track {
+  animation-duration: 18s;
+}
+
+
 #profile{
     display: flex;
     gap: 2vw;
@@ -1229,6 +1485,7 @@ button {
     .about-container{
         width: 100vw;
         display: flex;
+        height: fit-content;
     }
     .aboutMe{
         width: 100vw;
@@ -1242,6 +1499,7 @@ button {
 
     .about-content{
         width: 60vw;
+        overflow: hidden;
     }
 
     .about-content h2{

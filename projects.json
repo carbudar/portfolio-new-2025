@@ -1,4 +1,115 @@
 {
+"highlight":{ 
+        "Highlight1":{
+            "name":"Mirror Selfie",
+            "year":"2025",
+            "info":"Through this project, I explored the interaction between people and mirrors. When walking by mirrors, I noticed that people tend to subconsciously stare at the mirrors back to themselves to check their own appearance or to take mirror pictures. However, after I learnt about spy two-way mirrors, I felt more cautious interacting with mirrors due to my paranoia of being spied on. For this project titled “Mirror-Selfie”, I am embodying my fear of being stared back at by the mirror or anything behind the mirror. Using a camera with the OpenCV Python library, I detect faces and print out a frame of the moment when anyone looks into the mirror.",
+            "material":["Python","Bash","Webcam","Printer","Mirror"],
+            "link":"",
+            "haveLink": false,
+            "documentation":{
+                "thumbnail":"assets/Documentation/mirror-selfie-thumbnail.jpeg",
+                "doc1":"assets/Documentation/mirror-selfie demo video.mov",
+                "doc2":"assets/Documentation/mirror-selfie-hardware.jpeg",
+                "doc3":"assets/Documentation/open-cv test.mov",
+                "doc4":"assets/Documentation/mirror-selfie back.jpeg",
+                "doc5":"assets/Documentation/mirror-selfie testprint.jpeg",
+                "doc6":"assets/Documentation/mirror-selfie installation.jpeg"
+                
+            }
+        },
+        "Highlight2":{
+            "name":"Stroll",
+            "year":"2025",
+            "info":"Through this project, I explored the interaction between people and mirrors. When walking by mirrors, I noticed that people tend to subconsciously stare at the mirrors back to themselves to check their own appearance or to take mirror pictures. However, after I learnt about spy two-way mirrors, I felt more cautious interacting with mirrors due to my paranoia of being spied on. For this project titled “Mirror-Selfie”, I am embodying my fear of being stared back at by the mirror or anything behind the mirror. Using a camera with the OpenCV Python library, I detect faces and print out a frame of the moment when anyone looks into the mirror.",
+            "material":["Python","Bash","Webcam","Printer","Mirror"],
+            "link":"",
+            "haveLink": false,
+            "documentation":{
+                "thumbnail":"assets/Documentation/Stroll/Stroll Thumbnail.png",
+                "doc1":"assets/Documentation/mirror-selfie demo video.mov",
+                "doc2":"assets/Documentation/mirror-selfie-hardware.jpeg",
+                "doc3":"assets/Documentation/open-cv test.mov",
+                "doc4":"assets/Documentation/mirror-selfie back.jpeg",
+                "doc5":"assets/Documentation/mirror-selfie testprint.jpeg",
+                "doc6":"assets/Documentation/mirror-selfie installation.jpeg"
+                
+            }
+        },
+        "Highlight3":{
+            "name":"Hue Hunter",
+            "year":"2025",
+            "info":"Through this project, I explored the interaction between people and mirrors. When walking by mirrors, I noticed that people tend to subconsciously stare at the mirrors back to themselves to check their own appearance or to take mirror pictures. However, after I learnt about spy two-way mirrors, I felt more cautious interacting with mirrors due to my paranoia of being spied on. For this project titled “Mirror-Selfie”, I am embodying my fear of being stared back at by the mirror or anything behind the mirror. Using a camera with the OpenCV Python library, I detect faces and print out a frame of the moment when anyone looks into the mirror.",
+            "material":["Python","Bash","Webcam","Printer","Mirror"],
+            "link":"",
+            "haveLink": false,
+            "documentation":{
+                "thumbnail":"assets/Documentation/hue hunter cover.png",
+                "doc1":"assets/Documentation/mirror-selfie demo video.mov",
+                "doc2":"assets/Documentation/mirror-selfie-hardware.jpeg",
+                "doc3":"assets/Documentation/open-cv test.mov",
+                "doc4":"assets/Documentation/mirror-selfie back.jpeg",
+                "doc5":"assets/Documentation/mirror-selfie testprint.jpeg",
+                "doc6":"assets/Documentation/mirror-selfie installation.jpeg"
+                
+            }
+        },
+        "Highlight4":{
+            "name":"Odd Fellow Says Hello",
+            "year":"2025",
+            "info":"Through this project, I explored the interaction between people and mirrors. When walking by mirrors, I noticed that people tend to subconsciously stare at the mirrors back to themselves to check their own appearance or to take mirror pictures. However, after I learnt about spy two-way mirrors, I felt more cautious interacting with mirrors due to my paranoia of being spied on. For this project titled “Mirror-Selfie”, I am embodying my fear of being stared back at by the mirror or anything behind the mirror. Using a camera with the OpenCV Python library, I detect faces and print out a frame of the moment when anyone looks into the mirror.",
+            "material":["Python","Bash","Webcam","Printer","Mirror"],
+            "link":"",
+            "haveLink": false,
+            "documentation":{
+                "thumbnail":"assets/Documentation/Odd Fellow Says Hello cover.png",
+                "doc1":"assets/Documentation/mirror-selfie demo video.mov",
+                "doc2":"assets/Documentation/mirror-selfie-hardware.jpeg",
+                "doc3":"assets/Documentation/open-cv test.mov",
+                "doc4":"assets/Documentation/mirror-selfie back.jpeg",
+                "doc5":"assets/Documentation/mirror-selfie testprint.jpeg",
+                "doc6":"assets/Documentation/mirror-selfie installation.jpeg"
+                
+            }
+        },
+        "Highlight5":{
+            "name":"LABYRINTH",
+            "year":"2025",
+            "info":"Through this project, I explored the interaction between people and mirrors. When walking by mirrors, I noticed that people tend to subconsciously stare at the mirrors back to themselves to check their own appearance or to take mirror pictures. However, after I learnt about spy two-way mirrors, I felt more cautious interacting with mirrors due to my paranoia of being spied on. For this project titled “Mirror-Selfie”, I am embodying my fear of being stared back at by the mirror or anything behind the mirror. Using a camera with the OpenCV Python library, I detect faces and print out a frame of the moment when anyone looks into the mirror.",
+            "material":["Python","Bash","Webcam","Printer","Mirror"],
+            "link":"",
+            "haveLink": false,
+            "documentation":{
+                "thumbnail":"assets/Documentation/Labyrinth9.jpg",
+                "doc1":"assets/Documentation/mirror-selfie demo video.mov",
+                "doc2":"assets/Documentation/mirror-selfie-hardware.jpeg",
+                "doc3":"assets/Documentation/open-cv test.mov",
+                "doc4":"assets/Documentation/mirror-selfie back.jpeg",
+                "doc5":"assets/Documentation/mirror-selfie testprint.jpeg",
+                "doc6":"assets/Documentation/mirror-selfie installation.jpeg"
+                
+            }
+        },
+        "Highlight6":{
+            "name":"Generative Art",
+            "year":"2025",
+            "info":"Through this project, I explored the interaction between people and mirrors. When walking by mirrors, I noticed that people tend to subconsciously stare at the mirrors back to themselves to check their own appearance or to take mirror pictures. However, after I learnt about spy two-way mirrors, I felt more cautious interacting with mirrors due to my paranoia of being spied on. For this project titled “Mirror-Selfie”, I am embodying my fear of being stared back at by the mirror or anything behind the mirror. Using a camera with the OpenCV Python library, I detect faces and print out a frame of the moment when anyone looks into the mirror.",
+            "material":["Python","Bash","Webcam","Printer","Mirror"],
+            "link":"",
+            "haveLink": false,
+            "documentation":{
+                "thumbnail":"assets/Documentation/mirror-selfie-thumbnail.jpeg",
+                "doc1":"assets/Documentation/mirror-selfie demo video.mov",
+                "doc2":"assets/Documentation/mirror-selfie-hardware.jpeg",
+                "doc3":"assets/Documentation/open-cv test.mov",
+                "doc4":"assets/Documentation/mirror-selfie back.jpeg",
+                "doc5":"assets/Documentation/mirror-selfie testprint.jpeg",
+                "doc6":"assets/Documentation/mirror-selfie installation.jpeg"
+                
+            }
+        }
+        
+    },
     "work":{ 
         "Mirror Selfie":{
             "name":"Mirror Selfie",
@@ -221,50 +332,5 @@
         "doc3":""
     }
 }
-}, 
-"highlight":{ 
-    "Highlight1":{
-        "name":"Odd Fellow Says Hello",
-        "year":"2024",
-        "info":"Put your wits to the test with Odd Fellow Says Hello, a game of wordplay and fun! In each round, you’ll face four words—but one doesn’t belong. Is it a trick of meaning or a subtle twist of context? Gather your friends or challenge yourself to find the Odd Fellow before time runs out. Perfect for quick thinkers, word lovers, and anyone who loves a clever challenge. Are you sharp enough to spot the odd fellow? Odd fellow says hello!",
-        "material":["HTML","CSS","Javascript","Typescript"],
-        "link":"https://odd-one-out-game.deno.dev/",
-        "haveLink": true,
-        "documentation":{
-            "thumbnail":"assets/Documentation/Odd Fellow Says Hello cover.png",
-            "doc1":"assets/Documentation/Process/Odd Fellow Says Hello sketch.jpg",
-            "doc2":"assets/Documentation/Process/Odd fellow says hello sketch + color map.png",
-            "doc3":"assets/Documentation/Process/Odd Fellow Says Hello Flow Chart.png"
-        },
-        "highlight": true
-    },
-    "Highlight2":{
-        "name":"Hue Hunter",
-        "year":"2024",
-        "info":"Sight and hearing exercise game designed specifically with visual designer and/or musician in mind. User's are prompted to find the red square by following the transition of color and pitch. As users level up, the game becomes harder.",
-        "material":["HTML","CSS","Javascript"],
-        "link":" https://carbudar.github.io/hue-hunter/",
-        "haveLink": true,
-        "documentation":{
-            "thumbnail":"assets/Documentation/hue hunter cover.png",
-            "doc1":"assets/Documentation/Process/Hue Hunter sketch.jpg",
-            "doc2":"assets/Documentation/Process/Hue Hunter color sketch.png"
-        }
-    },
-    "Highlight3":{
-        "name":"Photo Archive",
-        "year":"2024",
-        "info":"This website serves as an archival hub for my personal photography portfolio, offering detailed insights into each piece. The collection is presented in an organized grid format, allowing for a visually cohesive and engaging browsing experience.",
-        "material":["HTML","CSS","Javascript"],
-        "link":"https://carbudar.github.io/Photo-Archive/",
-        "haveLink": true,
-        "documentation":{
-            "thumbnail":"assets/Documentation/Photo Archive cover.png",
-            "doc1":"assets/Documentation/Process/Photo Archive main page sketch.png",
-            "doc2":"assets/Documentation/Process/Photo Archive Expanded Sketch.png"
-        }
-        
-    }
-    
 }
 }
