@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     photoArchive()
     expandProjectHighlight()
     directoryButton()
-
+    strollCursor()
 
 
     const infoContainer = document.querySelector('#project-info-container')
@@ -255,26 +255,6 @@ nameBtn.addEventListener('click', () => {
         floors.forEach((container, index) => {
             container.style.zIndex = floors.length - index; // Reverse the order for z-index
         });
-    // const pages = [scrollToAbout,
-    //                 "content2.html?section=play",
-    //                 "content2.html?section=work"]  // Function reference for the first element
-
-    // // Directory navigation
-    // for (let dirNum = 1; dirNum <= pages.length; dirNum++) {
-    //     const container = document.querySelector(`#dirContainer${dirNum}`);
-    //     container.addEventListener('click', () => {
-    //         const action = pages[dirNum - 1];
-    //         if (typeof action === "function") {
-    //             // If the action is a function, execute it (e.g., scrollToAbout)
-    //             action();
-    //         } else if (typeof action === "string") {
-    //             // Redirect to the page with the query parameter
-    //             window.location.href = action; // Use the URL string directly
-    //         }
-    //     });
-
-
-    // }
 
     }
     function DateAndTime(){
@@ -372,8 +352,51 @@ function directoryButton(){
         scrollToAbout();
     })
 
+    const archiveDirectory = document.querySelector('#dirContainer2')
+    archiveDirectory.addEventListener('click',()=>{
+        window.location.href = 'archive.html'
+    })
+
     const highlightDirectory = document.querySelector('#dirContainer3');
     highlightDirectory.addEventListener('click',()=>{
         scrollToProjectHighlight()
     })
 }
+
+
+function initCustomCursor(cursorImagePath) {
+    
+    document.body.style.cursor = 'none';
+
+    // Create image element
+    const cursor = document.createElement('img');
+    cursor.src = cursorImagePath;
+    cursor.style.position = 'fixed';
+    cursor.style.pointerEvents = 'none';
+    cursor.style.width = '50px';
+    cursor.style.height = '30px';
+    cursor.style.zIndex = '10000';
+    cursor.style.transform = 'translate(-50%, -50%)'; // Center the cursor on mouse position
+    document.body.appendChild(cursor);
+
+    // Follow the mouse
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+}
+
+// Initialize custom cursor only on specific pages
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if we're on the Stroll page
+    if (document.getElementById('stroll-container')) {
+        initCustomCursor('assets/Documentation/Stroll/Flower Pink.png');
+    }
+    
+    // You can add more conditions for other pages with custom cursors
+    // Example:
+    // if (document.getElementById('another-page-id')) {
+    //     initCustomCursor('path/to/another-cursor.png');
+    // }
+});
+

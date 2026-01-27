@@ -197,6 +197,14 @@ h1{
     gap: 5vh;
 }
 
+.project-title{
+    color: #126889;
+    font-weight: 400;
+    text-shadow: offset-x offset-y blur-radius color;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+
+}
 
 .project-highlight {
   transform: scale(0.9);
@@ -1364,14 +1372,104 @@ button {
     cursor: pointer;
 }
 
-#protected-content{
-    width: 100vw;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    border: 0;
+#archive-container{
+    height: 92vh;
+    overflow-y: hidden;
+    width: 100%;
+    margin-top: 8vh;
+    display: flex;
+    flex-direction: row;
 }
 
+#archive-left{
+    width: 50vw;
+    height: 100%;
+    padding: 5vh;
+
+    
+}
+#archive-title{
+    height: 50%;
+}
+#archive-title h1{
+    font-size: 3rem;
+}
+
+#archive-info{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Aligns content to bottom */
+}
+
+#archive-carousel{
+    background-color: #F9F7F2;
+    height: 100%;
+    width: 50%;
+    display: flex;
+
+}
+
+
+#archive-carousel-left, 
+#archive-carousel-right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+    transition: transform 0.1s linear;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.gradient-top{
+    background-color: #323F2F;
+    height: 20vh;
+    width: 100%;
+    z-index: 1000;
+}
+
+.eachProjectThumbnail{
+    width: 100%;
+    height: 50vh;
+    flex-shrink: 0; 
+    
+}
+#archive-info span {
+   color: #126889;
+}
+
+#archive-info h1 {
+   font-weight: 500;
+}
+.archive-carousel-gradient-top{
+    background: linear-gradient(to bottom, rgba(249, 247, 242, 1), rgba(249, 247, 242, 0));
+    height: 10vh;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+}
+
+.archive-carousel-gradient-bottom{
+    background: linear-gradient(to top, rgba(249, 247, 242, 1), rgba(249, 247, 242, 0));
+    height: 10vh;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-image-wrapper {
+        aspect-ratio: 2/3;
+    }
+}
+
+/* --- */
 
 /* phone */
 @media (max-width: 768px) {

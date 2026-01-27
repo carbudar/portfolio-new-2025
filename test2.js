@@ -1,5 +1,4 @@
 function createButton(size, buttonText, className, highlightColor, color, parentElement = null) {
-    console.log("button function is connected")
     const button = document.createElement('div');
     button.classList.add('button');
 
@@ -51,7 +50,7 @@ createButton("h2", "Instagram", "instagram", "#EDED14", "#000");
 createButton("h3", "Back", "backBtn", "#EDED14", "#126889");
 createButton("h3", "Visit my photo archive here!", "photo-archive-btn", "#EDED14", "#FFD2FF");
 
-// Add this function at the top of your file (before the DOMContentLoaded)
+
 function loadProjectHighlights(data) {
     const highlights = data.highlight;
     if (!highlights) {
@@ -124,6 +123,8 @@ function loadProjectHighlights(data) {
     projectsFlexContainer.appendChild(finalFiller);
 }
 
+
+// THEN UPDATE YOUR DOMContentLoaded:
 document.addEventListener('DOMContentLoaded', async function () {
     try {
         const urlParams = new URLSearchParams(window.location.search);
@@ -133,6 +134,12 @@ document.addEventListener('DOMContentLoaded', async function () {
         const response = await fetch('projects.json');
         if (!response.ok) throw new Error('Failed to fetch projects.json');
         const data = await response.json();
+
+        // Check if we're on the archive page (no section parameter AND archive container exists)
+        if (!section && document.getElementById('archive-container')) {
+            loadArchivedWorks(data); // Pass data here
+            return;
+        }
 
         // If there's a section parameter, load the archive/project list
         if (section) {
@@ -147,95 +154,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             const container = document.getElementById('projects-container');
             container.innerHTML = '';
 
-            const backgroundImageContainer = document.querySelector('.page-container');
-
-            Object.keys(projects).forEach(projectKey => {
-                const project = projects[projectKey];
-
-                const projectElement = document.createElement('div');
-                projectElement.classList.add('projectElement');
-
-                // projectElement.addEventListener('mouseenter', () => {
-                //     document.body.style.backgroundImage = "url('Big CIty Small World cover.png')";
-                //     console.log(`url(${project.documentation.thumbnail})`);
-                // });
-                
-                // projectElement.addEventListener('mouseleave', () => {
-                //     console.log("mouse out");
-                //     backgroundImageContainer.style.backgroundImage = "none";
-                //     backgroundImageContainer.style.backgroundColor = "#F9F7F2";
-                // });
-
-                const projectPictureContainer = document.createElement('div');
-                projectPictureContainer.classList.add('projectPictureContainer');
-                const projectPicture = document.createElement('img');
-                projectPicture.src = project.documentation.thumbnail;
-                projectPicture.classList.add('projectPicture');
-
-                const projectInfo = document.createElement('div');
-                projectInfo.classList.add('projectInfo');
-
-                const projectName = document.createElement('div');
-                projectName.classList.add('projectName');
-
-                const projectMaterial = document.createElement('div');
-                projectMaterial.classList.add('projectMaterial');
-
-                const projectDetailBtn = document.createElement('div');
-                projectDetailBtn.classList.add('projectDetailBtn');
-
-                const moreInfoBtn = document.createElement('div');
-                moreInfoBtn.classList.add('moreInfoBtn');
-                projectDetailBtn.appendChild(moreInfoBtn);
-
-                createButton("h3", "More Info", "moreInfoBtn", "#EDED14", "#126889", moreInfoBtn);
-
-                if (projectKey === "Pinterest Case Study") {
-                    moreInfoBtn.addEventListener('click', () => {
-                        window.location.href = `pinterest-casestudy.html`;
-                    });
-                } else if (projectKey === "Stroll") {
-                    moreInfoBtn.addEventListener('click', () => {
-                        window.location.href = `stroll-app.html`;
-                    });
-                } else {
-                    moreInfoBtn.addEventListener('click', () => {
-                        window.location.href = `project-info.html?project=${projectKey}`;
-                    });
-                }
-
-                if (project.link) {
-                    const visitBtn = document.createElement('div');
-                    visitBtn.classList.add('visitBtn');
-                    projectDetailBtn.appendChild(visitBtn);
-                    createButton("h3", "Visit Site", "visitBtn", "#EDED14", "#126889", visitBtn);
-
-                    visitBtn.addEventListener('click', () => {
-                        window.open(project.link, '_blank');
-                    });
-                }
-
-                const projectNameContent = document.createElement('h1');
-                projectNameContent.classList.add('projectNameContent');
-                projectNameContent.innerHTML = `<h2>${project.name}</h2> <h3>${project.year}</h3>`;
-
-                const projectMaterialContent = document.createElement('ul');
-                projectMaterialContent.classList.add('projectMaterialContent');
-                projectMaterialContent.innerHTML = project.material?.length
-                    ? project.material.map(m => `<li>${m}</li>`).join('')
-                    : '<li>Not specified</li>';
-
-                projectName.appendChild(projectNameContent);
-                projectMaterial.appendChild(projectMaterialContent);
-                projectInfo.appendChild(projectName);
-                projectInfo.appendChild(projectMaterial);
-                projectInfo.appendChild(projectDetailBtn);
-
-                container.appendChild(projectElement);
-                projectElement.appendChild(projectPictureContainer);
-                projectPictureContainer.appendChild(projectPicture);
-                projectElement.appendChild(projectInfo);
-            });
+            // ... rest of your section loading code
         } else {
             // No section parameter - we're on the landing page, load highlights
             loadProjectHighlights(data);
@@ -244,3 +163,226 @@ document.addEventListener('DOMContentLoaded', async function () {
         console.error('Error fetching project data:', error);
     }
 });
+
+function loadArchivedWorks(data) {
+    if (!document.getElementById('archive-container')) return;
+
+    if (!data.archive) return;
+
+    const archiveCarouselLeft = document.querySelector('#archive-carousel-left');
+    const archiveCarouselRight = document.querySelector('#archive-carousel-right');
+
+    archiveCarouselLeft.innerHTML = '';
+    archiveCarouselRight.innerHTML = '';
+
+    const projectsArray = [];
+
+    Object.entries(data.archive).forEach(([key, project]) => {
+        projectsArray.push(project);
+    });
+
+    // LEFT (normal upward)
+    startSmoothCarouselLeft(archiveCarouselLeft, projectsArray);
+
+    // RIGHT (reverse downward)
+    startSmoothCarouselRight(archiveCarouselRight, projectsArray);
+}
+
+
+const archiveInfo = document.querySelector('#archive-info')
+archiveInfo.innerHTML="Hover over the images!"
+
+
+function startSmoothCarouselLeft(container, projectsArray) {
+    const infoLeftSide = document.getElementById("archive-info");
+    let carouselAnimation;
+    
+    // Duplicate projects array for seamless looping
+    const duplicatedProjects = [...projectsArray, ...projectsArray];
+    
+    // Create all thumbnails
+    duplicatedProjects.forEach((project, index) => {
+        const thumbnail = createThumbnailElement(project, index);
+        container.appendChild(thumbnail);
+    });
+    
+    // Wait for DOM to update, then get actual heights and position
+    setTimeout(() => {
+        const thumbnails = Array.from(container.children);
+        
+        // Calculate individual heights
+        const heights = thumbnails.map(thumb => thumb.offsetHeight);
+        
+        // Calculate the height of one complete cycle (first set only)
+        const singleCycleHeight = heights.slice(0, projectsArray.length).reduce((sum, h) => sum + h, 0);
+        
+        // Position ALL thumbnails in a continuous column
+        gsap.set(thumbnails, {
+            y: (i) => {
+                let yPos = 0;
+                // Sum up all heights before this index
+                for (let j = 0; j < i; j++) {
+                    yPos += heights[j];
+                }
+                return yPos;
+            }
+        });
+        
+        // Create the infinite scroll animation
+        carouselAnimation = gsap.to(thumbnails, {
+            duration: singleCycleHeight / 50, // Adjust speed here (higher number = slower)
+            ease: "none",
+            y: `-=${singleCycleHeight}`, // Move up by one cycle height
+            modifiers: {
+                y: gsap.utils.unitize(y => parseFloat(y) % singleCycleHeight)
+            },
+            repeat: -1
+        });
+    }, 100);
+    
+    function createThumbnailElement(project, index) {
+        const eachProjectThumbnail = document.createElement('div');
+        eachProjectThumbnail.classList.add('eachProjectThumbnail');
+        
+        // Set background image from JSON
+        eachProjectThumbnail.style.backgroundImage = `url('${project.documentation.thumbnail}')`;
+        eachProjectThumbnail.style.backgroundSize = 'cover';
+        eachProjectThumbnail.style.backgroundPosition = 'center';
+        eachProjectThumbnail.style.backgroundRepeat = 'no-repeat';
+        eachProjectThumbnail.style.position = 'absolute';
+        
+        // Add click handler
+        eachProjectThumbnail.addEventListener('click', () => {
+            window.location.href = `project-info.html?project=${encodeURIComponent(project.name)}`;
+        });
+
+        eachProjectThumbnail.addEventListener('mouseenter', () => {
+            gsap.to(eachProjectThumbnail, {
+                scale: 1.1,
+                duration: 0.25,
+                ease: "power2.out"
+            });
+            
+            // Pause the animation
+            if (carouselAnimation) {
+                carouselAnimation.pause();
+            }
+
+             infoLeftSide.innerHTML = `
+        <h1>${project.name}</h1>
+        <h2>${project.year}</h2>
+        <p>${project.info}</p>
+        <span>Click on the image to learn more</span>
+    `;
+        });
+
+        eachProjectThumbnail.addEventListener('mouseleave', () => {
+            gsap.to(eachProjectThumbnail, {
+                scale: 1,
+                duration: 0.25,
+                ease: "power2.out"
+            });
+            
+            // Resume the animation
+            if (carouselAnimation) {
+                carouselAnimation.resume();
+            }
+
+            infoLeftSide.innerHTML = "Hover over the images!";
+        });
+        
+        return eachProjectThumbnail;
+    }
+}
+
+     
+
+function startSmoothCarouselRight(container, projectsArray) {
+    const infoLeftSide = document.getElementById("archive-info");
+    let carouselAnimation;
+
+    // Duplicate projects array for seamless looping
+    const duplicatedProjects = [...projectsArray, ...projectsArray];
+
+    // Create all thumbnails
+    duplicatedProjects.forEach((project, index) => {
+        const thumbnail = createThumbnailElement(project, index);
+        container.appendChild(thumbnail);
+    });
+
+    // Wait for DOM to update
+    setTimeout(() => {
+        const thumbnails = Array.from(container.children);
+
+        // Get individual heights
+        const heights = thumbnails.map(t => t.offsetHeight);
+
+        // Height of one cycle (first set only)
+        const singleCycleHeight = heights
+            .slice(0, projectsArray.length)
+            .reduce((sum, h) => sum + h, 0);
+
+        // 1️⃣ Stack thumbnails with last project at bottom of container
+        gsap.set(thumbnails, {
+            y: (i) => {
+                let yPos = -singleCycleHeight + container.offsetHeight; // pull everything up so last project aligns bottom
+                for (let j = 0; j < i; j++) {
+                    yPos += heights[j];
+                }
+                return yPos;
+            }
+        });
+
+        // 2️⃣ Animate downward continuously
+        carouselAnimation = gsap.to(thumbnails, {
+            duration: singleCycleHeight / 50, // adjust speed
+            ease: "none",
+            y: `+=${singleCycleHeight}`,
+            modifiers: {
+                y: gsap.utils.unitize(y => parseFloat(y) % singleCycleHeight)
+            },
+            repeat: -1
+        });
+    }, 100);
+
+    function createThumbnailElement(project, index) {
+        const eachProjectThumbnail = document.createElement('div');
+        eachProjectThumbnail.classList.add('eachProjectThumbnail');
+
+        // Match left carousel sizing
+        eachProjectThumbnail.style.width = "100%";
+        eachProjectThumbnail.style.height = "50vh";
+        eachProjectThumbnail.style.flexShrink = "0";
+
+        eachProjectThumbnail.style.backgroundImage = `url('${project.documentation.thumbnail}')`;
+        eachProjectThumbnail.style.backgroundSize = 'cover';
+        eachProjectThumbnail.style.backgroundPosition = 'center';
+        eachProjectThumbnail.style.backgroundRepeat = 'no-repeat';
+        eachProjectThumbnail.style.position = 'absolute';
+
+        // Click
+        eachProjectThumbnail.addEventListener('click', () => {
+            window.location.href = `project-info.html?project=${encodeURIComponent(project.name)}`;
+        });
+
+        // Hover
+        eachProjectThumbnail.addEventListener('mouseenter', () => {
+            gsap.to(eachProjectThumbnail, { scale: 1.1, duration: 0.25, ease: "power2.out" });
+            if (carouselAnimation) carouselAnimation.pause();
+              infoLeftSide.innerHTML = `
+        <h1>${project.name}</h1>
+        <h2>${project.year}</h2>
+        <p>${project.info}</p>
+        <span>Click on the image to learn more</span>
+    `;
+        });
+
+        eachProjectThumbnail.addEventListener('mouseleave', () => {
+            gsap.to(eachProjectThumbnail, { scale: 1, duration: 0.25, ease: "power2.out" });
+            if (carouselAnimation) carouselAnimation.resume();
+            infoLeftSide.innerHTML = "Hover over the images!";
+        });
+
+        return eachProjectThumbnail;
+    }
+}
