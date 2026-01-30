@@ -66,15 +66,16 @@ console.log("script.js functioning")
         })
 
 
-        headerEmail.innerHTML = "Works"
+        headerEmail.innerHTML = "Highlight"
         headerEmail.addEventListener('click',()=>{
-            window.open('content2.html?section=work', '_blank');
+            window.location.href = "index.html#project-highlight"
+       
         })
 
         
-        headerInstagram.innerHTML = "Play"
+        headerInstagram.innerHTML = "Archive"
         headerInstagram.addEventListener('click',()=>{
-            window.location.href = "content2.html?section=play" 
+            window.location.href = "archive.html" 
         })
 
         headerLinkedin.innerHTML = "About"
@@ -368,13 +369,14 @@ function initCustomCursor(cursorImagePath) {
     
     document.body.style.cursor = 'none';
 
+
     // Create image element
     const cursor = document.createElement('img');
     cursor.src = cursorImagePath;
     cursor.style.position = 'fixed';
     cursor.style.pointerEvents = 'none';
-    cursor.style.width = '50px';
-    cursor.style.height = '30px';
+    cursor.style.width = 'auto';
+    cursor.style.height = '34px';
     cursor.style.zIndex = '10000';
     cursor.style.transform = 'translate(-50%, -50%)'; // Center the cursor on mouse position
     document.body.appendChild(cursor);
@@ -392,11 +394,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('stroll-container')) {
         initCustomCursor('assets/Documentation/Stroll/Flower Pink.png');
     }
-    
-    // You can add more conditions for other pages with custom cursors
-    // Example:
-    // if (document.getElementById('another-page-id')) {
-    //     initCustomCursor('path/to/another-cursor.png');
-    // }
+     if (document.getElementById('dotmap-container')) {
+        initCustomCursor('assets/Documentation/dotmap-cursor.png');
+    }
+  
 });
 

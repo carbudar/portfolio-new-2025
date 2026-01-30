@@ -78,14 +78,14 @@
             }
         },
         "Highlight6":{
-            "name":"Generative Art",
-            "year":"2025",
-            "info":"Through this project, I explored the interaction between people and mirrors. When walking by mirrors, I noticed that people tend to subconsciously stare at the mirrors back to themselves to check their own appearance or to take mirror pictures. However, after I learnt about spy two-way mirrors, I felt more cautious interacting with mirrors due to my paranoia of being spied on. For this project titled “Mirror-Selfie”, I am embodying my fear of being stared back at by the mirror or anything behind the mirror. Using a camera with the OpenCV Python library, I detect faces and print out a frame of the moment when anyone looks into the mirror.",
-            "material":["Python","Bash","Webcam","Printer","Mirror"],
-            "link":"",
-            "haveLink": false,
+            "name":"Dot Map",
+            "year":"2024",
+            "info":"Dot Map is a long-form generative art that uses a Javascript algorithm to create a 25 x 25 matrix that puts colors in random circles within the squares. This art explores how pseudo-randomness, structure, and computation collaborate to create uniqueness. Using the modulo operator, each circle is assigned with a random number. The system decides which circles in the grid becomes colored, and which ones stays white. This rule creates a pattern that feels random while still following a consistent logic. Beyond its visual output, Dot Map also creates a sense of time. Viewers wait as the colors reveals itself square by square, watching the system produce the art instead of receiving a finished result. Once the pattern fully appears, the piece continues to function as an interactive environment rather than a static image. Users can still engage with the system by hovering their mouse over each grid to enlarge the circles. Dot Map does not end when the randomness stops, it remains alive, inviting interaction that can only happen through the blockchain medium.",
+            "material":["Java Script", "Adobe Illustrator"],
+            "link":"https://editor.p5js.org/carbudar/full/ikVkKfFTn",
+            "haveLink": true,
             "documentation":{
-                "thumbnail":"assets/Documentation/mirror-selfie-thumbnail.jpeg",
+                "thumbnail":"assets/Documentation/Dot Map.png",
                 "doc1":"assets/Documentation/mirror-selfie demo video.mov",
                 "doc2":"assets/Documentation/mirror-selfie-hardware.jpeg",
                 "doc3":"assets/Documentation/open-cv test.mov",
@@ -115,7 +115,7 @@
             }
         },
         
- "Sircle App":{
+ "Sircle":{
             "name":"Sircle",
             "year":"2022",
             "info":"Mobile app concept and prototype to maximize the New York City waste management system.",

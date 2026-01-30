@@ -9,9 +9,9 @@ function createButton(size, buttonText, className, highlightColor, color, parent
     const buttonTitle = document.createElement(size);
     buttonTitle.innerHTML = buttonText;
 
+    buttonContent.style.padding = "1vw"
     buttonContent.appendChild(buttonTitle);
     buttonContent.classList.add('buttonContent');
-    buttonContent.style.padding = "1vh"
 
     button.appendChild(buttonExpand);
     button.appendChild(buttonContent);
@@ -43,6 +43,7 @@ function createButton(size, buttonText, className, highlightColor, color, parent
     }
 }
 
+// Initialize buttons (from file 2)
 createButton("h1", "Back to Top", "backToTop", "#FFD2FF", "#FFD2FF");
 createButton("h2", "Email", "email", "#EDED14", "#000");
 createButton("h2", "LinkedIn", "linkedin", "#EDED14", "#000");
@@ -50,6 +51,20 @@ createButton("h2", "Instagram", "instagram", "#EDED14", "#000");
 createButton("h3", "Back", "backBtn", "#EDED14", "#126889");
 createButton("h3", "Visit my photo archive here!", "photo-archive-btn", "#EDED14", "#FFD2FF");
 
+createButton("h3", "Generate new Dot Map", "generateNewDotMap", "#EDED14", "#126889");
+
+function enlargeMedia() {
+    const mediaImages = document.querySelectorAll('img:not(.noEnlarge)'); // Exclude .noEnlarge images
+
+    mediaImages.forEach(img => {
+        img.style.cursor = 'pointer'; // Optional: makes it feel interactive
+
+        img.addEventListener('click', () => {
+            console.log("image clicked:", img.src);
+            window.open(img.src, '_blank');
+        });
+    });
+}
 
 function loadProjectHighlights(data) {
     const highlights = data.highlight;
@@ -100,9 +115,20 @@ function loadProjectHighlights(data) {
         
         // Add click handler
         projectCard.addEventListener('click', () => {
-            if (key === "Highlight2") {
+            if(key === "Highlight1"){
+                window.location.href = 'mirror-selfie.html';
+            }else if(key === "Highlight2") {
                 window.location.href = 'stroll-app.html';
-            } else {
+            }else if (key === "Highlight3"){
+                window.location.href = 'pinterest-casestudy.html';
+            }else if(key === "Highlight4") {
+                window.location.href = 'odd-fellow-says-hello.html'
+            }else if(key === "Highlight5") {
+                window.location.href = 'labyrinth.html'
+            }else if(key === "Highlight6") {
+                window.location.href = 'dotmap.html'
+            }
+            else{
                 window.location.href = `project-info.html?project=${encodeURIComponent(project.name)}`;
             }
         });
@@ -122,47 +148,6 @@ function loadProjectHighlights(data) {
     finalFiller.classList.add('project-flex-filler');
     projectsFlexContainer.appendChild(finalFiller);
 }
-
-
-// THEN UPDATE YOUR DOMContentLoaded:
-document.addEventListener('DOMContentLoaded', async function () {
-    try {
-        const urlParams = new URLSearchParams(window.location.search);
-        const section = urlParams.get('section');
-
-        // Fetch the JSON once
-        const response = await fetch('projects.json');
-        if (!response.ok) throw new Error('Failed to fetch projects.json');
-        const data = await response.json();
-
-        // Check if we're on the archive page (no section parameter AND archive container exists)
-        if (!section && document.getElementById('archive-container')) {
-            loadArchivedWorks(data); // Pass data here
-            return;
-        }
-
-        // If there's a section parameter, load the archive/project list
-        if (section) {
-            console.log("Loading section:", section);
-
-            if (!data[section]) {
-                console.error(`Section "${section}" not found in the JSON file`);
-                return;
-            }
-            const projects = data[section];
-
-            const container = document.getElementById('projects-container');
-            container.innerHTML = '';
-
-            // ... rest of your section loading code
-        } else {
-            // No section parameter - we're on the landing page, load highlights
-            loadProjectHighlights(data);
-        }
-    } catch (error) {
-        console.error('Error fetching project data:', error);
-    }
-});
 
 function loadArchivedWorks(data) {
     if (!document.getElementById('archive-container')) return;
@@ -188,14 +173,14 @@ function loadArchivedWorks(data) {
     startSmoothCarouselRight(archiveCarouselRight, projectsArray);
 }
 
-
-const archiveInfo = document.querySelector('#archive-info')
-archiveInfo.innerHTML="Hover over the images!"
-
-
 function startSmoothCarouselLeft(container, projectsArray) {
     const infoLeftSide = document.getElementById("archive-info");
     let carouselAnimation;
+    let isDragging = false;
+    let hasDragged = false; // Track if user actually dragged
+    let startY = 0;
+    let currentY = 0;
+    let dragTimeout;
     
     // Duplicate projects array for seamless looping
     const duplicatedProjects = [...projectsArray, ...projectsArray];
@@ -230,102 +215,163 @@ function startSmoothCarouselLeft(container, projectsArray) {
         
         // Create the infinite scroll animation
         carouselAnimation = gsap.to(thumbnails, {
-            duration: singleCycleHeight / 50, // Adjust speed here (higher number = slower)
+            duration: singleCycleHeight / 50,
             ease: "none",
-            y: `-=${singleCycleHeight}`, // Move up by one cycle height
+            y: `-=${singleCycleHeight}`,
             modifiers: {
                 y: gsap.utils.unitize(y => parseFloat(y) % singleCycleHeight)
             },
             repeat: -1
         });
+
+        // Mouse down - start dragging
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            hasDragged = false; // Reset drag flag
+            startY = e.clientY;
+            container.style.cursor = 'grabbing';
+            
+            // Pause auto-scroll
+            if (carouselAnimation) {
+                carouselAnimation.pause();
+            }
+            
+            // Clear resume timeout
+            clearTimeout(dragTimeout);
+        });
+
+        // Mouse move - drag
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            
+            e.preventDefault();
+            currentY = e.clientY;
+            const deltaY = currentY - startY;
+            
+            // If mouse moved more than 5px, consider it a drag
+            if (Math.abs(deltaY) > 5) {
+                hasDragged = true;
+            }
+            
+            // Move thumbnails based on drag
+            thumbnails.forEach((thumb) => {
+                const currentThumbY = gsap.getProperty(thumb, "y");
+                gsap.set(thumb, { y: currentThumbY + deltaY });
+            });
+            
+            startY = currentY;
+        });
+
+        // Mouse up - stop dragging
+        document.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                container.style.cursor = 'grab';
+                
+                // Resume auto-scroll after 1.5 seconds
+                dragTimeout = setTimeout(() => {
+                    if (carouselAnimation) {
+                        carouselAnimation.resume();
+                    }
+                }, 1500);
+                
+                // Reset hasDragged after a short delay to prevent click
+                setTimeout(() => {
+                    hasDragged = false;
+                }, 100);
+            }
+        });
+
+        // Set initial cursor
+        container.style.cursor = 'grab';
+
     }, 100);
     
     function createThumbnailElement(project, index) {
         const eachProjectThumbnail = document.createElement('div');
         eachProjectThumbnail.classList.add('eachProjectThumbnail');
         
-        // Set background image from JSON
         eachProjectThumbnail.style.backgroundImage = `url('${project.documentation.thumbnail}')`;
         eachProjectThumbnail.style.backgroundSize = 'cover';
         eachProjectThumbnail.style.backgroundPosition = 'center';
         eachProjectThumbnail.style.backgroundRepeat = 'no-repeat';
         eachProjectThumbnail.style.position = 'absolute';
+        eachProjectThumbnail.style.userSelect = 'none'; // Prevent text selection while dragging
         
-        // Add click handler
-        eachProjectThumbnail.addEventListener('click', () => {
-            window.location.href = `project-info.html?project=${encodeURIComponent(project.name)}`;
+        eachProjectThumbnail.addEventListener('click', (e) => {
+            // Only navigate if not dragging AND haven't just dragged
+            if (!isDragging && !hasDragged) {
+                window.location.href = `project-info.html?project=${encodeURIComponent(project.name)}`;
+            }
         });
 
         eachProjectThumbnail.addEventListener('mouseenter', () => {
-            gsap.to(eachProjectThumbnail, {
-                scale: 1.1,
-                duration: 0.25,
-                ease: "power2.out"
-            });
-            
-            // Pause the animation
-            if (carouselAnimation) {
-                carouselAnimation.pause();
-            }
+            if (!isDragging) {
+                gsap.to(eachProjectThumbnail, {
+                    scale: 1.1,
+                    duration: 0.25,
+                    ease: "power2.out"
+                });
+                
+                if (carouselAnimation) {
+                    carouselAnimation.pause();
+                }
 
-             infoLeftSide.innerHTML = `
-        <h1>${project.name}</h1>
-        <h2>${project.year}</h2>
-        <p>${project.info}</p>
-        <span>Click on the image to learn more</span>
-    `;
+                infoLeftSide.innerHTML = `
+                    <h1>${project.name}</h1>
+                    <h2>${project.year}</h2>
+                    <p>${project.info}</p>
+                    <span>Click on the image to learn more</span>
+                `;
+            }
         });
 
         eachProjectThumbnail.addEventListener('mouseleave', () => {
-            gsap.to(eachProjectThumbnail, {
-                scale: 1,
-                duration: 0.25,
-                ease: "power2.out"
-            });
-            
-            // Resume the animation
-            if (carouselAnimation) {
-                carouselAnimation.resume();
-            }
+            if (!isDragging) {
+                gsap.to(eachProjectThumbnail, {
+                    scale: 1,
+                    duration: 0.25,
+                    ease: "power2.out"
+                });
+                
+                if (carouselAnimation) {
+                    carouselAnimation.resume();
+                }
 
-            infoLeftSide.innerHTML = "Hover over the images!";
+                infoLeftSide.innerHTML = "Hover over the images!";
+            }
         });
         
         return eachProjectThumbnail;
     }
 }
 
-     
-
 function startSmoothCarouselRight(container, projectsArray) {
     const infoLeftSide = document.getElementById("archive-info");
     let carouselAnimation;
+    let isDragging = false;
+    let hasDragged = false; // Track if user actually dragged
+    let startY = 0;
+    let currentY = 0;
+    let dragTimeout;
 
-    // Duplicate projects array for seamless looping
     const duplicatedProjects = [...projectsArray, ...projectsArray];
 
-    // Create all thumbnails
     duplicatedProjects.forEach((project, index) => {
         const thumbnail = createThumbnailElement(project, index);
         container.appendChild(thumbnail);
     });
 
-    // Wait for DOM to update
     setTimeout(() => {
         const thumbnails = Array.from(container.children);
-
-        // Get individual heights
         const heights = thumbnails.map(t => t.offsetHeight);
-
-        // Height of one cycle (first set only)
         const singleCycleHeight = heights
             .slice(0, projectsArray.length)
             .reduce((sum, h) => sum + h, 0);
 
-        // 1️⃣ Stack thumbnails with last project at bottom of container
         gsap.set(thumbnails, {
             y: (i) => {
-                let yPos = -singleCycleHeight + container.offsetHeight; // pull everything up so last project aligns bottom
+                let yPos = -singleCycleHeight + container.offsetHeight;
                 for (let j = 0; j < i; j++) {
                     yPos += heights[j];
                 }
@@ -333,9 +379,8 @@ function startSmoothCarouselRight(container, projectsArray) {
             }
         });
 
-        // 2️⃣ Animate downward continuously
         carouselAnimation = gsap.to(thumbnails, {
-            duration: singleCycleHeight / 50, // adjust speed
+            duration: singleCycleHeight / 50,
             ease: "none",
             y: `+=${singleCycleHeight}`,
             modifiers: {
@@ -343,13 +388,70 @@ function startSmoothCarouselRight(container, projectsArray) {
             },
             repeat: -1
         });
+
+        // Mouse down - start dragging
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            hasDragged = false; // Reset drag flag
+            startY = e.clientY;
+            container.style.cursor = 'grabbing';
+            
+            if (carouselAnimation) {
+                carouselAnimation.pause();
+            }
+            
+            clearTimeout(dragTimeout);
+        });
+
+        // Mouse move - drag
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            
+            e.preventDefault();
+            currentY = e.clientY;
+            const deltaY = currentY - startY;
+            
+            // If mouse moved more than 5px, consider it a drag
+            if (Math.abs(deltaY) > 5) {
+                hasDragged = true;
+            }
+            
+            thumbnails.forEach((thumb) => {
+                const currentThumbY = gsap.getProperty(thumb, "y");
+                gsap.set(thumb, { y: currentThumbY + deltaY });
+            });
+            
+            startY = currentY;
+        });
+
+        // Mouse up - stop dragging
+        document.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                container.style.cursor = 'grab';
+                
+                dragTimeout = setTimeout(() => {
+                    if (carouselAnimation) {
+                        carouselAnimation.resume();
+                    }
+                }, 1500);
+                
+                // Reset hasDragged after a short delay to prevent click
+                setTimeout(() => {
+                    hasDragged = false;
+                }, 100);
+            }
+        });
+
+        // Set initial cursor
+        container.style.cursor = 'grab';
+
     }, 100);
 
     function createThumbnailElement(project, index) {
         const eachProjectThumbnail = document.createElement('div');
         eachProjectThumbnail.classList.add('eachProjectThumbnail');
 
-        // Match left carousel sizing
         eachProjectThumbnail.style.width = "100%";
         eachProjectThumbnail.style.height = "50vh";
         eachProjectThumbnail.style.flexShrink = "0";
@@ -359,30 +461,176 @@ function startSmoothCarouselRight(container, projectsArray) {
         eachProjectThumbnail.style.backgroundPosition = 'center';
         eachProjectThumbnail.style.backgroundRepeat = 'no-repeat';
         eachProjectThumbnail.style.position = 'absolute';
+        eachProjectThumbnail.style.userSelect = 'none';
 
-        // Click
-        eachProjectThumbnail.addEventListener('click', () => {
-            window.location.href = `project-info.html?project=${encodeURIComponent(project.name)}`;
+        eachProjectThumbnail.addEventListener('click', (e) => {
+            // Only navigate if not dragging AND haven't just dragged
+            if (!isDragging && !hasDragged) {
+                window.location.href = `project-info.html?project=${encodeURIComponent(project.name)}`;
+            }
         });
 
-        // Hover
         eachProjectThumbnail.addEventListener('mouseenter', () => {
-            gsap.to(eachProjectThumbnail, { scale: 1.1, duration: 0.25, ease: "power2.out" });
-            if (carouselAnimation) carouselAnimation.pause();
-              infoLeftSide.innerHTML = `
-        <h1>${project.name}</h1>
-        <h2>${project.year}</h2>
-        <p>${project.info}</p>
-        <span>Click on the image to learn more</span>
-    `;
+            if (!isDragging) {
+                gsap.to(eachProjectThumbnail, { scale: 1.1, duration: 0.25, ease: "power2.out" });
+                if (carouselAnimation) carouselAnimation.pause();
+                infoLeftSide.innerHTML = `
+                    <h1>${project.name}</h1>
+                    <h2>${project.year}</h2>
+                    <p>${project.info}</p>
+                    <span>Click on the image to learn more</span>
+                `;
+            }
         });
 
         eachProjectThumbnail.addEventListener('mouseleave', () => {
-            gsap.to(eachProjectThumbnail, { scale: 1, duration: 0.25, ease: "power2.out" });
-            if (carouselAnimation) carouselAnimation.resume();
-            infoLeftSide.innerHTML = "Hover over the images!";
+            if (!isDragging) {
+                gsap.to(eachProjectThumbnail, { scale: 1, duration: 0.25, ease: "power2.out" });
+                if (carouselAnimation) carouselAnimation.resume();
+                infoLeftSide.innerHTML = "Hover over the images!";
+            }
         });
 
         return eachProjectThumbnail;
     }
 }
+function generateNewDotMap(){
+    const generateNewDotMap = document.querySelector('.generateNewDotMap')
+
+    generateNewDotMap.addEventListener('click',()=>{
+        const iframe = document.getElementById('dotMapIFrame');
+        iframe.src = iframe.src;
+    })
+}
+
+// Set archive info if element exists (from file 2)
+const archiveInfo = document.querySelector('#archive-info');
+if (archiveInfo) {
+    archiveInfo.innerHTML = "Hover over the images!";
+}
+
+// Combined DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', async function () {
+    try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectKey = urlParams.get('project'); // For project-info page
+        const section = urlParams.get('section'); // For section-based pages
+
+        // Fetch the JSON once
+        const response = await fetch('projects.json');
+        if (!response.ok) throw new Error('Failed to fetch projects.json');
+        const data = await response.json();
+
+
+        // CASE 1: Project info page (has ?project= parameter)
+        if (projectKey) {
+            const project = data.archive[projectKey];
+
+            if (project) {
+                document.querySelector('.content-left').innerHTML = `<h2>${project.name}</h2><h3>${project.year}</h3>`;
+                document.querySelector('.content-center').textContent = project.info;
+                document.querySelector('.content-right').innerHTML = project.material?.length ? project.material.map(m => `<li>${m}</li>`).join('') : '<li>Not specified</li>';
+
+                const img = document.querySelector('.projectThumbnail');
+                img.classList.add('noEnlarge');
+                img.src = project.documentation.thumbnail;
+                img.alt = project.name;
+
+                img.addEventListener('click', () => {
+                    window.open(project.link);
+                });
+
+                document.querySelector('.progressTitle').textContent = "Progress";
+                document.querySelector('.reflectionTitle').textContent = "Reflection";
+
+                const contentBackToTop = document.querySelector('.content-backToTop');
+                contentBackToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                createButton("h3", "Back To Top", "content-backToTop", "#EDED14", "#126889");
+
+                if (project.link) {
+                    const visitSite = document.querySelector('.visitSite');
+                    createButton("h3", "Visit Site", "visitSite", "#EDED14", "#126889");
+
+                    visitSite.addEventListener('click', () => {
+                        window.open(project.link);
+                    });
+                }
+
+                
+                const projectDocumentation = document.querySelector('.progressPhoto');
+
+                // Clear any existing content first
+                projectDocumentation.innerHTML = "";
+
+                // Loop through all keys in the documentation object
+                Object.entries(project.documentation).forEach(([key, value]) => {
+                    // Skip thumbnail since it's used elsewhere
+                    if (key !== "thumbnail" && value) {
+                        const fileExtension = value.split('.').pop().toLowerCase();
+                        let mediaElement;
+
+                        // Check for common video file extensions
+                        if (["mp4", "mov", "webm", "ogg"].includes(fileExtension)) {
+                            mediaElement = document.createElement("video");
+                            mediaElement.src = value;
+                            mediaElement.controls = true;
+                            mediaElement.autoplay = true;
+                            mediaElement.loop = true;
+                            mediaElement.muted = true;
+                            mediaElement.classList.add("documentationElement");
+                        }
+                        // Treat everything else as an image
+                        else if (["jpg", "jpeg", "png", "gif", "bmp", "svg", "webp", "heic", "avif"].includes(fileExtension)) {
+                            mediaElement = document.createElement("img");
+                            mediaElement.src = value;
+                            mediaElement.alt = `${project.name} - ${key}`;
+                            mediaElement.classList.add("documentationElement");
+                        }
+
+                        if (mediaElement) {
+                            projectDocumentation.appendChild(mediaElement);
+                        }
+                    }
+                });
+
+                enlargeMedia();
+            } else {
+                console.error('Project not found');
+            }
+            return;
+        }
+
+        // CASE 2: Archive page (no section parameter AND archive container exists)
+        if (!section && document.getElementById('archive-container')) {
+            loadArchivedWorks(data);
+            return;
+        }
+
+        // CASE 3: Section-based page (has ?section= parameter)
+        if (section) {
+            console.log("Loading section:", section);
+
+            if (!data[section]) {
+                console.error(`Section "${section}" not found in the JSON file`);
+                return;
+            }
+            const projects = data[section];
+
+            const container = document.getElementById('projects-container');
+            container.innerHTML = '';
+
+            // Add your section loading logic here if needed
+            return;
+        }
+
+        // CASE 4: Landing page with highlights (no parameters)
+        loadProjectHighlights(data);
+
+    } catch (error) {
+        console.error('Error loading projects:', error);
+    }
+});
+
+generateNewDotMap()

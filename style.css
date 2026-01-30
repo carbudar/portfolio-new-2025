@@ -30,6 +30,17 @@ html, body {
     margin: 0;
 }
 
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+
+  width: 10px;  
+  height: auto;  
+
+  transform: translate(-50%, -50%);
+}
+
 h1,h2,h3{
     font-weight: 300;
 }
@@ -204,6 +215,10 @@ h1{
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
 
+}
+
+#project-highlight {
+    scroll-margin-top: 20vh;
 }
 
 .project-highlight {
@@ -1329,40 +1344,6 @@ video.progressPhoto:hover {
     color: #126889;
 }
 
-#password-prompt{
-    background-color: #F9F7F2;
-    width: fit-content;
-    height: fit-content;
-    padding: 5vh;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 1vh;
-    color: #323F2F;
-    justify-self: center;
-    align-items: center;
-    margin-top: 30vh;
-}
-
-#password-prompt, #protected-content {
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-input[type="password"] {
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 15vw;
-}
-
-input[type="password"]:focus {
-    border-color: #FFD2FF; 
-    border-width: 2px; 
-    outline: none; 
-}
-
 button {
     padding: 8px 15px;
     background-color: #126889;
@@ -1399,7 +1380,7 @@ button {
     height: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Aligns content to bottom */
+    justify-content: flex-end;
 }
 
 #archive-carousel{
@@ -1445,11 +1426,12 @@ button {
    font-weight: 500;
 }
 .archive-carousel-gradient-top{
-    background: linear-gradient(to bottom, rgba(249, 247, 242, 1), rgba(249, 247, 242, 0));
+    background: linear-gradient(to bottom,  rgb(18, 104, 137), rgba(249, 247, 242, 0));
     height: 10vh;
     width: 100%;
     position: absolute;
     z-index: 10;
+  
 }
 
 .archive-carousel-gradient-bottom{
@@ -1461,7 +1443,192 @@ button {
     bottom: 0;
 }
 
+/* dot map styling */
 
+#dotMapSplashScreen video{
+    width: 100vw;
+    height: auto;
+}
+
+#dotMap-problem-statement{
+    width: auto;
+    margin: 5vw;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 2vw;
+}
+
+.dotmap-lineheight{
+    line-height: 4vh;
+}
+
+.dotmap-mint-and-feature{
+    display: flex;
+    width: 100vw;
+    padding: 5vw;
+    gap: 3vw;
+    justify-content: center;
+}
+
+#dotmap-key-features{
+    width: 100%;
+    line-height: 4vh;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.generateNewDotMap{
+    place-self: center;
+    justify-self: flex-end;
+    margin-top: auto;
+}
+
+#dotmap-key-features ul {
+    list-style: none;
+}
+
+#dotmap-key-features *{
+    text-align: center;
+}
+
+#dotMapIframeContainer{
+    width: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+}
+#dotMapIFrame{
+    width: 40vw;
+    height: 43vw;
+}
+
+.dot-map-progress-container{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100vw;
+    margin: 0;
+    padding: 5vw 0;
+    overflow: hidden; 
+}
+
+.dot-map-progress-container h3 {
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+#dot-map-progress-carousel{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 5vw;
+    padding: 0 5vw;
+    position: relative;
+    overflow: visible; 
+    will-change: transform; 
+    
+}
+
+#dot-map-progress-carousel img{
+    height: 70vh;
+    flex-shrink: 0;
+}
+
+#dot-map-progress-carousel > div {
+    flex-shrink: 0;
+}
+
+#dot-map-outputs{
+    display: flex;
+    margin: 5vw;
+    gap: 2vw;
+}
+
+#dot-map-outputs * {
+    transition: ease 0.5s;
+}
+
+#dot-map-outputs * :hover{
+    scale: 1.2;
+    box-shadow: 0 4px 8px rgba(50, 63, 47, 0.5);
+}
+
+#dotmap-breather img{
+    width: 100vw;
+    height: auto;
+}
+#dotmap-key-learnings{
+    padding: 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    text-align: center;
+}
+
+#key-learning-cascading{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height for stacking */
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10vh;
+}
+
+#key-learning-cascading h1{
+    padding: 4vh;
+}
+
+.key-learning{
+    position: absolute; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .key-learning {
+        width: 90%;
+        height: auto;
+        min-height: 200px;
+        padding: 1.5rem;
+    }
+    
+    .key-learning h3 {
+        font-size: 1.2rem;
+    }
+    
+    .key-learning p {
+        font-size: 0.9rem;
+    }
+}
+
+#dotmap-paper{
+    padding: 5vw;
+    text-align: center;
+    gap: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dotmap-paper h2{
+    width: 50vw;
+}
+
+
+/* --- */
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .carousel-image-wrapper {
