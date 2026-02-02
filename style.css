@@ -1466,6 +1466,10 @@ button {
     padding: 2vw;
 }
 
+#dotMap-problem-statement p{
+    line-height: 2rem;
+}
+
 .dotmap-lineheight{
     line-height: 4vh;
 }
@@ -1539,6 +1543,14 @@ button {
     
 }
 
+.progress-text-overflow{
+      white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  width: inherit;
+  max-width: 10vw;
+  background-color: #AAA7A2;
+}
 #dot-map-progress-carousel img,
 #dot-map-progress-carousel video{
     height: 70vh;
@@ -1548,6 +1560,10 @@ button {
 
 #dot-map-progress-carousel > div {
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vh;
 }
 
 #dot-map-outputs,
@@ -1609,16 +1625,17 @@ button {
 }
 
 /* mirror selfie styling */
-#mirror-selfie-container *{
 
+#stroll-header{
+    background-color: white;
 }
 #mirror-selfie-frontend-part,
 #mirror-selfie-backend-part{
     display: flex;
-    background-color: #AAA7A2;
     padding: 5vw;
     gap: 4vw;
     justify-content: center;
+    position: relative;
 
 }
 #mirror-selfie-frontend-part *{
@@ -1631,18 +1648,144 @@ button {
 
 #mirror-selfie-frontend-part-description,
 #mirror-selfie-backend-part-description{
-    background-color: #323F2F;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     width: 30vw;
     text-align: center;
-   
-    
+    position: relative; 
+}
+
+#mirror-selfie-frontend-part-description p,
+#mirror-selfie-backend-part-description p{
+    font-size: 1.7rem;
+}
+#mirror-selfie-demo{
+    height: 100vh;
+    width: 100vw;
+    padding: 5vw;
+}
+
+
+#mirror-selfie-splash-video{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: white;
+}
+
+.mirror-selfie-demo-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.mirror-selfie-demo-images img {
+  width: 100%;
+  height: 70vh;  
+  object-fit: cover;
+}
+
+#mirror-selfie-frontend-part-description .arrow-description {
+
+    transform: translateX(-35vw);
+}
+#mirror-selfie-backend-part-description .arrow-description {
+    transform: translateX(-12vw);
 }
 
 .arrow-description{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    height: auto;
     position: absolute;
+    white-space: nowrap;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
 }
+
+.arrow-description hr {
+    width: 30vw;
+    margin: 0;
+    background-color:#126889;
+    border: none; 
+    height: 2px; /* ADD THIS - sets thickness */
+}
+
+.arrow-description p {
+    margin: 0;
+}
+
+
+
+
+.arrow-description:has(#MS-printed-photo) {
+    top: 10vh;
+}
+
+.arrow-description:has(#MS-mirror) {
+    top: 30vh;
+    transform: translateX(-30vw);
+}
+.arrow-description:has(#MS-mirror) hr{
+    width: 25vw;
+}
+
+
+.arrow-description:has(#MS-printer) {
+    bottom: 8vh;
+    transform: translateX(-23vw);
+}
+.arrow-description:has(#MS-printer) hr{
+    width: 20vw;
+
+}
+.arrow-description:has(#MS-backend-hardware) {
+    bottom: 30vh;
+}
+
+.arrow-description:has(#MS-webcam) {
+    top: 15vh;
+}
+
+.arrow-description:has(#MS-webcam) hr{
+    width: 37vw;
+}
+
+.arrow-description:has(#MS-RaspberryPi) {
+    bottom: 20vh;
+}
+
+.arrow-description:has(#MS-RaspberryPi) hr{
+    width: 28vw;
+}
+.arrow-description:has(#MS-POS-Printer-backend) {
+    top: 40vh;
+}
+
+.arrow-description:has(#MS-POS-Printer-backend) hr{
+    width: 45vw;
+}
+.arrow-description:has(#MS-connector) {
+    bottom: 10vh;
+}
+
+.arrow-description:has(#MS-connector) hr{
+    width: 37vw;
+}
+
+
+.arrow-description:has(#MS-wifi) {
+    top: 25vh;
+}
+
+.arrow-description:has(#MS-wifi) hr{
+    width: 40vw;
+}
+
 
 /* labyrinth styling */
 #labyrinth-general-info{
@@ -1738,6 +1881,7 @@ button {
     height: auto;
     border-radius: 20px;
 }
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

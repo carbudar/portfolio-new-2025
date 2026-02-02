@@ -30,8 +30,10 @@
                 </div>
                 
             </div>
-             <div id="dotmap-breather">
-                     <img src="assets/Documentation/mirror-selfie-thumbnail.jpeg">
+             <div id="mirror-selfie-splash-video">
+                <video autoplay loop muted>
+                    <source src="assets/Documentation/mirror-selfie-printing.mov">
+                </video>
                 </div>
 
             <div id="stroll-general-info">
@@ -69,21 +71,74 @@
 
                     </div>
                     <div id="mirror-selfie-frontend-part-description">
-                        <p class="arrow-description">Output: printed photo</p>
-                         <p class="arrow-description">Mirror</p>
-                          <p class="arrow-description">Printer</p>
-                           <p class="arrow-description">Backend hardware</p>
+
+                        <div class="arrow-description">
+                             <hr>
+                             <p id="MS-printed-photo">Output: printed photo</p>
+                            
+                        </div>
+                        
+                        <div class="arrow-description">
+                             <hr>
+                             <p id="MS-mirror">Mirror</p>
+                            
+                        </div>
+
+                        <div class="arrow-description">
+                             <hr>
+                             <p id="MS-printer">POS Printer</p>
+                            
+                        </div>
+
+                        <div class="arrow-description">
+                             <hr>
+                             <p id="MS-backend-hardware">Backend hardware</p>
+                            
+                        </div>
+
+                        
                     </div>
 
                 </div>
 
                   <div id="mirror-selfie-backend-part">
-                   
                     <div id="mirror-selfie-backend-part-description">
-                        <p class="arrow-description">Output: printed photo</p>
-                         <p class="arrow-description">Mirror</p>
-                          <p class="arrow-description">Printer</p>
-                           <p class="arrow-description">Backend hardware</p>
+
+                        <div class="arrow-description">
+                             
+                             <p id="MS-webcam">Webcam</p>
+                             <hr>
+                            
+                        </div>
+
+                        <div class="arrow-description">
+                             
+                             <p id="MS-RaspberryPi">Raspberry Pi</p>
+                             <hr>
+                            
+                        </div>
+
+                        <div class="arrow-description">
+                             
+                             <p id="MS-POS-Printer-backend">POS Printer</p>
+                             <hr>
+                            
+                        </div>
+
+                         <div class="arrow-description">
+                             
+                             <p id="MS-connector">Connector to usbc</p>
+                             <hr>
+                            
+                        </div>
+
+                        <div class="arrow-description">
+                             
+                             <p id="MS-wifi">Wifi modem on the side</p>
+                             <hr>
+                            
+                        </div>
+                        
                     </div>
 
                      <div id="mirror-selfie-backend-part-image">
@@ -105,45 +160,47 @@
                     </div>
 
                     <div>
-                        <img src="assets/Documentation/Dot Map Iteration 1.png">
+                        <img src="assets/Documentation/mirror-selfie-face detection.jpg">
                         <p>Face detection in Raspberry Pi using Python OpenCV</p>
                     </div>
 
                       <div>
-                        <img src="assets/Documentation/Dot Map Iteration 2.png">
+                        <img src="assets/Documentation/mirror-selfie-Testing 2 way mirror + camera.jpeg">
                         <p>Testing hardware: 2 way mirror + camera</p>
                     </div>
 
                     
                      <div>
-                        <img src="assets/Documentation/Dot Map Iteration 3.png">
+                        <img src="assets/Documentation/mirror-selfie-webcam back.jpeg">
                         <p>Integrating camera behind the mirror using a chipboard as support</p>
                     </div>
 
                     <div>
-                        <img src="assets/Documentation/Dot Map Iteration 3.png">
-                        <p>Adding gap between mirror and chipboard backing to account for camera lense thickness.</p>
+                        <img src="assets/Documentation/mirror-selfie-buffer.jpeg">
+                        <p>Adding gap between mirror and chipboard backing to account for camera lense thickness</p>
                     </div>
 
                      <div>
-                        <img src="assets/Documentation/Dot Map Iteration 3.png">
+                        <img src="assets/Documentation/mirror-selfie printer test print.jpg">
                         <p>POS thermal printer test print</p>
                     </div>
 
                      <div>
-                        <img src="assets/Documentation/Dot Map Iteration 3.png">
+                        <img src="assets/Documentation/mirror-selfie-first test print.jpg">
                         <p>First photo print came out like this...</p>
                     </div>
-
-                     <div>
-                        <img src="assets/Documentation/Dot Map Iteration 3.png">
-                        <p>More tests, printer detected photo as the wrong format (characters), fixed it by resizing image and turned it into greyscale.</p>
+                    <div>
+                        <img src="assets/Documentation/mirror-selfie-first sucessfull photo print.jpg
+">
+                        <p>First succesful photo print</p>
                     </div>
 
                      <div>
-                        <img src="assets/Documentation/Dot Map Iteration 3.png">
-                        <p>Adding gap between mirror and chipboard backing to account for camera lense thickness.</p>
+                        <img src="assets/Documentation/mirror-selfie print test.jpeg">
+                        <p clss="progress-text-overflow">Changed image format to greyscale and smaller size</p>
                     </div>
+
+                   
                     </div>
                     
 
@@ -151,23 +208,50 @@
 
 
                 <div id="dotMap-problem-statement">
-                    <p>
-                        Since this was my first trial working with a RaspberryPi, I had troubles with setting up the project. I also found challenges connecting to the wifi since the I used different wifis at home and at school; I ended up connecting to a portable wifi modem to ensure the consistency of wifi connection. I think that this project turned out well and I wish I could show this project in class to see how people (without prior knowledge of what this mirror is about) interact with it. However, I was able to bring the mirror to D12 to try setting up the wifi before final critique day, and I was very excited when people would walk by the mirror and be surprised that a photo of them is printed out. In future iterations, I would make the face detection time to be shorter(to minimize wait times)  and to make the cooldown period longer (to not print too much images at once). I also would stylize the mirror better so it looks more intriguing and approachable, in contrast to the rigid form that I have currently. Lastly,  since everything is battery operated (wifi modem, printer), the longevity of the installation depends on the battery which is not ideal in my opinion. I would explore more options to make the program run independently and powered by a electricity source to be dependent of the batteries. But overall, I am quite proud of how this Mirror Selfie project came out.
-                    </p>
+                <h2>My Experience Programming the System</h2>
+                <p>
+                    As this was my first time working with a Raspberry Pi, I encountered several technical challenges during development. Setting up the device and maintaining a stable internet connection proved particularly difficult, especially when switching between different Wi-Fi networks at home and at school. To ensure consistency, I ultimately relied on a portable Wi-Fi modem. Despite these obstacles, the installation came together successfully, and I am eager to observe how people would interact with it in a real-world setting without prior knowledge of the mirror’s function.
+                </p>
 
-                </div>
+                <p>
+                   In the next refinement process, I would shorten the face-detection delay to reduce waiting time, extend the cooldown period to prevent excessive printing, and redesign the mirror’s physical form to feel more inviting and visually compelling, rather than rigid and purely functional.
+                </p>
 
-                <div id="mirror-selfie-setup">
-                    <h2>Setup + user testing</h2>
-                    <img src="">
-                    <img src="">
+                <p>
+                    Because the system currently relies on battery-powered components, including the Wi-Fi modem and thermal printer, the longevity of the installation is limited. Moving forward, I would explore ways to power the setup through a stable electrical source and further automate the program so that it can operate independently for extended periods. Overall, I am proud of how Mirror Selfie developed, particularly as an early experiment in both technical implementation and public interaction.
+                </p>
+
+                <br><br>
+                <h2>A Little About the System</h2>
+                <p>
+                    The face-detection software is designed to continuously overwrite captured images, ensuring participant privacy while optimizing storage on the Raspberry Pi, which has limited capacity. In this sense, Mirror Selfie is arguably less surveillant than platforms such as social media, public photo booths, or public cameras, where images are often stored semi-permanently or distributed online.
+                </p>
+            </div>
+
+                <div id="mirror-selfie-demo">
+                    <h2>Demo + User testing</h2>
+                    <br>
+                    <div class="mirror-selfie-demo-images">
+                         <img src="assets/Documentation/mirror-selfie-demo.jpeg">
+                         <img src="assets/Documentation/mirror-selfie-setup.jpeg">
+                    <img src="assets/Documentation/mirror-selfie-setup2.jpeg">
+                    </div>
+                   
                 </div>
             
-                <div id="mirror-selfie-demo">
-                    <!-- add output picture here -->
-                    <h2>Demo</h2>
-                    <img src="">
-                    <img src="">
+             
+                   <div id="dotMap-problem-statement">
+                    <h1>Future Plans</h1>
+                    <p>
+                        I plan to develop Mirror Selfie into a public installation that places the work in a real-world context and tests its underlying questions at scale. The project aims to spark conversation around surveillance culture by contrasting it to other forms of voluntary participation in image-making throughout people’s everyday activity.
+                        <br>
+                        What distinguishes Mirror Selfie, a camera concealed behind a mirror, from a two-way mirror where people would knowingly pose, even if they are unaware of who might be watching from the other side? 
+                        How does this differ from uploading images online, where control over visibility is often surrendered, or stepping into a photo booth in a public space?
+                        <br><br>
+
+                        The installation also probes public reaction to having an image printed without prior awareness, even if the photograph is immediately given to the participant and deleted from the system. By staging this moment of surprise, the work asks whether such an encounter feels playful, unsettling, or ethically ambiguous, and why. Through this tension, Mirror Selfie examines how consent, visibility, and trust operate in contemporary visual culture, questioning where individuals draw the line between comfort and intrusion in environments saturated with cameras.
+                    </p>
+
                 </div>
 
 
@@ -177,25 +261,25 @@
                      <h1>Key Learnings</h1>
                      
                     <div class="key-learning">
-                    <h3>1. Generative art shifts authorship from artist to structure</h3>
-                    <p class="dotmap-lineheight">Designing Dot Map showed that once parameters are established, the system becomes a co-author. Instead of composing a single final image, the focus becomes  crafting constraints that produces consistent variation.</p>
+                    <h3>1. Integrating OpenCV with Python on Raspberry Pi</h3>
+                    <p class="dotmap-lineheight">I gained hands-on experience implementing face detection using OpenCV through Raspberry Pi. This helped me gain skills like: optimizing performance, managing timing thresholds, and designing logic that balanced responsiveness with system limitations.</p>
          
                 </div>
 
                  <div class="key-learning">
-                    <h3>2. Blockchain reframes ownership as participation</h3>
-                    <p class="dotmap-lineheight">Treating the work as a conceptual NFT highlighted how minting and on-chain generative art transform ownership into access to an evolving system. Owners now can become part of the creator too, where collectors receive a one-of-a-kind system output as art instead of a static file.</p>
+                    <h3>2. Thermal POS Printer Integration</h3>
+                    <p class="dotmap-lineheight">Connecting and controlling a POS thermal printer introduced challenges around serial communication, formatting images for low-resolution output, and regulating print frequency to prevent overload. This process deepened my understanding of hardware–software coordination in physical computing systems.</p>
                  
                 </div>
 
                 <div class="key-learning">
-                    <h3>3. Simple rules can create complex visual behavior</h3>
-                    <p class="dotmap-lineheight">By using a modulo-based logic within a fixed grid, I learned how minimal mathematical conditions can generate patterns that feel organic.</p>
+                    <h3>3. Public Trust and the Psychology of Surveillance</h3>
+                    <p class="dotmap-lineheight">During demonstrations, many participants were eager to have their photo taken despite the system’s main topic of conversation. This raised questions about whether people instinctively trust technological systems, or the developer presenting them, even when surveillance mechanisms are not fully visible.</p>
                   
                 </div>
                 <div class="key-learning ">
-                    <h3>4. Time and interaction change how artwork is perceived</h3>
-                    <p class="dotmap-lineheight">Allowing the piece to unfold gradually, and remain interactive after completion, demonstrated how duration and viewer input can become central components to making immersive and unique works.</p>
+                    <h3>4. Consent Through Design and Interface Cues</h3>
+                    <p class="dotmap-lineheight">The project revealed how physical form and interaction design affect perceptions of safety and participation. The smaller mirror size invites users to get close and pose for in front of it, I am intrigued to explore larger mirror sizes to see if more candid or casual actions are captured.</p>
                   
                 </div>
                
@@ -203,103 +287,7 @@
                 
             </div>
 
-          
-            <div id="dotMapSplashScreen">
-                <video autoplay muted>
-                    <source src="assets/Documentation/Dot Map Screen Mockup.mp4">
-                </video>
-            </div>
-                
-
-
-                <div id="key-feature-title">
-                    <h3 >Outputs</h3>
-                    <br>
-                </div>
-                <div id="dot-map-outputs">
-                    <div id="key-feature-1" class="key-feature">
-                        <img src="assets/Documentation/Dot Map Output 1.png" class="key-feature-images">
-                    </div>
-
-                    <div id="key-feature-2" class="key-feature">
-                        <img src="assets/Documentation/Dot Map Output 2.png" class="key-feature-images">
-                    </div>
-
-                    <div id="key-feature-3" class="key-feature">
-                        <img src="assets/Documentation/Dot Map Output 3.png" class="key-feature-images">
-                       
-                    </div>
-
-                    <div id="key-feature-4" class="key-feature">
-                        <img src="assets/Documentation/Dot Map Output 4.png" class="key-feature-images">
-                        
-                    </div>
-
-                    <div id="key-feature-5" class="key-feature">
-                        <img src="assets/Documentation/Dot Map Output 5.png" class="key-feature-images">
-                        
-                    </div>
-                  
-                </div>
-
-                
             
-                <br><br>
-
-                
-            <div class="dotmap-mint-and-feature">
-                
-             <div id="dotMapIframeContainer">
-                <h2>Mint your own Dot Map!</h2>
-        
-                <iframe src="https://editor.p5js.org/carbudar/full/ikVkKfFTn" id="dotMapIFrame"></iframe>
-            </div>
-
-            <div id="dotmap-key-features">
-                <h2>Key Features</h2>
-
-                <ul>
-                    <li>
-                        Randomized color gradient 
-                    </li>
-                     <li>
-                        Interactive mouse hover scaling behavior
-                    </li>
-                     <li>
-                        Time-based generative rendering sequence
-                    </li>
-                     <li>
-                        System-based pseudo-random dot placement
-                    </li>
-                     <li>
-                        On-chain storage of generative source code
-                    </li>
-                     <li>
-                        Implemented using p5.js
-                    </li>
-                </ul>
-             
-            
-
-                 <div class="generateNewDotMap"></div>
-
-            </div>
-        
-            
-                
-            </div>
-            
-            
-            
-            <div id="dotmap-paper">
-                    <h2>Read my essay on how blockchain extends the life of art, the inspiration behind the creation of Dot Map 👇</h2>
-            
-
-                 <embed class="pdf" 
-                     src="assets/Documentation/How  Blockchain Extends the Life of Art - Dot Map - Carla Budar 2025.pdf"
-                     width="800" height="500">
-                </div>
-
 
                
             
