@@ -1,1 +1,319 @@
-mirror selfie
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirror Selfie</title>
+    <link rel="stylesheet" href="stroll.css">
+    <link rel="stylesheet" href="style.css">
+    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+   
+  
+  
+   
+</head>
+<body>
+
+    <div>
+        <div class="page-container">
+            <div class="headerPlaceHolder"></div>
+            <div class="backBtn"></div>
+<div id="mirror-selfie-container">
+            <div id="stroll-header">
+                <div id="stroll-title" class="stroll-column-left"> 
+                    <h1>Mirror Selfie</h1>
+                </div>
+                <div id="stroll-date" class="stroll-column-right">
+                    <h3>April - May 2025</h2>
+                </div>
+                
+            </div>
+             <div id="dotmap-breather">
+                     <img src="assets/Documentation/mirror-selfie-thumbnail.jpeg">
+                </div>
+
+            <div id="stroll-general-info">
+                <div id="stroll-overview" class="stroll-column-left">
+                     <h3 >Responsibilities</h3>
+                    <p>Designer · Programmer</p>
+                    <br>
+                    <hr>
+          
+                </div>
+                <div id="stroll-details" class="stroll-column-right">
+            
+                    <h3 >Tools</h3>
+                    <p>Python · Open CV · Raspberry Pi · Bash · Webcam · Printer · Mirror · Adobe Photoshop</p>
+                   <br>
+                    <hr>
+
+
+                    
+                </div>
+            </div>
+
+           
+            <div id="dotMap-problem-statement">
+                    <p>
+                        Through this project, I explored the interaction between people and mirrors. When walking by mirrors, I noticed that people tend to subconsciously stare at the mirrors back to themselves to check their own appearance or to take mirror pictures. However, after I learnt about spy two-way mirrors, I felt more cautious interacting with mirrors due to my paranoia of being spied on. For this project titled “Mirror-Selfie”, I am embodying my fear of being stared back at by the mirror or anything behind the mirror. Using a camera with the OpenCV Python library, I detect faces and print out a frame of the moment when anyone looks into the mirror.
+                    </p>
+
+                </div>
+
+                <div id="mirror-selfie-frontend-part">
+                    <div id="mirror-selfie-frontend-part-image">
+
+                         <img src="assets/Documentation/mirror-selfie-thumbnail.jpeg">
+
+                    </div>
+                    <div id="mirror-selfie-frontend-part-description">
+                        <p class="arrow-description">Output: printed photo</p>
+                         <p class="arrow-description">Mirror</p>
+                          <p class="arrow-description">Printer</p>
+                           <p class="arrow-description">Backend hardware</p>
+                    </div>
+
+                </div>
+
+                  <div id="mirror-selfie-backend-part">
+                   
+                    <div id="mirror-selfie-backend-part-description">
+                        <p class="arrow-description">Output: printed photo</p>
+                         <p class="arrow-description">Mirror</p>
+                          <p class="arrow-description">Printer</p>
+                           <p class="arrow-description">Backend hardware</p>
+                    </div>
+
+                     <div id="mirror-selfie-backend-part-image">
+
+                         <img src="assets/Documentation/mirror-selfie-hardware.jpeg">
+
+                    </div>
+
+                </div>
+
+                <div class="dot-map-progress-container">
+                  
+                    <h3>Process</h3>
+            
+                <div id="dot-map-progress-carousel">
+                     <div>
+                        <video src="assets/Documentation/open-cv test.mov" muted autoplay loop></video>
+                        <p>OpenCV face detection on laptop</p>
+                    </div>
+
+                    <div>
+                        <img src="assets/Documentation/Dot Map Iteration 1.png">
+                        <p>Face detection in Raspberry Pi using Python OpenCV</p>
+                    </div>
+
+                      <div>
+                        <img src="assets/Documentation/Dot Map Iteration 2.png">
+                        <p>Testing hardware: 2 way mirror + camera</p>
+                    </div>
+
+                    
+                     <div>
+                        <img src="assets/Documentation/Dot Map Iteration 3.png">
+                        <p>Integrating camera behind the mirror using a chipboard as support</p>
+                    </div>
+
+                    <div>
+                        <img src="assets/Documentation/Dot Map Iteration 3.png">
+                        <p>Adding gap between mirror and chipboard backing to account for camera lense thickness.</p>
+                    </div>
+
+                     <div>
+                        <img src="assets/Documentation/Dot Map Iteration 3.png">
+                        <p>POS thermal printer test print</p>
+                    </div>
+
+                     <div>
+                        <img src="assets/Documentation/Dot Map Iteration 3.png">
+                        <p>First photo print came out like this...</p>
+                    </div>
+
+                     <div>
+                        <img src="assets/Documentation/Dot Map Iteration 3.png">
+                        <p>More tests, printer detected photo as the wrong format (characters), fixed it by resizing image and turned it into greyscale.</p>
+                    </div>
+
+                     <div>
+                        <img src="assets/Documentation/Dot Map Iteration 3.png">
+                        <p>Adding gap between mirror and chipboard backing to account for camera lense thickness.</p>
+                    </div>
+                    </div>
+                    
+
+                </div>
+
+
+                <div id="dotMap-problem-statement">
+                    <p>
+                        Since this was my first trial working with a RaspberryPi, I had troubles with setting up the project. I also found challenges connecting to the wifi since the I used different wifis at home and at school; I ended up connecting to a portable wifi modem to ensure the consistency of wifi connection. I think that this project turned out well and I wish I could show this project in class to see how people (without prior knowledge of what this mirror is about) interact with it. However, I was able to bring the mirror to D12 to try setting up the wifi before final critique day, and I was very excited when people would walk by the mirror and be surprised that a photo of them is printed out. In future iterations, I would make the face detection time to be shorter(to minimize wait times)  and to make the cooldown period longer (to not print too much images at once). I also would stylize the mirror better so it looks more intriguing and approachable, in contrast to the rigid form that I have currently. Lastly,  since everything is battery operated (wifi modem, printer), the longevity of the installation depends on the battery which is not ideal in my opinion. I would explore more options to make the program run independently and powered by a electricity source to be dependent of the batteries. But overall, I am quite proud of how this Mirror Selfie project came out.
+                    </p>
+
+                </div>
+
+                <div id="mirror-selfie-setup">
+                    <h2>Setup + user testing</h2>
+                    <img src="">
+                    <img src="">
+                </div>
+            
+                <div id="mirror-selfie-demo">
+                    <!-- add output picture here -->
+                    <h2>Demo</h2>
+                    <img src="">
+                    <img src="">
+                </div>
+
+
+                <div id="dotmap-key-learnings">
+               
+                <div id="key-learning-cascading">
+                     <h1>Key Learnings</h1>
+                     
+                    <div class="key-learning">
+                    <h3>1. Generative art shifts authorship from artist to structure</h3>
+                    <p class="dotmap-lineheight">Designing Dot Map showed that once parameters are established, the system becomes a co-author. Instead of composing a single final image, the focus becomes  crafting constraints that produces consistent variation.</p>
+         
+                </div>
+
+                 <div class="key-learning">
+                    <h3>2. Blockchain reframes ownership as participation</h3>
+                    <p class="dotmap-lineheight">Treating the work as a conceptual NFT highlighted how minting and on-chain generative art transform ownership into access to an evolving system. Owners now can become part of the creator too, where collectors receive a one-of-a-kind system output as art instead of a static file.</p>
+                 
+                </div>
+
+                <div class="key-learning">
+                    <h3>3. Simple rules can create complex visual behavior</h3>
+                    <p class="dotmap-lineheight">By using a modulo-based logic within a fixed grid, I learned how minimal mathematical conditions can generate patterns that feel organic.</p>
+                  
+                </div>
+                <div class="key-learning ">
+                    <h3>4. Time and interaction change how artwork is perceived</h3>
+                    <p class="dotmap-lineheight">Allowing the piece to unfold gradually, and remain interactive after completion, demonstrated how duration and viewer input can become central components to making immersive and unique works.</p>
+                  
+                </div>
+               
+                </div>
+                
+            </div>
+
+          
+            <div id="dotMapSplashScreen">
+                <video autoplay muted>
+                    <source src="assets/Documentation/Dot Map Screen Mockup.mp4">
+                </video>
+            </div>
+                
+
+
+                <div id="key-feature-title">
+                    <h3 >Outputs</h3>
+                    <br>
+                </div>
+                <div id="dot-map-outputs">
+                    <div id="key-feature-1" class="key-feature">
+                        <img src="assets/Documentation/Dot Map Output 1.png" class="key-feature-images">
+                    </div>
+
+                    <div id="key-feature-2" class="key-feature">
+                        <img src="assets/Documentation/Dot Map Output 2.png" class="key-feature-images">
+                    </div>
+
+                    <div id="key-feature-3" class="key-feature">
+                        <img src="assets/Documentation/Dot Map Output 3.png" class="key-feature-images">
+                       
+                    </div>
+
+                    <div id="key-feature-4" class="key-feature">
+                        <img src="assets/Documentation/Dot Map Output 4.png" class="key-feature-images">
+                        
+                    </div>
+
+                    <div id="key-feature-5" class="key-feature">
+                        <img src="assets/Documentation/Dot Map Output 5.png" class="key-feature-images">
+                        
+                    </div>
+                  
+                </div>
+
+                
+            
+                <br><br>
+
+                
+            <div class="dotmap-mint-and-feature">
+                
+             <div id="dotMapIframeContainer">
+                <h2>Mint your own Dot Map!</h2>
+        
+                <iframe src="https://editor.p5js.org/carbudar/full/ikVkKfFTn" id="dotMapIFrame"></iframe>
+            </div>
+
+            <div id="dotmap-key-features">
+                <h2>Key Features</h2>
+
+                <ul>
+                    <li>
+                        Randomized color gradient 
+                    </li>
+                     <li>
+                        Interactive mouse hover scaling behavior
+                    </li>
+                     <li>
+                        Time-based generative rendering sequence
+                    </li>
+                     <li>
+                        System-based pseudo-random dot placement
+                    </li>
+                     <li>
+                        On-chain storage of generative source code
+                    </li>
+                     <li>
+                        Implemented using p5.js
+                    </li>
+                </ul>
+             
+            
+
+                 <div class="generateNewDotMap"></div>
+
+            </div>
+        
+            
+                
+            </div>
+            
+            
+            
+            <div id="dotmap-paper">
+                    <h2>Read my essay on how blockchain extends the life of art, the inspiration behind the creation of Dot Map 👇</h2>
+            
+
+                 <embed class="pdf" 
+                     src="assets/Documentation/How  Blockchain Extends the Life of Art - Dot Map - Carla Budar 2025.pdf"
+                     width="800" height="500">
+                </div>
+
+
+               
+            
+                </div>
+                <h1 id="stroll-thank-you">Thank you for reading.</h1>
+                <div class="footerPlaceholder"></div>
+
+     </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+    <script src="test2.js"></script>
+    <script src="dot-map-carousel-scroll.js"></script>
+   
+</body>
+</html>

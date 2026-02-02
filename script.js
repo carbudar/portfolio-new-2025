@@ -377,6 +377,7 @@ function initCustomCursor(cursorImagePath) {
     cursor.style.pointerEvents = 'none';
     cursor.style.width = 'auto';
     cursor.style.height = '34px';
+    cursor.style.borderRadius = '0px';
     cursor.style.zIndex = '10000';
     cursor.style.transform = 'translate(-50%, -50%)'; // Center the cursor on mouse position
     document.body.appendChild(cursor);

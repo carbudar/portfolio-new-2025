@@ -1,1 +1,371 @@
-labyrinth
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labyrinth</title>
+    <link rel="stylesheet" href="stroll.css">
+    <link rel="stylesheet" href="style.css">
+    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+   
+  
+  
+   
+</head>
+<body>
+
+    <div>
+        <div class="page-container">
+            <div class="headerPlaceHolder"></div>
+            <div class="backBtn"></div>
+<div id="mirror-selfie-container">
+            <div id="stroll-header">
+                <div id="stroll-title" class="stroll-column-left"> 
+                    <h1>Labyrinth</h1>
+                </div>
+                <div id="stroll-date" class="stroll-column-right">
+                    <h3>March - May 2025</h2>
+                </div>
+                
+                
+            </div>
+             <div id="dotmap-breather">
+                     <img src="assets/Documentation/Labyrinth9.jpg">
+                </div>
+
+            <div id="labyrinth-general-info">
+                <div>
+                     <h3 >Responsibilities</h3>
+                    <p>Designer · Programmer · Digital Fabricator · User Researcher</p>
+                    <br>
+                    <hr>
+          
+                </div>
+                
+                <div>
+            
+                    <h3 >Tools</h3>
+                    <p>Adobe Illustrator · Unity · C# · Arduino · Leap Motion · Electronics
+
+                    </p>
+                   <br>
+                    <hr>
+                </div>
+                 <div>
+            
+                    <h3 >Credits</h3>
+                    <p>Jaiden Brown · Ziye An · Eve
+                    </p>
+                   <br>
+                    <hr>
+
+
+                    
+                </div>
+            </div>
+
+           
+            <div id="dotMap-problem-statement">
+                    <p>
+                        Labyrinth is a two-player asymmetric hide-and-seek game, set in a dark maze. One player becomes the Hider, who is a living person trying to escape. While the other player becomes the Seeker, a ghostly entity that hunts through sound.
+                        <br> <br>
+                        While designing this new arcade game, we were drawn to the idea of a "non-conventional" game controls, yet maintaining the familiar form of a retro arcade cabinet.
+                       <br> <br>
+                        We explored different controls, considering all senses that can possibly be used to control the game. Like a hearing-based and motion-based control, steering away from the common key and button control.
+                    </p>
+
+                </div>
+
+                <div id="labyrinth-player-info">
+                <div>
+                     <h3 >Hider</h3>
+                      <img src="assets/Documentation/labyrinth-hider-icon.png">
+                    <p> 
+                        Hider's main objective is to excape the random generated maze using a joystick controller on the left, and a hand gesture control on the right. The right hand controls the spotlight in the dark maze using Leap Motion, which will help Hiders navigate clearly.
+
+                    </p>
+                
+          
+                </div>
+                
+                <div>
+            
+                    <h3 >Seeker</h3>
+                     <img src="assets/Documentation/labyrinth-seeker-icon.png">
+
+                    <p>
+                        Seeker plays headlessly. Using their hearing sense as the main input, Seeker will follow the spatial footstep sound of the hider to capture them.
+                    </p>
+            
+                </div>
+                
+            </div>
+
+            <div id="labyrinth-video-demo">
+                <iframe src="https://drive.google.com/file/d/165iQDdZ-lnZaZsXlYEj68sQvxgBplwUo/preview" autoplay>
+
+                </iframe>
+                
+                <p>Video credit: Ziye An</p>
+            </div>
+
+            <div id="key-feature-title">
+                    <h3 >Precedents</h3>
+                    <p>While ideating the core game mechanic for Labyrinth, my team and I drew inspiration from three games known for their strong execution within distinct niche concepts. These references helped guide our focus toward developing a mechanic that is both unique and intuitive, allowing players to quickly grasp the system while still offering a new type of engagement.</p>
+                    <br>
+                </div>
+
+                <div id="labyrinth-precedents">
+                    <div class="key-feature">
+                        <img src="assets/Documentation/labyrinth-precedent-dark-echo.jpg">
+                        <h3>Dark Echo</h3>
+                        <p>Mysterious and dark maze game</p>
+                    </div>
+
+                    <div class="key-feature">
+                        <img src="assets/Documentation/labyrinth-precedent-blind-drive.jpg" class="key-feature-images">
+                          <h3>Blind Drive</h3>
+                        <p>Sound-based gameplay</p>
+                    </div>
+
+                    <div class="key-feature">
+                        <img src="assets/Documentation/labyrinth-precedent-luigis-mansion.jpeg" class="key-feature-images">
+                          <h3>Luigi's Mansion 3</h3>
+                        <p>Flashlight logic was a big inspiration to Labyrinth</p>
+                       
+                    </div>
+                </div>
+
+
+                <div class="labyrinth-breather">
+                    <img src="assets/Documentation/labyrinth-breather-2.jpg">
+                </div>
+
+                <div class="dot-map-progress-container">
+                  
+                    <h3>Hardware Process</h3>
+            
+                <div id="dot-map-progress-carousel">
+
+                    <div>
+                        <img src="assets/Documentation/Labyrinth-sketch-1.jpeg">
+                        <p>Ideation + concept sketch 1</p>
+                    </div>
+
+                      <div>
+                        <img src="assets/Documentation/Labyrinth-sketch-2.jpeg">
+                        <p>Ideation + concept sketch 2</p>
+                    </div>
+
+                     <div>
+                        <img src="assets/Documentation/labyrinth-cabinet-prototype-1.jpeg">
+                        <p>Arcade cabinet form prototype 1</p>
+                    </div>
+
+                     <div>
+                        <img src="assets/Documentation/labyrinth-cabinet-prototype-2.jpeg">
+                        <p>Arcade cabinet form prototype 2</p>
+                    </div>
+                     <div>
+                        <img src="assets/Documentation/labyrinth-cabinet-prototype-3.jpeg">
+                        <p>Arcade cabinet form prototype 3</p>
+                    </div>
+                    
+                    
+                    <div>
+                        <img src="assets/Documentation/Labyrinth-cabinet-1.png">
+                        <p>Digital cabinet design (Laser cut out of chipboard)</p>
+                    </div>
+
+                    <div>
+                        <img src="assets/Documentation/Labyrinth-cabinet-2.png">
+                        <p>Digital cabinet design (Laser cut out of chipboard)</p>
+                    </div>
+
+                    <div>
+                        <img src="assets/Documentation/Labyrinth-cabinet-3.png">
+                        <p>Digital cabinet design (Laser cut out of chipboard)</p>
+                    </div>
+
+                    <div>
+                        <img src="assets/Documentation/Labyrinth full size arcade assemble 1.jpeg">
+                        <p>Full size arcade cabinet assembly (front)</p>
+                    </div>
+
+                    <div>
+                        <img src="assets/Documentation/Labyrinth full size arcade assemble 2.jpeg">
+                        <p>Full size arcade cabinet assembly (side, with screen inside)</p>
+                    </div>
+
+                    <div>
+                        <img src="assets/Documentation/Labyrinth-cabinet-final-assembly-1.jpeg">
+                        <p>Final assembly process, painted and electronics integrated</p>
+                    </div>
+                    <div>
+                        <img src="assets/Documentation/Labyrinth-cabinet-final-assembly-2.jpeg">
+                        <p>Final assembly process, side art 1</p>
+                    </div>
+                    <div>
+                        <img src="assets/Documentation/Labyrinth-cabinet-final-assembly-3.jpeg">
+                        <p>Final assembly process, side art 2</p>
+                    </div>
+                    
+
+                  
+                     
+                    </div>
+
+                </div>
+                
+
+                <div class="labyrinth-software-development">
+                  
+                    <h3>Software Process</h3>
+            
+                <div id="labyrinth-software-development-process">
+
+                    <div>
+                    <video autoplay muted loop>
+                    <source src="assets/Documentation/Labyrinth spotlight prototype 2.mov">
+                    </video>
+                    <p>Paper prototype, spotlight and hider mechanism</p>
+                    </div>
+                     
+                     <div>
+                    <video autoplay muted loop>
+                    <source src="assets/Documentation/Labyrinth leap motion testing.MOV">
+                    </video>
+                    <p>Leap Motion testing with hand movements</p>
+                    </div>
+
+                       <div>
+                    <video autoplay muted loop>
+                    <source src="assets/Documentation/Labyrinth working gameplay.MOV">
+                    </video>
+                    <p>Leap Motion testing with hand movements</p>
+                    </div>
+                    
+
+                    <div>
+                    <video autoplay muted>
+                    <source src="assets/Documentation/labyrinth-unity-maze-generation.mov">
+                    </video>
+                    <p>Unity random maze generating process</p>
+                    </div>
+
+                    
+                    </div>
+                    
+
+                </div>
+
+                <div class="labyrinth-software-development">
+                  
+                    <h3>User Testing + Demo</h3>
+            
+                <div id="labyrinth-software-development-process">
+
+                    <div>
+                    <img src="assets/Documentation/Labyrinth6.jpg">
+                    <p>Hider set up (Screen, joy stick, Leap Motion)</p>
+                    </div>
+                     
+                     <div>
+                    <img src="assets/Documentation/Labyrinth7.jpg">
+                    <p>Hider hand motion</p>
+                    </div>
+
+                       <div>
+                    <img src="assets/Documentation/Labyrinth8.jpg">
+                    <p>Seeker set up (Headless, joy stick, headphones)</p>
+                    </div>
+                    
+
+                    <div>
+                    <img src="assets/Documentation/Labyrinth9.jpg">
+                    <p>Collaborative game play</p>
+                    </div>
+
+                    
+                    </div>
+                    
+
+                </div>
+
+
+                <div id="dotmap-key-learnings">
+               
+                <div id="key-learning-cascading">
+                     <h1>Key Learnings</h1>
+                     
+                    <div class="key-learning">
+                    <h3>1. Designing for asymmetric perception creates tension and collaboration</h3>
+                    <p class="dotmap-lineheight">Giving the Hider visual navigation tools while forcing the Seeker to rely solely on sound introduced a sense of imbalance that supports suspense and requires players to adapt to unfamiliar sensory constraints.</p>
+         
+                </div>
+
+                <div class="key-learning">
+                    <h3>2. Multimodal input deepens embodied gameplay</h3>
+                    <p class="dotmap-lineheight">Combining joystick movement with hand-gesture spotlight control demonstrated how layered physical interactions can increase immersion and make players feel physically connected to the game environment.</p>
+         
+                </div>
+
+                 <div class="key-learning">
+                    <h3>3. Rapid prototyping through digital fabrication accelerates iteration</h3>
+                    <p class="dotmap-lineheight">Building the cabinet using digital fabrication tools enabled quick structural adjustments based on testing, allowing the physical design to evolve alongside the gameplay mechanics.</p>
+                 
+                </div>
+
+                <div class="key-learning">
+                    <h3>4. User testing revealed how quickly players adapt (or not) to unconventional controls</h3>
+                    <p class="dotmap-lineheight">Observing first-time players showed that unfamiliar interfaces can remain intuitive when visual and audio feedback creates a flow of instructions.</p>
+                  
+                </div>
+                <div class="key-learning ">
+                    <h3>5. Sound design is critical when vision is removed</h3>
+                    <p class="dotmap-lineheight">Developing spatialized footstep audio for the Seeker shows how precise audio cues can replace visual information and become a primary navigation system.</p>
+                  
+                </div>
+               
+                </div>
+                
+
+                
+            </div>
+
+             <div class="labyrinth-breather">
+                    <img src="assets/Documentation/labyrinth-breather-1.jpg">
+             </div>
+          
+            
+                
+
+
+    
+
+                
+            
+            
+            
+            
+            
+
+
+               
+            
+                </div>
+                <h1 id="stroll-thank-you">Thank you for reading.</h1>
+                <div class="footerPlaceholder"></div>
+
+     </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+    <script src="test2.js"></script>
+    <script src="dot-map-carousel-scroll.js"></script>
+   
+</body>
+</html>

@@ -20,6 +20,14 @@
     100% { opacity: 0; }
 }
 
+img{
+    border-radius: 30px;
+}
+
+video{
+    border-radius: 30px;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -1531,19 +1539,24 @@ button {
     
 }
 
-#dot-map-progress-carousel img{
+#dot-map-progress-carousel img,
+#dot-map-progress-carousel video{
     height: 70vh;
     flex-shrink: 0;
+    border-radius: 20px;
 }
 
 #dot-map-progress-carousel > div {
     flex-shrink: 0;
 }
 
-#dot-map-outputs{
+#dot-map-outputs,
+#labyrinth-precedents{
     display: flex;
     margin: 5vw;
     gap: 2vw;
+    align-items: center;
+    justify-content: space-around;
 }
 
 #dot-map-outputs * {
@@ -1595,6 +1608,136 @@ button {
     padding: 2rem;
 }
 
+/* mirror selfie styling */
+#mirror-selfie-container *{
+
+}
+#mirror-selfie-frontend-part,
+#mirror-selfie-backend-part{
+    display: flex;
+    background-color: #AAA7A2;
+    padding: 5vw;
+    gap: 4vw;
+    justify-content: center;
+
+}
+#mirror-selfie-frontend-part *{
+}
+#mirror-selfie-frontend-part-image img,
+#mirror-selfie-backend-part-image img{
+    height: 80vh;
+    width: auto;
+}
+
+#mirror-selfie-frontend-part-description,
+#mirror-selfie-backend-part-description{
+    background-color: #323F2F;
+    display: flex;
+    justify-content: center;
+    width: 30vw;
+    text-align: center;
+   
+    
+}
+
+.arrow-description{
+    position: absolute;
+}
+
+/* labyrinth styling */
+#labyrinth-general-info{
+    display: flex;
+    width: 100%;   
+    padding: 3vw;
+    justify-content: center;
+    gap: 6vw;
+
+}
+
+
+
+#labyrinth-player-info{
+    display: flex;
+    width: 100%;   
+    padding: 3vw;
+    justify-content: center;
+    gap: 6vw;
+
+}
+
+#labyrinth-player-info *{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    gap: 3vh;
+}
+
+#labyrinth-player-info img{
+    height: 30vh;
+    width: auto;
+  
+}
+
+
+
+.labyrinth-software-development{
+    width: 100vw;
+    height: fit-content;
+    padding: 5vw;
+ 
+}
+#labyrinth-software-development-process{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+   justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+
+#labyrinth-software-development-process video,
+#labyrinth-software-development-process img{
+    width: auto;
+    height: 40vh;
+    padding: 2vh;
+}
+
+#labyrinth-video-demo{
+    height: 100vh;
+    padding: 3vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vh;
+}
+#labyrinth-video-demo iframe{
+    height: 100%;
+    width: 100%;
+}
+
+#labyrinth-precedents .key-feature img {
+  width: 100%;
+  aspect-ratio: 3 / 2;  
+  object-fit: cover; 
+  display: block;
+}
+
+#labyrinth-precedents .key-feature img {
+  border-radius: 12px;
+}
+
+.labyrinth-breather{
+    width: 100vw;
+    padding: 4vw;
+   
+}
+
+.labyrinth-breather img{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
