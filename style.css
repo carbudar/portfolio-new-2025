@@ -468,6 +468,7 @@ min-height: 10vh;
   height: 48px;
   width: auto;
   flex-shrink: 0;
+  border-radius: 0;
 }
 
 
