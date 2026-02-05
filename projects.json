@@ -56,7 +56,7 @@
             "link":"https://odd-one-out-game.deno.dev/",
             "haveLink": true,
             "documentation":{
-                "thumbnail":"assets/Documentation/Odd Fellow Says Hello cover.png",
+                "thumbnail":"assets/Documentation/ofsh-thumbnail.png",
                 "doc1":"assets/Documentation/Process/Odd Fellow Says Hello sketch.jpg",
                 "doc2":"assets/Documentation/Process/Odd fellow says hello sketch + color map.png",
                 "doc3":"assets/Documentation/Process/Odd Fellow Says Hello Flow Chart.png"
@@ -85,7 +85,7 @@
             "link":"https://editor.p5js.org/carbudar/full/ikVkKfFTn",
             "haveLink": true,
             "documentation":{
-                "thumbnail":"assets/Documentation/Dot Map.png",
+                "thumbnail":"assets/Documentation/Dot Map Mockup 2.png",
                 "doc1":"assets/Documentation/mirror-selfie demo video.mov",
                 "doc2":"assets/Documentation/mirror-selfie-hardware.jpeg",
                 "doc3":"assets/Documentation/open-cv test.mov",

@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     expandProjectHighlight()
     directoryButton()
     strollCursor()
+    ofshBackgroundColor()
 
 
     const infoContainer = document.querySelector('#project-info-container')
@@ -401,3 +402,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
 });
 
+
+function ofshBackgroundColor(){
+
+    const ofshProcessIdeation = document.querySelector('#ofsh-process-ideation')
+    ofshProcessIdeation.style.backgroundColor = 'red';
+
+}
