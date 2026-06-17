@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When The Flower Stops Breathing</title>
+    <link rel="stylesheet" href="stroll.css">
+    <link rel="stylesheet" href="style.css">
+    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+   
+  
+  
+   
+</head>
+<body>
+
+    <div>
+        <div class="page-container">
+            <div class="headerPlaceHolder"></div>
+            <div class="backBtn"></div>
+<div id="mirror-selfie-container">
+            <div id="stroll-header">
+                <div id="stroll-title" class="stroll-column-left"> 
+                    <h1>When The Flower Stops Breathing</h1>
+                </div>
+                <div id="stroll-date" class="stroll-column-right">
+                    <h3>August 2025 - May 2026</h2>
+                </div>
+                
+            </div>
+             <div id="ofsh-splash-video">
+                <video autoplay loop muted>
+                    <source src="assets/Documentation/thesis_video.mov">
+                </video>
+                </div>
+
+            <div id="stroll-general-info">
+                <div id="stroll-overview" class="stroll-column-left">
+                     <h3 >Responsibilities</h3>
+                    <p>Designer · Programmer · Engineer · Fabricator</p>
+                    <br>
+                    <hr>
+          
+                </div>
+                <div id="stroll-details" class="stroll-column-right">
+            
+                    <h3 >Tools</h3>
+                    <p>Python · Open CV · Raspberry Pi · Bash · Webcam · Electronics · 3D Printed Mechanism · C++</p>
+                   <br>
+                    <hr>
+
+
+                    
+                </div>
+            </div>
+
+           
+            <div id="dotMap-problem-statement">
+                    <p>
+                        When The Flower Stops Breathing is an interactive kinetic sculpture composed of a cluster of mechanical flowers that continuously bloom and close, echoing the subtle rhythms of living ecosystems. It asks a simple but uneasy question: what happens to a system when it is constantly observed, approached, and disturbed?
+                    </p>
+
+                </div>
+
+                   <div id="stroll-splash-image">
+                <img src="assets/Documentation/thesis_thumbnail.JPG">
+
+            </div>
+
+            <div id="thesis-documentation">
+                 <embed class="pdf" 
+                     src="assets/Documentation/Thesis2 Documentation.pdf"
+                     width="800" height="500">
+
+                 <embed class="pdf" 
+                     src="assets/Documentation/Thesis Documentation Sketch.pdf"
+                     width="800" height="500">
+            </div>
+                
+
+                <div class="dot-map-progress-container">
+                  
+                    <h3>Process</h3>
+            
+                <div id="dot-map-progress-carousel">
+                     <div>
+                        <video src="assets/Documentation/open-cv test.mov" muted autoplay loop></video>
+                        <p>OpenCV face detection on laptop</p>
+                    </div>
+
+                    <div>
+                        <img src="assets/Documentation/mirror-selfie-face detection.jpg">
+                        <p>Face detection in Raspberry Pi using Python OpenCV</p>
+                    </div>
+
+                      <div>
+                        <img src="assets/Documentation/mirror-selfie-Testing 2 way mirror + camera.jpeg">
+                        <p>Testing hardware: 2 way mirror + camera</p>
+                    </div>
+
+                    
+                     <div>
+                        <img src="assets/Documentation/mirror-selfie-webcam back.jpeg">
+                        <p>Integrating camera behind the mirror using a chipboard as support</p>
+                    </div>
+
+                    <div>
+                        <img src="assets/Documentation/mirror-selfie-buffer.jpeg">
+                        <p>Adding gap between mirror and chipboard backing to account for camera lense thickness</p>
+                    </div>
+
+                     <div>
+                        <img src="assets/Documentation/mirror-selfie printer test print.jpg">
+                        <p>POS thermal printer test print</p>
+                    </div>
+
+                     <div>
+                        <img src="assets/Documentation/mirror-selfie-first test print.jpg">
+                        <p>First photo print came out like this...</p>
+                    </div>
+                    <div>
+                        <img src="assets/Documentation/mirror-selfie-first sucessfull photo print.jpg
+">
+                        <p>First succesful photo print</p>
+                    </div>
+
+                     <div>
+                        <img src="assets/Documentation/mirror-selfie print test.jpeg">
+                        <p clss="progress-text-overflow">Changed image format to greyscale and smaller size</p>
+                    </div>
+
+                   
+                    </div>
+                    
+
+                </div>
+
+
+                <div id="dotMap-problem-statement">
+                <h2>My Experience Programming the System</h2>
+                <p>
+                    As this was my first time working with a Raspberry Pi, I encountered several technical challenges during development. Setting up the device and maintaining a stable internet connection proved particularly difficult, especially when switching between different Wi-Fi networks at home and at school. To ensure consistency, I ultimately relied on a portable Wi-Fi modem. Despite these obstacles, the installation came together successfully, and I am eager to observe how people would interact with it in a real-world setting without prior knowledge of the mirror’s function.
+                </p>
+
+                <p>
+                   In the next refinement process, I would shorten the face-detection delay to reduce waiting time, extend the cooldown period to prevent excessive printing, and redesign the mirror’s physical form to feel more inviting and visually compelling, rather than rigid and purely functional.
+                </p>
+
+                <p>
+                    Because the system currently relies on battery-powered components, including the Wi-Fi modem and thermal printer, the longevity of the installation is limited. Moving forward, I would explore ways to power the setup through a stable electrical source and further automate the program so that it can operate independently for extended periods. Overall, I am proud of how Mirror Selfie developed, particularly as an early experiment in both technical implementation and public interaction.
+                </p>
+
+                <br><br>
+                <h2>A Little About the System</h2>
+                <p>
+                    The face-detection software is designed to continuously overwrite captured images, ensuring participant privacy while optimizing storage on the Raspberry Pi, which has limited capacity. In this sense, Mirror Selfie is arguably less surveillant than platforms such as social media, public photo booths, or public cameras, where images are often stored semi-permanently or distributed online.
+                </p>
+            </div>
+
+                <div id="mirror-selfie-demo">
+                    <h2>Demo + User testing</h2>
+                    <br>
+                    <div class="mirror-selfie-demo-images">
+                         <img src="assets/Documentation/mirror-selfie-demo.jpeg">
+                         <img src="assets/Documentation/mirror-selfie-setup.jpeg">
+                    <img src="assets/Documentation/mirror-selfie-setup2.jpeg">
+                    </div>
+                   
+                </div>
+            
+             
+                   <div id="dotMap-problem-statement">
+                    <h1>Future Plans</h1>
+                    <p>
+                        I plan to develop Mirror Selfie into a public installation that places the work in a real-world context and tests its underlying questions at scale. The project aims to spark conversation around surveillance culture by contrasting it to other forms of voluntary participation in image-making throughout people’s everyday activity.
+                        <br>
+                        What distinguishes Mirror Selfie, a camera concealed behind a mirror, from a two-way mirror where people would knowingly pose, even if they are unaware of who might be watching from the other side? 
+                        How does this differ from uploading images online, where control over visibility is often surrendered, or stepping into a photo booth in a public space?
+                        <br><br>
+
+                        The installation also probes public reaction to having an image printed without prior awareness, even if the photograph is immediately given to the participant and deleted from the system. By staging this moment of surprise, the work asks whether such an encounter feels playful, unsettling, or ethically ambiguous, and why. Through this tension, Mirror Selfie examines how consent, visibility, and trust operate in contemporary visual culture, questioning where individuals draw the line between comfort and intrusion in environments saturated with cameras.
+                    </p>
+
+                </div>
+
+
+                <div id="dotmap-key-learnings">
+               
+                <div id="key-learning-cascading">
+                     <h1>Key Learnings</h1>
+                     
+                    <div class="key-learning">
+                    <h3>1. Integrating OpenCV with Python on Raspberry Pi</h3>
+                    <p class="dotmap-lineheight">I gained hands-on experience implementing face detection using OpenCV through Raspberry Pi. This helped me gain skills like: optimizing performance, managing timing thresholds, and designing logic that balanced responsiveness with system limitations.</p>
+         
+                </div>
+
+                 <div class="key-learning">
+                    <h3>2. Thermal POS Printer Integration</h3>
+                    <p class="dotmap-lineheight">Connecting and controlling a POS thermal printer introduced challenges around serial communication, formatting images for low-resolution output, and regulating print frequency to prevent overload. This process deepened my understanding of hardware–software coordination in physical computing systems.</p>
+                 
+                </div>
+
+                <div class="key-learning">
+                    <h3>3. Public Trust and the Psychology of Surveillance</h3>
+                    <p class="dotmap-lineheight">During demonstrations, many participants were eager to have their photo taken despite the system’s main topic of conversation. This raised questions about whether people instinctively trust technological systems, or the developer presenting them, even when surveillance mechanisms are not fully visible.</p>
+                  
+                </div>
+                <div class="key-learning ">
+                    <h3>4. Consent Through Design and Interface Cues</h3>
+                    <p class="dotmap-lineheight">The project revealed how physical form and interaction design affect perceptions of safety and participation. The smaller mirror size invites users to get close and pose for in front of it, I am intrigued to explore larger mirror sizes to see if more candid or casual actions are captured.</p>
+                  
+                </div>
+               
+                </div>
+                
+            </div>
+
+            
+
+               
+            
+                </div>
+                <h1 id="stroll-thank-you">Thank you for reading.</h1>
+                <div class="footerPlaceholder"></div>
+
+     </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+    <script src="test2.js"></script>
+    <script src="dot-map-carousel-scroll.js"></script>
+   
+</body>
+</html>

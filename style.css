@@ -663,15 +663,6 @@ min-height: 10vh;
     z-index: 3;
 }
 
-/* .buttonPlaceHolder{
-    width: auto;
-    position: absolute;
-    height: fit-content;
-    background-color: #F9F7F2;
-    width: fit-content;
-} */
-
-/* button animation */
 .button {
     display: flex;
     flex-wrap: nowrap;
@@ -761,6 +752,11 @@ min-height: 10vh;
     z-index: 105;
 
 }
+.footerPlaceholder{
+    margin-top: 0;
+    border-top: 0;
+    padding-top: 0;
+}
 .contact-title,
 .contact-info{
     height: 90%;
@@ -817,44 +813,6 @@ min-height: 10vh;
     color: #126889;
 }
 
-
-/* .stickyParent{
-    scroll-behavior: smooth;
-    
-}
-
-.sticky{
-    overflow: hidden;
-    position:sticky;
-    top:8vh;
-    height: 92vh;
-}
-
-
-.scrollSection {
-    position: absolute;
-    top: 0;
-    display: flex; 
-    width: max-content;
-    will-change: transform;
-} */
-
-/* .headerTest{
-    height: 8vh;
-    background-color: #323F2F;
-    position: absolute;
-
-} */
-
-/* .scrollNotice{
-    position: absolute;
-    z-index: 100;
-   bottom: 40vh;
-   left:3vw;
-   font-style: italic;
-} */
-
-
 .project {
     width: auto;
     display: flex;
@@ -902,23 +860,6 @@ min-height: 10vh;
     /* margin-top: 2vh; */
     color: #323F2F;
 }
-
-/* .spotlight{
-    height: 80vh;
-    width: 20vw;
-    background-color: tomato;
-    position: absolute;
-    z-index: 50;
-    place-self: center;
-    
-} */
-
-/* .distanceDisplay {
-    font-family: Arial, sans-serif;
-    text-align: center;
-} */
-
-
 
 #project-info-container{
     min-height: 92vh;
@@ -1383,6 +1324,7 @@ button {
 }
 #archive-title h1{
     font-size: 3rem;
+    color: #126889;
 }
 
 #archive-info{
@@ -1982,6 +1924,7 @@ button {
 /* --- */
 /* Responsive adjustments */
 @media (max-width: 768px) {
+
     .carousel-image-wrapper {
         aspect-ratio: 2/3;
     }
@@ -1998,12 +1941,133 @@ button {
 @media (max-width: 768px) {
      html, body {
         width: 100vw;
+
     }
+
+     #archive-container{
+        flex-direction: column;
+        height: 92vh; /* Changed from 200vh to 100vh */
+        position: relative;
+        margin-bottom: 0; /* Ensure no gap */
+    }
+    
+    #archive-carousel{
+        width: 100vw;
+        background-color: #323F2F;
+    }
+    
+    #archive-title h1{
+        font-size: 2rem;
+    }
+    
+    #archive-left{
+        height: 20vh;
+        width: 100vw;
+    }
+
+    #archive-info{
+        display: none;
+    }
+    
+    .archive-carousel-gradient-bottom,
+    .archive-carousel-gradient-top{
+        width: 100vw;
+        height: 5vh;
+    }
+
+    .archive-carousel-gradient-top{
+        background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    }
+    
+    #archive-carousel-left{
+        width: 100vw;
+    }
+
+    #archive-carousel-right{
+        display: none;
+    }
+    
+        .footer{
+        width: 100vw;
+        height: auto; /* Let it size naturally */
+        min-height: 20vh;
+        position: relative;
+        margin-top: 0;
+    }
+   
+.project-flex-filler{
+    display: none;
+}
+
+.projects-flex {
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+        gap: 2vh;
+        width: 100vw;
+        padding: 0 4vw;
+        box-sizing: border-box;
+    }
+    
+    .project-flex-each {
+        min-width: 100%;
+        width: 100%;
+        flex-basis: auto !important;
+        min-height: 12vh;
+        padding: 2vh 4vw;
+    }
+    
+    /* Remove hover effects on mobile */
+    .projects-flex:hover .project-flex-each {
+        flex-grow: 1;
+    }
+    
+    .projects-flex:hover .project-flex-each:hover {
+        flex-grow: 1;
+        min-height: 12vh;
+    }
+    
+    .project-flex-each:hover {
+        min-height: 12vh;
+    }
+    
+    /* Adjust overlay for horizontal layout */
+    .project-overlay {
+        padding: 1.5vh 3vw;
+    }
+    
+    .project-overlay h3 {
+        font-size: 1.2rem;
+    }
+    
+    .project-overlay p {
+        font-size: 0.9rem;
+    }
+
+
+.project-highlight h1{
+    font-size: 2.5em;
+}
+
+.photo-archive-btn h3{
+    font-size: 1rem;
+}
+
+.directoryTitleStyle{
+    display: block;
+    color: #EDED14;
+    font-weight: 200;
+    text-shadow: 1px 1px 2px #4d4d4d
+
+}
+
 
     .header{
         width: 100vw;
         position: fixed;
         z-index: 100;
+        top: 0;
+
     }
     .header-center{
         visibility: hidden;
@@ -2029,6 +2093,10 @@ button {
   
 
    
+    #mirror-selfie-splash-video{
+        max-width: 100vw;
+        height: auto;
+    }
 
     
     .main-container{
@@ -2040,6 +2108,10 @@ button {
         height: 92vh;
     }
 
+    #skills h3{
+        font-size: 1rem;
+    }
+
     .hello-text{
         position: relative;
         height: 20vh;
@@ -2047,6 +2119,7 @@ button {
         margin-top: 0;
         padding: 3vw;
         padding-top: 3vh;
+        z-index: 10;
     }
 
     #dynamic-time{
@@ -2183,12 +2256,16 @@ button {
     }
 
 
-    .page-container{
-        display: flex;
-        flex-direction: column;
-     }
+       .page-container {
+        overflow-y: auto;
+        height: auto;
+        min-height: 100vh;
+        padding-top: 8vh;
 
     
+    }
+    
+ 
     #projects-container,
     #project-info-container{
         overflow-x:hidden;
@@ -2197,13 +2274,6 @@ button {
     }
 
 
-
-
-.footer{
-    width: 100vw;
-    height: 20vh;
-    position: relative;
-}
 
 #content-buttons{
     margin-bottom: 10vh;
@@ -2312,26 +2382,21 @@ button {
         width: 60vw;
     }
 
-    .pinterest-content-center{
-        background-color: #323F2F;
-    }
-
+ 
     #content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto; 
-        /* grid-template-areas:
-            "left center"
-            "right center"; 
-            "right center";  */
+        display: flex;
+       flex-direction: column;
         gap: 20px;
     }
-
+    #content *{
+        width: 100%;
+    }
     .content-left{
         height: fit-content;
+    
     }
     
-    .content-left h2 {
+    .content-left h2,
     .content-left h2{
         white-space: normal; 
         overflow-wrap: break-word; 
@@ -2400,4 +2465,3 @@ button {
 
     
     }
-}

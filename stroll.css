@@ -376,10 +376,10 @@ align-self: flex-end;
 
     /* HEADER */
     #stroll-header {
+        min-height: 10vh;
         flex-direction: column;
         text-align: left;
-        padding-top: 5vh;
-        height: auto;
+        height: 23vh;
     }
 
     #stroll-title, 

@@ -1,12 +1,32 @@
 {
 "highlight":{ 
-        "Highlight1":{
+    "Highlight1":{
+            "name":"When The Flower Stops Breathing",
+            "year":"2026",
+            "info":"When The Flower Stops Breathing is an interactive kinetic sculpture composed of a cluster of mechanical flowers that continuously bloom and close, echoing the subtle rhythms of living ecosystems. It asks a simple but uneasy question: what happens to a system when it is constantly observed, approached, and disturbed?",
+            "material":["Python","C++","Fabrication","Webcam","Electronics"],
+            "link":"https://parsons.edu/dt-2026/when-the-flower-stops-breathing/",
+            "haveLink": true,
+            "pageLink":"when-the-flower-stops-breathing.html",
+            "documentation":{
+                "thumbnail":"assets/Documentation/thesis_thumbnail.JPG",
+                "doc1":"assets/Documentation/mirror-selfie demo video.mov",
+                "doc2":"assets/Documentation/mirror-selfie-hardware.jpeg",
+                "doc3":"assets/Documentation/open-cv test.mov",
+                "doc4":"assets/Documentation/mirror-selfie back.jpeg",
+                "doc5":"assets/Documentation/mirror-selfie testprint.jpeg",
+                "doc6":"assets/Documentation/mirror-selfie installation.jpeg"
+                
+            }
+        },
+        "Highlight2":{
             "name":"Mirror Selfie",
             "year":"2025",
             "info":"Through this project, I explored the interaction between people and mirrors. When walking by mirrors, I noticed that people tend to subconsciously stare at the mirrors back to themselves to check their own appearance or to take mirror pictures. However, after I learnt about spy two-way mirrors, I felt more cautious interacting with mirrors due to my paranoia of being spied on. For this project titled “Mirror-Selfie”, I am embodying my fear of being stared back at by the mirror or anything behind the mirror. Using a camera with the OpenCV Python library, I detect faces and print out a frame of the moment when anyone looks into the mirror.",
             "material":["Python","Bash","Webcam","Printer","Mirror"],
             "link":"",
             "haveLink": false,
+             "pageLink":"mirror-selfie.html",
             "documentation":{
                 "thumbnail":"assets/Documentation/mirror-selfie-thumbnail.jpeg",
                 "doc1":"assets/Documentation/mirror-selfie demo video.mov",
@@ -18,7 +38,7 @@
                 
             }
         },
-        "Highlight2":{
+        "Highlight3":{
     "name":"Stroll",
     "year":"2025",
     "info":"",
@@ -26,6 +46,7 @@
     "link":"",
     "haveLink": false,
     "isPhysical":false,
+     "pageLink":"stroll-app.html",
     "documentation":{
         "thumbnail":"assets/Documentation/Stroll/Stroll Thumbnail.png",
         "doc1":"",
@@ -33,7 +54,7 @@
         "doc3":""
     }
 },
-"Highlight3":{
+"Highlight4":{
     "name":"Pinterest Case Study",
     "year":"2025",
     "info":"",
@@ -41,6 +62,7 @@
     "link":"",
     "haveLink": false,
     "isPhysical":false,
+     "pageLink":"pinterest-casestudy.html",
     "documentation":{
         "thumbnail":"assets/Documentation/Pinterest Case Study/Pinterest Web.png",
         "doc1":"",
@@ -48,13 +70,14 @@
         "doc3":""
     }
 },
-         "Highlight4":{
+         "Highlight5":{
             "name":"Odd Fellow Says Hello",
             "year":"2024",
             "info":"Put your wits to the test with Odd Fellow Says Hello, a game of wordplay and fun! In each round, you’ll face four words—but one doesn’t belong. Is it a trick of meaning or a subtle twist of context? Gather your friends or challenge yourself to find the Odd Fellow before time runs out. Perfect for quick thinkers, word lovers, and anyone who loves a clever challenge. Are you sharp enough to spot the odd fellow? Odd fellow says hello!",
             "material":["HTML","CSS","Javascript","Typescript"],
             "link":"https://odd-one-out-game.deno.dev/",
             "haveLink": true,
+             "pageLink":"odd-fellow-says-hello.html",
             "documentation":{
                 "thumbnail":"assets/Documentation/ofsh-thumbnail.png",
                 "doc1":"assets/Documentation/Process/Odd Fellow Says Hello sketch.jpg",
@@ -63,13 +86,14 @@
             }
         },
 
-        "Highlight5":{
+        "Highlight6":{
             "name":"LABYRINTH",
             "year":"2025",
             "info":"Collaboration project with Ziye An, Jaiden Brown, and Eve",
             "material":["Unity","LEAP Motion","Joystick","Arduino","Electronics","Hardware"],
             "link":"",
             "haveLink": false,
+             "pageLink":"labyrinth.html",
             "documentation":{
                 "thumbnail":"assets/Documentation/Labyrinth9.jpg",
                 "doc1":"assets/Documentation/LabyrinthE.jpg",
@@ -77,13 +101,14 @@
                 "doc3":"assets/Documentation/Labyrinth6.jpg"
             }
         },
-        "Highlight6":{
+        "Highlight7":{
             "name":"Dot Map",
             "year":"2024",
             "info":"Dot Map is a long-form generative art that uses a Javascript algorithm to create a 25 x 25 matrix that puts colors in random circles within the squares. This art explores how pseudo-randomness, structure, and computation collaborate to create uniqueness. Using the modulo operator, each circle is assigned with a random number. The system decides which circles in the grid becomes colored, and which ones stays white. This rule creates a pattern that feels random while still following a consistent logic. Beyond its visual output, Dot Map also creates a sense of time. Viewers wait as the colors reveals itself square by square, watching the system produce the art instead of receiving a finished result. Once the pattern fully appears, the piece continues to function as an interactive environment rather than a static image. Users can still engage with the system by hovering their mouse over each grid to enlarge the circles. Dot Map does not end when the randomness stops, it remains alive, inviting interaction that can only happen through the blockchain medium.",
             "material":["Java Script", "Adobe Illustrator"],
             "link":"https://editor.p5js.org/carbudar/full/ikVkKfFTn",
             "haveLink": true,
+             "pageLink":"dotmap.html",
             "documentation":{
                 "thumbnail":"assets/Documentation/Dot Map Mockup 2.png",
                 "doc1":"assets/Documentation/mirror-selfie demo video.mov",

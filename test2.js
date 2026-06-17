@@ -113,25 +113,13 @@ function loadProjectHighlights(data) {
         
         projectCard.appendChild(projectOverlay);
         
-        // Add click handler
-        projectCard.addEventListener('click', () => {
-            if(key === "Highlight1"){
-                window.location.href = 'mirror-selfie.html';
-            }else if(key === "Highlight2") {
-                window.location.href = 'stroll-app.html';
-            }else if (key === "Highlight3"){
-                window.location.href = 'pinterest-casestudy.html';
-            }else if(key === "Highlight4") {
-                window.location.href = 'odd-fellow-says-hello.html'
-            }else if(key === "Highlight5") {
-                window.location.href = 'labyrinth.html'
-            }else if(key === "Highlight6") {
-                window.location.href = 'dotmap.html'
-            }
-            else{
-                window.location.href = `project-info.html?project=${encodeURIComponent(project.name)}`;
-            }
-        });
+       projectCard.addEventListener('click', () => {
+    if (project.pageLink) {
+        window.location.href = project.pageLink;
+    } else {
+        window.location.href = `project-info.html?project=${encodeURIComponent(project.name)}`;
+    }
+});
 
         projectsFlexContainer.appendChild(projectCard);
 
