@@ -1401,18 +1401,27 @@ button {
     height: auto;
 }
 
-#dotMap-problem-statement{
+#dotMap-problem-statement, #thesis-problem-statement{
     width: auto;
     margin: 5vw;
     box-sizing: border-box;
     border-radius: 10px;
     padding: 2vw;
+  
+}
+
+
+#dotMap-problem-statement h2{
+    padding-bottom: 4vh;
 }
 
 #dotMap-problem-statement p{
     line-height: 2rem;
 }
 
+#thesis-problem-statement{
+    line-height: 3rem;
+}
 .dotmap-lineheight{
     line-height: 4vh;
 }
@@ -1486,6 +1495,10 @@ button {
     
 }
 
+.text-center{
+    text-align: center;
+}
+
 .progress-text-overflow{
       white-space: normal;
   overflow-wrap: break-word;
@@ -1536,6 +1549,7 @@ button {
     flex-direction: column;
     gap: 5vh;
     text-align: center;
+    padding-top: 0;
 }
 
 #key-learning-cascading{
@@ -1580,8 +1594,7 @@ button {
     position: relative;
 
 }
-#mirror-selfie-frontend-part *{
-}
+
 #mirror-selfie-frontend-part-image img,
 #mirror-selfie-backend-part-image img{
     height: 80vh;
@@ -1920,7 +1933,106 @@ button {
     gap: 2vh;
 }
 
+/* when the flower stops breathing */
+#thesis-documentation-title{
+    padding: 8vh;
+    padding-bottom: 0;
 
+}
+#thesis-documentation{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    gap: 5vh;
+   grid-template-columns: repeat(2, 1fr);
+
+    justify-items: center;
+    align-items: center;
+    padding-top: 0;
+
+}
+
+.thesis-pdf{
+    height: 80vh;
+    width: 40vw;
+    background-color: #4d4d4d;
+   
+}
+
+#thesis-problem-statement{
+    text-align: center;
+
+}
+
+
+#thesis-background-statement{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+    gap: 5vw;
+}
+
+.thesis-breather-image{
+    width: 100vw;
+
+}
+.thesis-breather-image *{
+    scale: 60%;
+  
+}
+
+.thesis-technical-illustration{
+    display: flex;
+    justify-content: center;
+    gap: 3vh;
+    width: 100vw;
+
+}
+
+.thesis-technical-illustration-child{
+    height: 85vh;
+}
+
+.thesis-technical-illustration-child img{
+    height: 100%;
+}
+
+.thesis-mechanical-parts{
+    height: 95vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.thesis-mechanical-parts img{
+    height: 100%;
+    width: auto;
+}
+
+.thesis-interaction{
+    padding: 6vw;
+    line-height: 3rem;
+}
+.thesis-interaction-3columns{
+    display: flex;
+    gap: 3vw;
+}
+
+.thesis-big-documentation{
+    display: flex;
+    width: 100vw;
+    height: auto;
+    flex-direction: column;
+    gap: 5vh;
+    padding: 5vw;
+}
+
+.thesis-big-documentation *{
+    width: 100%;
+}
 /* --- */
 /* Responsive adjustments */
 @media (max-width: 768px) {
