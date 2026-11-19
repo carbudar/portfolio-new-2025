@@ -27,9 +27,9 @@ function liveClock() {
 }
 
 function contactButtons() {
-    createButton('h2', 'Email', 'email', SITE.yellow, '#000', { href: `mailto:${SITE.email}` });
-    createButton('h2', 'LinkedIn', 'linkedin', SITE.yellow, '#000', { href: SITE.linkedin, newTab: true });
-    createButton('h2', 'Instagram', 'instagram', SITE.yellow, '#000', { href: SITE.instagram, newTab: true });
+    createButton('h2', 'Email', 'email', SITE.yellow, SITE.teal, { href: `mailto:${SITE.email}` });
+    createButton('h2', 'LinkedIn', 'linkedin', SITE.yellow, SITE.teal, { href: SITE.linkedin, newTab: true });
+    createButton('h2', 'Instagram', 'instagram', SITE.yellow, SITE.teal, { href: SITE.instagram, newTab: true });
 }
 
 // The project list + preview panel, built from projects.json.

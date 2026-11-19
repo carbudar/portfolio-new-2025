@@ -221,7 +221,12 @@
                 "doc1": "assets/Documentation/Process/rps sketch 2.png",
                 "doc2": "assets/Documentation/Process/rps sketch v1.png",
                 "doc3": "assets/Documentation/Process/hand design.png"
-            }
+            },
+            "summary": "Pixel-art rock-paper-scissors: one click, one throw",
+            "type": "Code sketch",
+            "category": "sketch",
+            "linkLabel": "Play sketch",
+            "thumb": "assets/thumbs/archive/rock-paper-scissor.jpg"
         },
         "Sircle": {
             "name": "Sircle",
@@ -246,7 +251,11 @@
                 "doc8": "assets/Documentation/Process/Sircle Greybox 2.png",
                 "doc9": "assets/Documentation/Process/Sircle wireframe.png",
                 "doc10": "assets/Documentation/Process/Sircle App Demo.mov"
-            }
+            },
+            "summary": "App concept that makes NYC recycling less confusing",
+            "type": "UX / Product",
+            "category": "ux",
+            "thumb": "assets/thumbs/archive/sircle.jpg"
         },
         "Data Portrait": {
             "name": "Data Portrait",
@@ -262,7 +271,12 @@
                 "thumbnail": "assets/Documentation/Data Portrait cover.png",
                 "doc1": "assets/Documentation/Process/Data Portrait Data.png",
                 "doc2": "assets/Documentation/Process/Data Portrait Sketch.png"
-            }
+            },
+            "summary": "A week of my social habits, drawn as a self-portrait",
+            "type": "Code sketch",
+            "category": "sketch",
+            "linkLabel": "Play sketch",
+            "thumb": "assets/thumbs/archive/data-portrait.jpg"
         },
         "Time Keeper": {
             "name": "Time Keeper",
@@ -278,7 +292,12 @@
                 "thumbnail": "assets/Documentation/Time Keeper cover.png",
                 "doc1": "",
                 "doc2": ""
-            }
+            },
+            "summary": "A clock that speeds up and slows down the way time feels",
+            "type": "Code sketch",
+            "category": "sketch",
+            "linkLabel": "Play sketch",
+            "thumb": "assets/thumbs/archive/time-keeper.jpg"
         },
         "Sunrise": {
             "name": "Sunrise",
@@ -298,7 +317,12 @@
                 "doc3": "assets/Documentation/sun vid 4.mov",
                 "doc4": "assets/Documentation/Sunrise cover.png",
                 "doc5": "assets/Documentation/sun 3d1.png"
-            }
+            },
+            "summary": "An LED 'artificial sun' that brightens as the room gets dark",
+            "type": "Physical build",
+            "category": "physical",
+            "linkLabel": "Watch video",
+            "thumb": "assets/thumbs/archive/sunrise.jpg"
         },
         "Hue Hunter": {
             "name": "Hue Hunter",
@@ -309,13 +333,18 @@
                 "CSS",
                 "Javascript"
             ],
-            "link": " https://carbudar.github.io/hue-hunter/",
+            "link": "https://carbudar.github.io/hue-hunter/",
             "haveLink": true,
             "documentation": {
                 "thumbnail": "assets/Documentation/hue hunter cover.png",
                 "doc1": "assets/Documentation/Process/Hue Hunter sketch.jpg",
                 "doc2": "assets/Documentation/Process/Hue Hunter color sketch.png"
-            }
+            },
+            "summary": "Find the red square by following colour and pitch",
+            "type": "Web game",
+            "category": "web",
+            "linkLabel": "Play game",
+            "thumb": "assets/thumbs/archive/hue-hunter.jpg"
         },
         "Time Machine": {
             "name": "Time Machine",
@@ -332,7 +361,12 @@
                 "thumbnail": "assets/Documentation/Time Machine cover.jpeg",
                 "doc1": "",
                 "doc2": ""
-            }
+            },
+            "summary": "Acrylic and electronics piece about how time feels in a group",
+            "type": "Physical build",
+            "category": "physical",
+            "linkLabel": "Watch video",
+            "thumb": "assets/thumbs/archive/time-machine.jpg"
         },
         "Photo Archive": {
             "name": "Photo Archive",
@@ -349,7 +383,12 @@
                 "thumbnail": "assets/Documentation/Photo Archive cover.png",
                 "doc1": "assets/Documentation/Process/Photo Archive main page sketch.png",
                 "doc2": "assets/Documentation/Process/Photo Archive Expanded Sketch.png"
-            }
+            },
+            "summary": "A grid-based home for my photography",
+            "type": "Website",
+            "category": "web",
+            "linkLabel": "Visit site",
+            "thumb": "assets/thumbs/archive/photo-archive.jpg"
         }
     }
 }

@@ -24,7 +24,8 @@
 
 .home-hero {
     min-height: 92vh;
-    padding: calc(8vh + 4vw) 4vw 4vw;
+    padding: calc(8vh + 4.5vw) 4vw 4vw; /* 8vh clears the fixed header; ~65px gap below it */
+    align-content: start; /* content starts at the top instead of floating in the middle */
     display: grid;
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
     gap: 4vw;
@@ -49,11 +50,12 @@
     font-size: 1.4rem;
     line-height: 1.6;
     color: #323F2F;
-    font-weight: 300;
+    font-weight: 400;
     max-width: 38ch;
 }
 
-.home-contact h2 { color: #126889; font-size: 1.5rem; margin-bottom: 2vh; }
+/* direct child only: the contact buttons are h2s too and should keep the .button weight */
+.home-contact > h2 { color: #126889; font-size: 1.5rem; margin-bottom: 2vh; font-weight: 500; }
 .home-contact #intro-contact { justify-content: flex-start; flex-wrap: wrap; }
 
 /* The building: the original floor images, now always labeled and clickable */
@@ -62,6 +64,9 @@
     flex-direction: column;
     align-items: center;
     padding-right: 6vw;
+    /* line the top of floor 3 up with the intro line (date line + gaps above it) */
+    align-self: start;
+    margin-top: calc(6vh + 1.6rem);
 }
 
 .floor {
@@ -94,7 +99,7 @@
     color: #126889;
     transition: color 0.2s ease;
 }
-.floor-label small { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: #323F2F; font-weight: 300; }
+.floor-label small { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: #323F2F; font-weight: 600; }
 .floor:hover .floor-label, .floor:focus-visible .floor-label {
     color: #FFD2FF;
     text-shadow: 1px 1px 2px #126889, 0 0 1em #EDED14, 0 0 0.2em #126889;
@@ -103,21 +108,6 @@
 @media (prefers-reduced-motion: reduce) {
     .floor { animation: none; }
 }
-
-/* ---------- Quick facts ---------- */
-
-.home-facts {
-    margin: 0 4vw 8vh;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    border: 1px solid #126889;
-    border-radius: 15px;
-    overflow: hidden;
-}
-.home-facts > div { padding: 2.5vh 1.5vw; display: flex; flex-direction: column; gap: 0.6vh; }
-.home-facts > div + div { border-left: 1px solid #126889; }
-.home-facts span { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: #126889; font-weight: 400; }
-.home-facts p { font-size: 1.1rem; line-height: 1.4; color: #323F2F; font-weight: 300; }
 
 /* ---------- Project index ---------- */
 
@@ -131,14 +121,14 @@
     align-items: flex-end;
     margin-bottom: 4vh;
 }
-.home-work-head h1 { font-size: 3rem; color: #323F2F; }
-.home-work-head p { font-size: 1.1rem; color: #323F2F; margin-top: 1vh; font-weight: 300; }
+.home-work-head h1 { font-size: 3rem; color: #323F2F; font-weight: 400; }
+.home-work-head p { font-size: 1.1rem; color: #323F2F; margin-top: 1vh; font-weight: 400; }
 
 .work-filters { display: flex; flex-wrap: wrap; gap: 10px; }
 .work-filters button {
     font: inherit;
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 500;
     min-height: 44px;
     padding: 0 20px;
     border-radius: 999px;
@@ -170,13 +160,14 @@
     font-size: 0.8rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    font-weight: 600;
 }
 .work-row-head span:last-child, .work-year { text-align: right; }
 
 .work-no, .work-year { font-size: 1rem; color: #323F2F; }
 .work-title { display: flex; flex-direction: column; gap: 0.5vh; }
-.work-name { font-size: 1.8rem; font-weight: 300; transition: color 0.2s ease; }
-.work-summary { font-size: 1rem; font-weight: 300; }
+.work-name { font-size: 1.8rem; font-weight: 500; transition: color 0.2s ease; }
+.work-summary { font-size: 1rem; font-weight: 400; }
 .work-type {
     justify-self: start;
     font-size: 0.9rem;
@@ -204,8 +195,8 @@
     gap: 2vh;
 }
 .work-preview-img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 30px; background: #AAA7A2; }
-.work-preview-text { font-size: 1.1rem; line-height: 1.6; color: #323F2F; font-weight: 300; }
-.work-preview-role { font-size: 0.95rem; color: #126889; font-weight: 400; }
+.work-preview-text { font-size: 1.1rem; line-height: 1.6; color: #323F2F; font-weight: 400; }
+.work-preview-role { font-size: 0.95rem; color: #126889; font-weight: 500; }
 
 /* ---------- About ---------- */
 
@@ -220,16 +211,16 @@
 }
 .home-about-photo { flex: 0 1 320px; margin: 0; display: flex; flex-direction: column; gap: 1.5vh; }
 .home-about-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 30px; }
-.home-about-photo figcaption { font-size: 0.95rem; color: #F9F7F2; font-weight: 300; }
+.home-about-photo figcaption { font-size: 0.95rem; color: #F9F7F2; font-weight: 400; }
 
 .home-about-text { flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 2.5vh; }
 .home-about-text h1 { font-size: 3rem; color: #EDED14; font-weight: 300; }
 .home-about-text .home-about-lead { font-size: 1.8rem; line-height: 1.35; font-weight: 300; color: #FFD2FF; }
-.home-about-text p { font-size: 1.15rem; line-height: 1.7; color: #F9F7F2; font-weight: 300; }
-.home-about-text strong { color: #EDED14; font-weight: 400; }
+.home-about-text p { font-size: 1.15rem; line-height: 1.7; color: #F9F7F2; font-weight: 400; }
+.home-about-text strong { color: #EDED14; font-weight: 600; }
 
 .home-toolkit { display: flex; flex-direction: column; gap: 1vh; margin-top: 1vh; }
-.home-toolkit-label { font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: #F9F7F2; font-weight: 400; }
+.home-toolkit-label { font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: #F9F7F2; font-weight: 600; }
 
 .home-about-link { color: #EDED14; font-size: 1.15rem; align-self: flex-start; }
 .home-about-link:hover { color: #FFD2FF; }
@@ -240,13 +231,10 @@
 
 @media (max-width: 1024px) {
     .home-hero { grid-template-columns: 1fr; }
-    .building { flex-direction: row; justify-content: center; padding-right: 0; gap: 2vw; }
+    .building { flex-direction: row; justify-content: center; padding-right: 0; gap: 2vw; margin-top: 0; }
     .floor, .floor-3 { margin-top: 0; }
     .floor img { height: 16vh; }
     .floor-label { position: static; transform: none; margin: 1vh 0 0; align-items: center; font-size: 1.2rem; }
-    .home-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .home-facts > div:nth-child(3) { border-left: 0; }
-    .home-facts > div:nth-child(n+3) { border-top: 1px solid #126889; }
 }
 
 @media (max-width: 768px) {
@@ -258,11 +246,8 @@
     .floor img { height: auto; width: 26vw; }
     .floor-label { font-size: 1rem; }
     .floor-label small { font-size: 0.65rem; }
-    .home-contact .buttonContent { padding: 10px 14px !important; }
+    .home-contact .buttonContent { padding: 8px 18px !important; }
     .home-contact #intro-contact h2 { font-size: 1.2rem; }
-    .home-facts { margin: 0 20px 48px; grid-template-columns: 1fr; }
-    .home-facts > div { padding: 16px 18px; }
-    .home-facts > div + div { border-left: 0; border-top: 1px solid #126889; }
     .home-work { padding: 16px 20px 64px; }
     .home-work-head h1 { font-size: 2.2rem; }
     .work-filters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
@@ -279,6 +264,25 @@
     .home-about-text h1 { font-size: 2.2rem; }
     .home-about-text .home-about-lead { font-size: 1.4rem; }
     .home-about-inner { row-gap: 32px; }
+}
+
+
+/* ---------- Phone hero: building stacked vertically, between the tagline and the contact buttons ---------- */
+@media (max-width: 768px) {
+    .home-hero { display: flex; flex-direction: column; align-items: flex-start; gap: 3vh; }
+    /* let the text's children sit in the hero column so the building can slot in between them */
+    .home-hero-text { display: contents; }
+    .home-contact { order: 2; }
+    .building {
+        order: 1;
+        flex-direction: column; align-items: flex-start; gap: 0;
+        margin: 8px 0 4px; padding-right: 0; padding-left: 4vw;
+    }
+    .floor { margin-top: -17vw; }          /* same overlap as desktop, scaled to the phone width */
+    .floor-3 { margin-top: 0; }
+    .floor img { width: 54vw; height: auto; }
+    .floor-label { position: absolute; left: 100%; top: 50%; transform: translateY(-50%); margin: 0 0 0 3vw; align-items: flex-start; font-size: 1.15rem; }
+    .floor-label small { font-size: 0.65rem; }
 }
 
 .home-contact .button { color: #126889; }

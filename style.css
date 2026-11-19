@@ -2,8 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;      
-    font-family: "quasimoda", sans-serif;
-    font-weight: 100;
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
     font-style: normal;
     transition: background-color 0.5s ease;
 
@@ -120,6 +120,7 @@ h1{
 .logo-img{
     width: 30%;
     height: auto;
+    border-radius: 0; /* the global img rounding would clip the logo */
 }
 
 .header-right{
@@ -673,7 +674,7 @@ min-height: 10vh;
     white-space: nowrap;
     margin-top: auto;
     margin-bottom: auto;
-    border-radius: 5px;
+    border-radius: 999px;
     z-index: 1000;
     outline: 0.7px solid;
 }
@@ -697,7 +698,7 @@ min-height: 10vh;
     height: 100%;
     width: 0;
     transition: width ease 0.7s;
-    border-radius: 5px;
+    border-radius: 999px;
 
 }
 
@@ -736,73 +737,6 @@ min-height: 10vh;
 
 .buttonContainer:hover{
     width: 10vw;
-}
-
-.footer{
-    height:auto;
-    width: 100vw;
-    background-color: #AAA7A2;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    box-sizing: border-box;
-    position:relative;
-    padding: 4vw;
-    gap: 10px;
-    bottom: 0;
-    z-index: 105;
-
-}
-.footerPlaceholder{
-    margin-top: 0;
-    border-top: 0;
-    padding-top: 0;
-}
-.contact-title,
-.contact-info{
-    height: 90%;
-}
-
-.contact-title h1{
-    font-size: 4rem;
-    color:#FFD2FF;
-}
-.contact-info h2 {
-    margin-bottom: 2vh;
-    font-size: 1.5rem;
-}
-
-.contact-info a {
-    text-decoration: none;
-    color: #F9F7F2; 
-}
-
-
-.contact-info a:hover {
-    color: #EDED14;
-}
-
-
-.fineprint{
-    text-align: end;
-    right: 0;
-    text-wrap: none;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: 4vw;
-    margin-bottom: 3vh;
-    color:#323F2F;
-}
-
-
-.contact-info .link a {
-    color:#F9F7F2;
-    text-decoration: none; 
-
-}
-
-.contact-info .link a:hover {
-    color: #EDED14; 
 }
 
 .backBtn {
@@ -1299,99 +1233,8 @@ button {
     background-color: #126889;
     color:#F9F7F2;
     border: none;
-    border-radius: 4px;
+    border-radius: 999px;
     cursor: pointer;
-}
-
-#archive-container{
-    height: 92vh;
-    overflow-y: hidden;
-    width: 100%;
-    margin-top: 8vh;
-    display: flex;
-    flex-direction: row;
-}
-
-#archive-left{
-    width: 50vw;
-    height: 100%;
-    padding: 5vh;
-
-    
-}
-#archive-title{
-    height: 50%;
-}
-#archive-title h1{
-    font-size: 3rem;
-    color: #126889;
-}
-
-#archive-info{
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-#archive-carousel{
-    background-color: #F9F7F2;
-    height: 100%;
-    width: 50%;
-    display: flex;
-
-}
-
-
-#archive-carousel-left, 
-#archive-carousel-right{
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    will-change: transform;
-    transition: transform 0.1s linear;
-    position: relative;
-    overflow: hidden;
-}
-
-
-.gradient-top{
-    background-color: #323F2F;
-    height: 20vh;
-    width: 100%;
-    z-index: 1000;
-}
-
-.eachProjectThumbnail{
-    width: 100%;
-    height: 50vh;
-    flex-shrink: 0; 
-    
-}
-#archive-info span {
-   color: #126889;
-}
-
-#archive-info h1 {
-   font-weight: 500;
-}
-.archive-carousel-gradient-top{
-    background: linear-gradient(to bottom,  rgb(18, 104, 137), rgba(249, 247, 242, 0));
-    height: 10vh;
-    width: 100%;
-    position: absolute;
-    z-index: 10;
-  
-}
-
-.archive-carousel-gradient-bottom{
-    background: linear-gradient(to top, rgba(249, 247, 242, 1), rgba(249, 247, 242, 0));
-    height: 10vh;
-    width: 100%;
-    position: absolute;
-    z-index: 10;
-    bottom: 0;
 }
 
 /* dot map styling */
@@ -2056,57 +1899,6 @@ button {
 
     }
 
-     #archive-container{
-        flex-direction: column;
-        height: 92vh; /* Changed from 200vh to 100vh */
-        position: relative;
-        margin-bottom: 0; /* Ensure no gap */
-    }
-    
-    #archive-carousel{
-        width: 100vw;
-        background-color: #323F2F;
-    }
-    
-    #archive-title h1{
-        font-size: 2rem;
-    }
-    
-    #archive-left{
-        height: 20vh;
-        width: 100vw;
-    }
-
-    #archive-info{
-        display: none;
-    }
-    
-    .archive-carousel-gradient-bottom,
-    .archive-carousel-gradient-top{
-        width: 100vw;
-        height: 5vh;
-    }
-
-    .archive-carousel-gradient-top{
-        background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
-    }
-    
-    #archive-carousel-left{
-        width: 100vw;
-    }
-
-    #archive-carousel-right{
-        display: none;
-    }
-    
-        .footer{
-        width: 100vw;
-        height: auto; /* Let it size naturally */
-        min-height: 20vh;
-        position: relative;
-        margin-top: 0;
-    }
-   
 .project-flex-filler{
     display: none;
 }
@@ -2344,30 +2136,6 @@ button {
         
     }
 
-    .contact-title{
-        width: 30vw;
-    }
-
-    .contact-title h1{
-        font-size: 1.5rem;
-    }
-
-    .contact-info{
-        width: 70vw;
-    }
-    .contact-info h2{
-        font-size: 1rem;
-    }
-
-    .fineprint{
-        max-width: 100%;
-        height: fit-content;
-    }
-    .fineprint p{
-        font-size: 0.55rem;
-    }
-
-
        .page-container {
         overflow-y: auto;
         height: auto;
@@ -2584,8 +2352,87 @@ button {
 a.button, a.button * { font-family: inherit; }
 .headerButton a:hover, .header-home-link:hover { color: #FFD2FF; }
 a.button, button.button { cursor: pointer; border: none; color: inherit; }
-@media (max-width: 768px) {
-    .footer { grid-template-columns: 1fr; padding-bottom: 10vh; }
-    .contact-title h1 { font-size: 2.5rem; }
-    .contact-info h2 { font-size: 1.2rem; overflow-wrap: anywhere; }
+/* ==========================================================================
+   Footer (built in site.js → makeFooter)
+   ========================================================================== */
+
+/* the "garage door": page content sits on top and scrolls away to reveal the footer */
+.reveal-content { position: relative; z-index: 1; }
+.reveal-content.reveal-on {
+    height: auto; /* .page-container has a fixed height its content spills past; clip would cut that off */
+    min-height: 100vh;
+    border-radius: 0 0 36px 36px;
+    overflow: clip;
+    box-shadow: 0 30px 40px -24px rgba(50, 63, 47, 0.45);
 }
+
+.site-footer {
+    position: relative; z-index: 0; width: 100%; overflow: hidden;
+    background: #323F2F; color: #F9F7F2;
+    padding-top: 36px; /* sits under the page's rounded corners (site.js overlaps by this much) */
+}
+.site-footer.is-revealed { position: fixed; left: 0; right: 0; bottom: 0; }
+/* project pages restyle h2/p with their own fonts; keep the footer identical everywhere */
+.site-footer, .site-footer * { font-family: "Jost", sans-serif; }
+.site-footer h2 { font-weight: 300; margin: 0; }
+.site-footer p { font-weight: 400; margin: 0; }
+.site-footer a { text-decoration: none; }
+
+.sf-marquee { background: #126889; color: #EDED14; overflow: hidden; padding: 14px 0; font-size: 1.1rem; font-weight: 400; }
+.sf-track { display: flex; width: max-content; animation: sf-marquee 28s linear infinite; }
+.sf-track span { white-space: pre; }
+@keyframes sf-marquee { to { transform: translateX(-50%); } }
+
+.sf-main { padding: 64px 4vw 40px; }
+.sf-kicker { font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: #EDED14; font-weight: 600 !important; }
+.sf-big { font-size: clamp(2.2rem, 5.5vw, 5rem); line-height: 1.05; margin: 18px 0 36px !important; max-width: 16ch; }
+.sf-big em { font-style: normal; color: #FFD2FF; }
+.sf-pills { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; }
+.sf-pills a {
+    position: relative; isolation: isolate; overflow: hidden;
+    display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px;
+    border-radius: 999px; border: 1px solid #EDED14; color: #EDED14; font-size: 1.15rem; font-weight: 400;
+    transition: color 0.3s ease;
+}
+/* same left-to-right highlight as the site's other buttons */
+.sf-pills a::before {
+    content: ""; position: absolute; inset: 0; z-index: -1; background: #EDED14;
+    transform: scaleX(0); transform-origin: left; transition: transform 0.7s ease;
+}
+.sf-pills a:hover, .sf-pills a:focus-visible { color: #126889; }
+.sf-pills a:hover::before, .sf-pills a:focus-visible::before { transform: scaleX(1); }
+
+.sf-bottom {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px;
+    margin: 0 4vw; padding: 20px 0 28px; font-size: 0.9rem; font-weight: 400;
+    border-top: 1px solid rgba(249, 247, 242, 0.25);
+}
+
+/* big name, cut off by the ticker below it */
+.sf-wordmark {
+    font-size: 19vw; line-height: 0.72; white-space: nowrap; font-weight: 300; letter-spacing: -0.03em;
+    color: #126889; text-align: center; margin-top: 8px; height: 0.62em; overflow: hidden;
+    pointer-events: none; user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) { .sf-track { animation: none; } .sf-pills a::before { transition: none; } }
+
+@media (max-width: 768px) {
+    .reveal-content.reveal-on { border-radius: 0 0 24px 24px; }
+    .site-footer { padding-top: 24px; }
+    .sf-main { padding: 40px 16px 28px; }
+    .sf-bottom { margin: 0 16px; padding: 16px 0 20px; }
+    .sf-pills a { font-size: 1rem; }
+}
+
+/* ==========================================================================
+   Type scale (Jost)
+   300 light    → big display lines (hero intro, page titles, footer headline)
+   400 regular  → body copy, summaries, meta
+   500 medium   → names/titles, nav, buttons
+   600 semibold → small uppercase labels
+   ========================================================================== */
+.header { font-weight: 300; }
+.headerButton h3 { font-weight: 300; }
+.button h1, .button h2, .button h3 { font-weight: 400; } /* a touch heavier than 300 body text */
+strong, b { font-weight: 400; }

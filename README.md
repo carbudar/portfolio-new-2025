@@ -7,12 +7,12 @@ Hand-coded portfolio, hosted on GitHub Pages (no build step).
 | File | What it does |
 | --- | --- |
 | `index.html` + `home.css` + `home.js` | Homepage: hero, building menu, quick facts, filterable project list |
-| `site.js` | Shared by every page: header, footer, buttons, archive carousel, `project-info.html` loader |
+| `site.js` | Shared by every page: header, footer (with the scroll-reveal effect and ticker text), buttons, `project-info.html` loader |
 | `style.css` | Main styles (colors, fonts, every page) |
 | `stroll.css` | Shared case-study layout used by the project pages |
-| `projects.json` | Project data for the homepage list (`highlight`) and the archive (`archive`) |
+| `projects.json` | Project data for the homepage list (`highlight`) and the archive page (`archive`) |
 | `<project>.html` | One hand-built case study per highlighted project |
-| `archive.html` / `project-info.html` | Archive carousel, and the detail page each archive item opens |
+| `archive.html` / `project-info.html` | Archive grid (grouped by `category`), and the detail page each archive item opens |
 | `dot-map-carousel-scroll.js` | GSAP horizontal-scroll process carousels on project pages |
 
 ## Adding a highlighted project
@@ -31,3 +31,7 @@ Hand-coded portfolio, hosted on GitHub Pages (no build step).
 ## Contact details
 
 The email and social links are set once at the top of `site.js` (`SITE`).
+
+## Adding an archive project
+
+Add an entry under `archive` in `projects.json` with `name`, `year`, `summary` (one line), `type`, `category` (`sketch`, `web`, `ux` or `physical`, which sets the group it appears in), `material` (tools), `link` + `linkLabel` (e.g. "Play sketch") if it has a live version, and `thumb` (a web-sized image in `assets/thumbs/archive/`). The group order is set in `GROUPS` at the bottom of `archive.html`.

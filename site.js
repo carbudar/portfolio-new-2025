@@ -52,18 +52,75 @@ function makeFooter() {
     if (!placeholder) return;
 
     const year = new Date().getFullYear();
-    placeholder.innerHTML = `
-        <footer class="footer" id="contact">
-            <div class="contact-title"><h1>Connect With Me!</h1></div>
-            <div class="contact-info">
-                <h2><a href="mailto:${SITE.email}">Email: ${SITE.email}</a></h2>
-                <h2><a href="${SITE.linkedin}" target="_blank" rel="noopener">LinkedIn: Carla Budar</a></h2>
-                <h2><a href="${SITE.instagram}" target="_blank" rel="noopener">Instagram: @carbudar</a></h2>
-            </div>
-            <div class="fineprint">
-                <p>&copy; ${year} Carla Budar. All rights reserved. Designed and developed with 🤎 somewhere in New York City.</p>
-            </div>
-        </footer>`;
+    const ticker = 'Open to UX / product design ✦ Web design ✦ Creative technology ✦ Based in New York City ✦ Say hi! ✦ ';
+
+    const footer = document.createElement('footer');
+    footer.id = 'contact';
+    footer.className = 'site-footer';
+    footer.innerHTML = `
+        <div class="sf-main">
+            <p class="sf-kicker">Open to UX / product design, web design and creative technology</p>
+            <h2 class="sf-big">Let's make something <em>together.</em></h2>
+            <ul class="sf-pills">
+                <li><a href="mailto:${SITE.email}">${SITE.email}</a></li>
+                <li><a href="${SITE.linkedin}" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>
+                <li><a href="${SITE.instagram}" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a></li>
+            </ul>
+        </div>
+        <div class="sf-bottom">
+            <p>&copy; ${year} Carla Budar. Designed and developed with 🤎 somewhere in New York City.</p>
+            <p class="sf-clock" aria-label="Current time in New York"></p>
+        </div>
+        <div class="sf-wordmark" aria-hidden="true">carla budar</div>
+        <div class="sf-marquee" aria-hidden="true"><div class="sf-track"><span>${ticker}</span><span>${ticker}</span></div></div>`;
+
+    // The footer lives at the end of <body> so it can sit behind the page.
+    document.body.appendChild(footer);
+    placeholder.remove();
+
+    const clock = footer.querySelector('.sf-clock');
+    const timeFormat = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' });
+    const tick = () => { clock.textContent = `NYC · ${timeFormat.format(new Date())}`; };
+    tick();
+    setInterval(tick, 30000);
+
+    revealFooter(footer);
+}
+
+// "Garage door": the page scrolls up and uncovers the footer fixed behind it.
+// Falls back to a normal footer if it's taller than the screen (small phones).
+function revealFooter(footer) {
+    const isClear = c => c === 'transparent' || c === 'rgba(0, 0, 0, 0)';
+    const bodyBg = getComputedStyle(document.body).backgroundColor;
+    const content = [...document.body.children].filter(el =>
+        el !== footer && el.matches('div, main') && getComputedStyle(el).position !== 'fixed');
+
+    content.forEach(el => {
+        el.classList.add('reveal-content');
+        // the page has to be opaque, or the footer would show through it
+        if (isClear(getComputedStyle(el).backgroundColor)) {
+            el.style.backgroundColor = isClear(bodyBg) ? SITE.cream : bodyBg;
+        }
+    });
+
+    // body has a fixed height in style.css, so an empty spacer (not padding)
+    // makes the scroll room the footer is uncovered in
+    const spacer = document.createElement('div');
+    spacer.className = 'footer-spacer';
+    spacer.setAttribute('aria-hidden', 'true');
+    footer.before(spacer);
+
+    const update = () => {
+        const fits = footer.offsetHeight < window.innerHeight * 0.9;
+        footer.classList.toggle('is-revealed', fits);
+        content.forEach(el => el.classList.toggle('reveal-on', fits));
+        // the page overlaps the footer's top by its corner radius, so green shows in the corners
+        const overlap = parseFloat(getComputedStyle(footer).paddingTop) || 0;
+        spacer.style.height = fits ? `${footer.offsetHeight - overlap}px` : '0';
+    };
+    new ResizeObserver(update).observe(footer);
+    window.addEventListener('resize', update);
+    update();
 }
 
 /* ---------- The expanding-highlight button used across the site ----------
@@ -83,7 +140,7 @@ function createButton(size, buttonText, className, highlightColor, color, option
     } else {
         button.type = 'button';
         // reset the global <button> styles so it looks like the original div version
-        Object.assign(button.style, { background: 'none', padding: '0', color: 'inherit', borderRadius: '5px', font: 'inherit' });
+        Object.assign(button.style, { background: 'none', padding: '0', color: 'inherit', borderRadius: '999px', font: 'inherit' });
     }
     button.style.textDecoration = 'none';
     button.style.position = 'relative';
@@ -93,7 +150,7 @@ function createButton(size, buttonText, className, highlightColor, color, option
 
     const buttonContent = document.createElement('span');
     buttonContent.classList.add('buttonContent');
-    buttonContent.style.padding = '1vw';
+    buttonContent.style.padding = 'clamp(6px, 0.6vw, 12px) clamp(16px, 1.6vw, 28px)';
     buttonContent.style.color = color;
 
     const buttonTitle = document.createElement(size);
@@ -195,111 +252,6 @@ function isVideo(path) {
     return /\.(mp4|mov|webm|ogg)$/i.test(path);
 }
 
-/* ---------- Archive page: two looping columns of thumbnails ---------- */
-
-async function archivePage() {
-    const left = document.querySelector('#archive-carousel-left');
-    const right = document.querySelector('#archive-carousel-right');
-    const info = document.querySelector('#archive-info');
-    if (!left || !right || !info || typeof gsap === 'undefined') return;
-
-    const data = await loadProjects();
-    const projects = Object.values(data.archive || {});
-    const idleText = 'Hover over the images!';
-    info.innerHTML = idleText;
-
-    // direction: -1 scrolls up (left column), +1 scrolls down (right column)
-    function carousel(container, direction) {
-        let animation;
-        let isDragging = false;
-        let hasDragged = false;
-        let startY = 0;
-        let resumeTimer;
-
-        [...projects, ...projects].forEach(project => {
-            const thumb = document.createElement('a');
-            thumb.className = 'eachProjectThumbnail';
-            thumb.href = `project-info.html?project=${encodeURIComponent(project.name)}`;
-            thumb.setAttribute('aria-label', `${project.name} (${project.year})`);
-            thumb.draggable = false;
-            Object.assign(thumb.style, {
-                backgroundImage: `url('${project.documentation.thumbnail}')`,
-                backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat',
-                position: 'absolute', userSelect: 'none', display: 'block',
-            });
-            if (direction > 0) Object.assign(thumb.style, { width: '100%', height: '50vh', flexShrink: '0' });
-
-            thumb.addEventListener('click', e => { if (hasDragged) e.preventDefault(); });
-
-            const show = () => {
-                if (isDragging) return;
-                gsap.to(thumb, { scale: 1.1, duration: 0.25, ease: 'power2.out' });
-                animation?.pause();
-                info.innerHTML = `<h1>${project.name}</h1><h2>${project.year}</h2><p>${project.info}</p><span>Click on the image to learn more</span>`;
-            };
-            const hide = () => {
-                if (isDragging) return;
-                gsap.to(thumb, { scale: 1, duration: 0.25, ease: 'power2.out' });
-                animation?.resume();
-                info.innerHTML = idleText;
-            };
-            thumb.addEventListener('mouseenter', show);
-            thumb.addEventListener('focus', show);
-            thumb.addEventListener('mouseleave', hide);
-            thumb.addEventListener('blur', hide);
-
-            container.appendChild(thumb);
-        });
-
-        setTimeout(() => {
-            const thumbs = Array.from(container.children);
-            const heights = thumbs.map(t => t.offsetHeight);
-            const cycle = heights.slice(0, projects.length).reduce((sum, h) => sum + h, 0);
-            const start = direction > 0 ? -cycle + container.offsetHeight : 0;
-
-            gsap.set(thumbs, { y: i => start + heights.slice(0, i).reduce((sum, h) => sum + h, 0) });
-
-            if (!prefersReducedMotion) {
-                animation = gsap.to(thumbs, {
-                    duration: cycle / 50,
-                    ease: 'none',
-                    y: `${direction > 0 ? '+' : '-'}=${cycle}`,
-                    modifiers: { y: gsap.utils.unitize(y => parseFloat(y) % cycle) },
-                    repeat: -1,
-                });
-            }
-
-            container.style.cursor = 'grab';
-            container.addEventListener('mousedown', e => {
-                isDragging = true;
-                hasDragged = false;
-                startY = e.clientY;
-                container.style.cursor = 'grabbing';
-                animation?.pause();
-                clearTimeout(resumeTimer);
-            });
-            document.addEventListener('mousemove', e => {
-                if (!isDragging) return;
-                e.preventDefault();
-                const delta = e.clientY - startY;
-                if (Math.abs(delta) > 5) hasDragged = true;
-                thumbs.forEach(t => gsap.set(t, { y: gsap.getProperty(t, 'y') + delta }));
-                startY = e.clientY;
-            });
-            document.addEventListener('mouseup', () => {
-                if (!isDragging) return;
-                isDragging = false;
-                container.style.cursor = 'grab';
-                resumeTimer = setTimeout(() => animation?.resume(), 1500);
-                setTimeout(() => { hasDragged = false; }, 100);
-            });
-        }, 100);
-    }
-
-    carousel(left, -1);
-    carousel(right, 1);
-}
-
 /* ---------- project-info.html?project=Name (archive projects) ---------- */
 
 async function archiveProjectPage() {
@@ -358,7 +310,7 @@ async function archiveProjectPage() {
 /* ---------- Start ---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const features = [makeHeader, makeFooter, backButton, backToTopButtons, customCursor, dotMapGenerator, archivePage, archiveProjectPage];
+    const features = [makeHeader, makeFooter, backButton, backToTopButtons, customCursor, dotMapGenerator, archiveProjectPage];
     // Each feature runs on its own, so one failing can't take the others down.
     features.forEach(feature => {
         try {
