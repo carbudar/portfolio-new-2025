@@ -3,7 +3,7 @@
    ========================================================================== */
 
 function initHome() {
-    const features = [liveClock, contactButtons, toolkitMarquee, projectIndex, scrollColorSwap, mouseTrail];
+    const features = [liveClock, contactButtons, projectIndex, scrollColorSwap, mouseTrail];
     features.forEach(feature => {
         try {
             const result = feature();
@@ -30,30 +30,6 @@ function contactButtons() {
     createButton('h2', 'Email', 'email', SITE.yellow, '#000', { href: `mailto:${SITE.email}` });
     createButton('h2', 'LinkedIn', 'linkedin', SITE.yellow, '#000', { href: SITE.linkedin, newTab: true });
     createButton('h2', 'Instagram', 'instagram', SITE.yellow, '#000', { href: SITE.instagram, newTab: true });
-    createButton('h3', 'Visit my photo archive here!', 'photo-archive-btn', SITE.yellow, SITE.pink, { href: SITE.photoArchive, newTab: true });
-}
-
-// Builds the scrolling icon strips from the data-icons list in index.html.
-function toolkitMarquee() {
-    document.querySelectorAll('.skill-icon-carousel[data-icons]').forEach(carousel => {
-        const icons = carousel.dataset.icons.split(',');
-        const set = () => {
-            const div = document.createElement('div');
-            div.className = 'marquee-set';
-            [...icons, ...icons].forEach(file => {
-                const img = document.createElement('img');
-                img.src = `assets/toolkit-icons/${file}`;
-                img.alt = '';
-                img.className = 'noEnlarge';
-                div.appendChild(img);
-            });
-            return div;
-        };
-        const track = document.createElement('div');
-        track.className = 'marquee-track';
-        track.append(set(), set());
-        carousel.appendChild(track);
-    });
 }
 
 // The project list + preview panel, built from projects.json.
@@ -127,7 +103,6 @@ function scrollColorSwap() {
     const update = () => {
         const header = document.querySelector('.header');
         const logo = document.querySelector('.logo-img');
-        const blur = document.querySelector('.blurEffect');
         const top = about.getBoundingClientRect().top;
         tealMode = top < window.innerHeight * 0.6;
 
@@ -137,7 +112,6 @@ function scrollColorSwap() {
             header.style.color = tealMode ? SITE.teal : SITE.yellow;
         }
         if (logo) logo.src = tealMode ? 'assets/logo header teal.png' : 'assets/logo header yellow.png';
-        if (blur) blur.style.opacity = top < window.innerHeight * 0.2 ? '1' : '0';
     };
     window.addEventListener('scroll', update, { passive: true });
     update();

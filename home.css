@@ -207,12 +207,34 @@
 .work-preview-text { font-size: 1.1rem; line-height: 1.6; color: #323F2F; font-weight: 300; }
 .work-preview-role { font-size: 0.95rem; color: #126889; font-weight: 400; }
 
-/* ---------- About (existing styles, readability tweaks only) ---------- */
+/* ---------- About ---------- */
 
-.aboutMe .about-content p,
-.aboutMe #skills h3 { color: #F9F7F2; }
-.aboutMe .about-content h2 { color: #FFD2FF; }
-.aboutMe .backToTop { margin: 0 auto; padding-bottom: 6vh; }
+.home-about { padding: 10vh 4vw 4vh; color: #F9F7F2; scroll-margin-top: 8vh; }
+.home-about-inner {
+    max-width: 1200px;
+    margin: 0 auto 8vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4vw;
+    align-items: flex-start;
+}
+.home-about-photo { flex: 0 1 320px; margin: 0; display: flex; flex-direction: column; gap: 1.5vh; }
+.home-about-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 30px; }
+.home-about-photo figcaption { font-size: 0.95rem; color: #F9F7F2; font-weight: 300; }
+
+.home-about-text { flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 2.5vh; }
+.home-about-text h1 { font-size: 3rem; color: #EDED14; font-weight: 300; }
+.home-about-text .home-about-lead { font-size: 1.8rem; line-height: 1.35; font-weight: 300; color: #FFD2FF; }
+.home-about-text p { font-size: 1.15rem; line-height: 1.7; color: #F9F7F2; font-weight: 300; }
+.home-about-text strong { color: #EDED14; font-weight: 400; }
+
+.home-toolkit { display: flex; flex-direction: column; gap: 1vh; margin-top: 1vh; }
+.home-toolkit-label { font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: #F9F7F2; font-weight: 400; }
+
+.home-about-link { color: #EDED14; font-size: 1.15rem; align-self: flex-start; }
+.home-about-link:hover { color: #FFD2FF; }
+
+.home-about .backToTop { display: flex; justify-content: center; }
 
 /* ---------- Tablet & phone ---------- */
 
@@ -252,6 +274,11 @@
     .work-name { font-size: 1.4rem; }
     .work-thumb-mobile { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 15px; margin-top: 8px; }
     .work-preview { display: none; }
+    .home-about { padding: 64px 20px 32px; }
+    .home-about-photo { flex-basis: 100%; }
+    .home-about-text h1 { font-size: 2.2rem; }
+    .home-about-text .home-about-lead { font-size: 1.4rem; }
+    .home-about-inner { row-gap: 32px; }
 }
 
 .home-contact .button { color: #126889; }
