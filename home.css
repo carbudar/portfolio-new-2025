@@ -124,21 +124,21 @@
 .home-work-head h1 { font-size: 3rem; color: #323F2F; font-weight: 400; }
 .home-work-head p { font-size: 1.1rem; color: #323F2F; margin-top: 1vh; font-weight: 400; }
 
-.work-filters { display: flex; flex-wrap: wrap; gap: 10px; }
+/* segmented pill, same as the toolkit's Design / Code / AI tabs (colours flipped for the cream background) */
+.work-filters {
+    display: inline-flex; gap: 4px; padding: 5px; max-width: 100%;
+    border-radius: 999px; border: 1px solid rgba(18, 104, 137, 0.35);
+}
 .work-filters button {
-    font: inherit;
-    font-size: 1rem;
-    font-weight: 500;
-    min-height: 44px;
-    padding: 0 20px;
-    border-radius: 999px;
-    border: 1px solid #126889;
-    background: transparent;
-    color: #126889;
+    font: inherit; font-size: 1.05rem; font-weight: 400; color: #126889; cursor: pointer;
+    min-height: 44px; padding: 0 20px; border: 0; border-radius: 999px; background: transparent;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
-.work-filters button:hover { background: #EDED14; }
-.work-filters button[aria-pressed="true"] { background: #126889; color: #F9F7F2; }
+.work-filters button small { font-size: 0.85rem; opacity: 0.7; }
+.work-filters button:hover { color: #323F2F; background: rgba(237, 237, 20, 0.35); }
+.work-filters button[aria-pressed="true"] { background: #EDED14; color: #126889; }
+.work-filters button[aria-pressed="true"] small { opacity: 0.8; }
 
 .work-layout { display: flex; flex-wrap: wrap; gap: 4vw; align-items: flex-start; }
 .work-list { flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; }
@@ -194,7 +194,12 @@
     flex-direction: column;
     gap: 2vh;
 }
-.work-preview-img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 30px; background: #AAA7A2; }
+/* thumbnails cross-fade: the new image fades in over the old one */
+.work-preview-media { position: relative; width: 100%; aspect-ratio: 4 / 3; border-radius: 30px; overflow: hidden; background: #AAA7A2; }
+.work-preview-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 0; opacity: 0; transition: opacity 0.6s ease; }
+.work-preview-img.is-front { opacity: 1; }
+.work-preview-copy { display: flex; flex-direction: column; gap: 2vh; transition: opacity 0.3s ease; }
+.work-preview-copy.is-fading { opacity: 0; }
 .work-preview-text { font-size: 1.1rem; line-height: 1.6; color: #323F2F; font-weight: 400; }
 .work-preview-role { font-size: 0.95rem; color: #126889; font-weight: 500; }
 
@@ -202,8 +207,7 @@
 
 .home-about { padding: 10vh 4vw 4vh; color: #F9F7F2; scroll-margin-top: 8vh; }
 .home-about-inner {
-    max-width: 1200px;
-    margin: 0 auto 8vh;
+    margin: 0 0 8vh; /* full width inside the section padding, like Highlighted Works */
     display: flex;
     flex-wrap: wrap;
     gap: 4vw;
@@ -214,13 +218,80 @@
 .home-about-photo figcaption { font-size: 0.95rem; color: #F9F7F2; font-weight: 400; }
 
 .home-about-text { flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 2.5vh; }
-.home-about-text h1 { font-size: 3rem; color: #EDED14; font-weight: 300; }
+.home-about-text h1 { font-size: 3rem; color: #EDED14; font-weight: 400; } /* matches "Highlighted Works" */
 .home-about-text .home-about-lead { font-size: 1.8rem; line-height: 1.35; font-weight: 300; color: #FFD2FF; }
 .home-about-text p { font-size: 1.15rem; line-height: 1.7; color: #F9F7F2; font-weight: 400; }
 .home-about-text strong { color: #EDED14; font-weight: 600; }
 
-.home-toolkit { display: flex; flex-direction: column; gap: 1vh; margin-top: 1vh; }
-.home-toolkit-label { font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: #F9F7F2; font-weight: 600; }
+/* ---------- Toolkit (About section) ----------
+   Same flex columns as .home-about-inner: the card sits under the photo (320px),
+   the heading, tabs and tool pills sit under the text column. */
+.home-toolkit {
+    margin: 0 0 8vh;
+    display: flex; flex-wrap: wrap; gap: 4vw; align-items: flex-start;
+    color: #F9F7F2;
+}
+.tk-card { flex: 0 1 320px; min-width: 0; margin-top: 84px; } /* drops level with the pills, below the heading row */
+.tk-main { flex: 1 1 520px; min-width: 0; }
+
+.tk-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px 24px; margin-bottom: 24px; min-height: 60px; }
+.tk-top h2 { font-size: 2.6rem; font-weight: 400; color: #EDED14; }
+
+/* Design / Code / AI: a segmented pill */
+.tk-tabs { display: inline-flex; gap: 4px; padding: 5px; border-radius: 999px; border: 1px solid rgba(249, 247, 242, 0.35); }
+.tk-tab {
+    font: inherit; font-size: 1.05rem; font-weight: 400; color: #F9F7F2; cursor: pointer;
+    min-height: 44px; padding: 0 20px; border: 0; border-radius: 999px; background: transparent;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.tk-tab small { font-size: 0.85rem; opacity: 0.7; }
+/* same pale-yellow hover as the Highlighted Works filters (solid, so it doesn't turn green over the teal) */
+.tk-tab:hover { background: #F5F3A4; color: #126889; }
+.tk-tab:hover small { opacity: 0.8; }
+.tk-tab[aria-selected="true"] { background: #EDED14; color: #126889; }
+.tk-tab[aria-selected="true"] small { opacity: 0.8; }
+
+/* one pill per tool */
+.tk-pills { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; }
+.tk-pill {
+    font: inherit; font-size: 1.05rem; font-weight: 400; color: #F9F7F2; cursor: pointer;
+    min-height: 48px; padding: 0 20px; border-radius: 999px; background: transparent;
+    border: 1px solid rgba(249, 247, 242, 0.45);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.tk-pill:hover, .tk-pill:focus-visible { border-color: #F5F3A4; background: #F5F3A4; color: #126889; }
+.tk-pill[aria-pressed="true"] { background: #FFD2FF; border-color: #FFD2FF; color: #126889; }
+
+/* the card that explains the selected tool */
+.tk-card-inner {
+    background: #F9F7F2; color: #323F2F; border-radius: 24px; padding: 28px;
+}
+/* only the card's contents fade, so the cream card itself stays put */
+.tk-card-inner > * { animation: tk-in 0.45s ease both; }
+@keyframes tk-in { from { opacity: 0; transform: translateY(4px); } }
+.tk-card-kicker { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; color: #126889; }
+.tk-card-inner h3 { font-size: 2.1rem; font-weight: 400; color: #126889; line-height: 1.15; margin: 14px 0 16px; }
+.tk-card-use { font-size: 1.1rem; line-height: 1.6; font-weight: 300; }
+.tk-card-used { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 24px; }
+.tk-card-used > span { font-size: 0.95rem; font-weight: 400; margin-right: 4px; }
+.tk-project {
+    font-size: 0.95rem; font-weight: 400; color: #126889; text-decoration: none;
+    padding: 5px 14px; border-radius: 999px; background: #FFD2FF; transition: background-color 0.2s ease;
+}
+a.tk-project:hover, a.tk-project:focus-visible { background: #EDED14; }
+.tk-project-plain { background: rgba(18, 104, 137, 0.1); }
+
+@media (prefers-reduced-motion: reduce) {
+    .tk-card-inner > * { animation: none; }
+    .work-preview-img, .work-preview-copy { transition: none; }
+}
+
+/* once the About block stacks (photo above text), stack this too: tools first, card under them */
+@media (max-width: 955px) {
+    .tk-card { order: 2; flex-basis: 100%; margin-top: 0; }
+    .tk-main { flex-basis: 100%; }
+}
 
 .home-about-link { color: #EDED14; font-size: 1.15rem; align-self: flex-start; }
 .home-about-link:hover { color: #FFD2FF; }
@@ -250,8 +321,8 @@
     .home-contact #intro-contact h2 { font-size: 1.2rem; }
     .home-work { padding: 16px 20px 64px; }
     .home-work-head h1 { font-size: 2.2rem; }
-    .work-filters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
-    .work-filters button { flex: none; }
+    .work-filters { overflow-x: auto; scrollbar-width: none; }
+    .work-filters button { flex: none; padding: 0 14px; font-size: 0.95rem; }
     .work-row-head { display: none; }
     .work-row { grid-template-columns: 2.5rem minmax(0, 1fr); row-gap: 8px; padding: 20px 0; }
     .work-type { grid-column: 2; }
@@ -286,3 +357,9 @@
 }
 
 .home-contact .button { color: #126889; }
+
+/* ---------- Smooth scrolling (Lenis, set up in home.js → smoothScroll) ---------- */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }

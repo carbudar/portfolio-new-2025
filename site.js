@@ -52,7 +52,7 @@ function makeFooter() {
     if (!placeholder) return;
 
     const year = new Date().getFullYear();
-    const ticker = 'Open to UX / product design ✦ Web design ✦ Creative technology ✦ Based in New York City ✦ Say hi! ✦ ';
+    const ticker = 'UX / product designer ✦ Web designer ✦ Creative technologist ✦ Based in New York City ✦ Say hi! ✦ ';
 
     const footer = document.createElement('footer');
     footer.id = 'contact';
@@ -99,7 +99,11 @@ function revealFooter(footer) {
         el.classList.add('reveal-content');
         // the page has to be opaque, or the footer would show through it
         if (isClear(getComputedStyle(el).backgroundColor)) {
+            // style.css fades every background over 0.5s; skip that here so the footer never flashes through
+            el.style.transition = 'none';
             el.style.backgroundColor = isClear(bodyBg) ? SITE.cream : bodyBg;
+            el.offsetHeight; // apply the colour before the transition comes back
+            el.style.transition = '';
         }
     });
 
@@ -145,35 +149,24 @@ function createButton(size, buttonText, className, highlightColor, color, option
     button.style.textDecoration = 'none';
     button.style.position = 'relative';
 
+    // colours go in CSS variables; the hover sweep itself is pure CSS (style.css → .button-expand)
+    button.style.setProperty('--btn-color', color);
+    button.style.setProperty('--btn-highlight', highlightColor);
+    button.style.setProperty('--btn-highlight-text', SITE.teal);
+
     const buttonExpand = document.createElement('span');
     buttonExpand.classList.add('button-expand');
+    buttonExpand.setAttribute('aria-hidden', 'true');
 
     const buttonContent = document.createElement('span');
     buttonContent.classList.add('buttonContent');
     buttonContent.style.padding = 'clamp(6px, 0.6vw, 12px) clamp(16px, 1.6vw, 28px)';
-    buttonContent.style.color = color;
 
     const buttonTitle = document.createElement(size);
     buttonTitle.innerHTML = buttonText;
     buttonContent.appendChild(buttonTitle);
 
     button.append(buttonExpand, buttonContent);
-
-    const highlight = () => {
-        const rect = buttonContent.getBoundingClientRect();
-        buttonExpand.style.width = `${rect.width}px`;
-        buttonExpand.style.height = `${rect.height}px`;
-        buttonExpand.style.backgroundColor = highlightColor;
-        buttonContent.style.color = SITE.teal;
-    };
-    const reset = () => {
-        buttonExpand.style.width = '0';
-        buttonContent.style.color = color;
-    };
-    button.addEventListener('mouseenter', highlight);
-    button.addEventListener('focus', highlight);
-    button.addEventListener('mouseleave', reset);
-    button.addEventListener('blur', reset);
 
     if (options.onClick) button.addEventListener('click', options.onClick);
 

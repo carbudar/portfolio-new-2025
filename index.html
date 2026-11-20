@@ -27,9 +27,9 @@
                     <p id="dynamic-time"></p>
                     <h1 class="introduction">
                         I'm <a href="#aboutMe" id="nameBtn"><img class="nameGif noEnlarge" src="assets/carlabudar font gif.gif" alt="Carla Budar"></a>,<br>
-                        a Creative Technologist 👩‍💻 &amp; UX Designer based in New York City 🗽
+                        a  UX Designer &amp; Creative Technologist based in New York City 🗽
                     </h1>
-                    <p class="home-tagline">I work across pixels and circuits: web and product design, plus interactive installations I design, code and build myself.</p>
+                    <p class="home-tagline">I design experiences people enjoy, then build them myself, from mobile apps and websites to interactive physical installations.</p>
                     <div class="home-contact">
                         <h2>Contact me at:</h2>
                         <div id="intro-contact">
@@ -65,7 +65,7 @@
                 <div class="home-work-head">
                     <div>
                         <h1>Highlighted Works</h1>
-                        <p>Filter by the kind of role you're hiring for.</p>
+                        <p>Filter by the kind of projects you're interested in.</p>
                     </div>
                     <div class="work-filters" role="group" aria-label="Filter projects">
                         <button type="button" data-filter="all" aria-pressed="true">All work</button>
@@ -77,16 +77,22 @@
 
                 <div class="work-layout">
                     <div class="work-list">
-                        <div class="work-row work-row-head" aria-hidden="true">
+                        <!-- <div class="work-row work-row-head" aria-hidden="true">
                             <span>No.</span><span>Project</span><span>Type</span><span>Year</span>
-                        </div>
+                        </div> -->
                         <ol class="work-rows"></ol>
                         <a class="work-archive-link" href="archive.html">+ More experiments in the archive</a>
                     </div>
                     <aside class="work-preview" aria-live="polite">
-                        <img class="work-preview-img noEnlarge" src="" alt="">
-                        <p class="work-preview-text"></p>
-                        <p class="work-preview-role"></p>
+                        <!-- two stacked images so a new thumbnail can cross-fade over the old one -->
+                        <div class="work-preview-media">
+                            <img class="work-preview-img noEnlarge is-front" src="" alt="">
+                            <img class="work-preview-img noEnlarge" src="" alt="" aria-hidden="true">
+                        </div>
+                        <div class="work-preview-copy">
+                            <p class="work-preview-text"></p>
+                            <p class="work-preview-role"></p>
+                        </div>
                     </aside>
                 </div>
             </section>
@@ -103,12 +109,20 @@
                         <p class="home-about-lead">I work across pixels and circuits to design interactive experiences.</p>
                         <p>Hi again, I am Carla Budar, a Design and Technology graduate from Parsons School of Design 🗽. I love using creative technology as tools for building fun, intuitive, and engaging experiences. I aim to produce streamlined designs, whether I'm designing for the web 👾, experimenting with systems and sensors 📟, or modelling products 🪅. I believe, "good design" is the sweet spot between practicality and play.</p>
                         <p>Outside of design work, I enjoy photography 📸 and videography 🎥 as a way of slowing down and noticing details and feelings. I also enjoy making soft structures like bags and clothing, which gives me a more intuitive, material-focused way to create 🪡 🧵, a contrast to the technical side of my practice.</p>
-                        <div class="home-toolkit">
-                            <span class="home-toolkit-label">My Toolkit</span>
-                            <p><strong>Creative Software</strong> · Illustrator, Photoshop, Premiere Pro, Lightroom, InDesign, Fusion 360, Figma, Miro, Unity</p>
-                            <p><strong>Technologies &amp; Languages</strong> · HTML, CSS, JavaScript, TypeScript, Python, C, C#, Arduino</p>
-                        </div>
                         <a class="home-about-link" href="https://carbudar.github.io/Photo-Archive/index.html#pageContainer" target="_blank" rel="noopener">Visit my photo archive →</a>
+                    </div>
+                </div>
+
+                <!-- Toolkit: same two columns as the About block above (card under the photo, tools under the text).
+                     Built from toolkit.js by home.js (toolkitPicker). -->
+                <div class="home-toolkit" aria-labelledby="toolkit-title">
+                    <aside class="tk-card" aria-live="polite"></aside>
+                    <div class="tk-main">
+                        <div class="tk-top">
+                            <h2 id="toolkit-title">My Toolkit</h2>
+                            <div class="tk-tabs" role="tablist" aria-label="Toolkit categories"></div>
+                        </div>
+                        <ul class="tk-pills" role="tabpanel" id="tk-panel"></ul>
                     </div>
                 </div>
                 <div class="backToTop"></div>
@@ -117,6 +131,8 @@
     </div>
     <div class="footerPlaceholder"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="toolkit.js"></script>
     <script src="home.js"></script>
     <script src="site.js"></script>
 </body>

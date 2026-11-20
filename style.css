@@ -693,14 +693,21 @@ min-height: 10vh;
     font-size: 1.3rem;
 }
 
+/* hover: highlight sweeps in from the left, clipped to the pill (same as the footer buttons) */
+.button { overflow: hidden; isolation: isolate; }
 .button-expand{
     position: absolute;
-    height: 100%;
-    width: 0;
-    transition: width ease 0.7s;
-    border-radius: 999px;
-
+    inset: 0;
+    z-index: 0;
+    background: var(--btn-highlight, #EDED14);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.7s ease;
 }
+.button .buttonContent { color: var(--btn-color, inherit); transition: color 0.3s ease; }
+.button:hover .button-expand, .button:focus-visible .button-expand { transform: scaleX(1); }
+.button:hover .buttonContent, .button:focus-visible .buttonContent { color: var(--btn-highlight-text, #126889); }
+@media (prefers-reduced-motion: reduce) { .button-expand { transition: none; } }
 
 
 
@@ -2366,6 +2373,9 @@ a.button, button.button { cursor: pointer; border: none; color: inherit; }
     box-shadow: 0 30px 40px -24px rgba(50, 63, 47, 0.45);
 }
 
+/* same reason, one level down: on case-study pages the clipped wrapper is a plain div around .page-container */
+.reveal-content.reveal-on .page-container { height: auto; }
+
 .site-footer {
     position: relative; z-index: 0; width: 100%; overflow: hidden;
     background: #323F2F; color: #F9F7F2;
@@ -2411,7 +2421,7 @@ a.button, button.button { cursor: pointer; border: none; color: inherit; }
 /* big name, cut off by the ticker below it */
 .sf-wordmark {
     font-size: 19vw; line-height: 0.72; white-space: nowrap; font-weight: 300; letter-spacing: -0.03em;
-    color: #126889; text-align: center; margin-top: 8px; height: 0.62em; overflow: hidden;
+    color: #126889; text-align: center; margin-top: 8px; height: 0.55em; overflow: hidden;
     pointer-events: none; user-select: none;
 }
 
