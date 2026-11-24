@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sircle · Carla Budar</title>
+    <meta name="description" content="Sircle, a mobile app concept that makes New York City recycling less confusing, designed to work on LinkNYC kiosks too.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="headerPlaceHolder"></div>
+
+        <main class="st">
+            <header class="st-hero">
+                <img src="assets/web/sircle/linknyc.jpg" alt="Sircle on a LinkNYC kiosk on a New York street at night">
+                <div class="st-hero-text">
+                    <span class="st-kicker">UX / Product · Mobile app</span>
+                    <h1>Sircle</h1>
+                    <p>An app concept that makes New York City recycling less confusing.</p>
+                </div>
+            </header>
+
+            <dl class="cs-meta">
+                <div><dt>Timeline</dt><dd>2022</dd></div>
+                <div><dt>Role</dt><dd>UX research · UI design · Brand identity · Prototyping</dd></div>
+                <div><dt>Tools</dt><dd><ul class="cs-tags"><li>Figma</li><li>Illustrator</li><li>Photoshop</li></ul></dd></div>
+            </dl>
+
+            <nav class="st-bar" aria-label="Chapters">
+                <div class="backBtn"></div>
+                <div class="st-chapters">
+                    <a href="#problem"><small>01</small>Problem</a>
+                    <a href="#linknyc"><small>02</small>Why LinkNYC</a>
+                    <a href="#process"><small>03</small>Process</a>
+                    <a href="#branding"><small>04</small>Branding</a>
+                    <a href="#design"><small>05</small>Final design</a>
+                    <a href="#reflection"><small>06</small>Reflection</a>
+                </div>
+                <span class="st-progress" aria-hidden="true"></span>
+            </nav>
+
+            <!-- 01 Problem -->
+            <section class="st-chapter" id="problem">
+                <div class="st-chapter-head st-reveal"><span>01</span><h2>The problem<small>Why recycling in New York City is harder than it should be.</small></h2></div>
+                <div class="st-row st-reveal">
+                    <figure class="st-stat">
+                        <blockquote class="st-quote">“In 2022, only 17% of what New Yorkers put out at the curb was recycled or composted. The rest went to disposal.”</blockquote>
+                        <figcaption>Source: DSNY, Annual Collection and Diversion Report, FY2022.</figcaption>
+                    </figure>
+                    <div>
+                        <p>New York has a recycling program, but it leaves the work to residents and gives them little help. The rules are hard to find and harder to remember, and on the street there’s no clear system for sorting waste on the go. Many people give up before recycling becomes a habit, especially the students and young professionals who move in and out of the city quickly. Without clear information or a reason to try, recycling becomes an afterthought.</p>
+                    </div>
+                </div>
+                <div class="st-row st-reveal">
+                    <h3 class="st-quote" style="font-size:1.6rem">What the research found</h3>
+                    <p>Researching DSNY’s program, I found five pain points:</p>
+                </div>
+                <ul class="st-cards st-reveal">
+                    <li class="st-card"><span class="st-card-kicker">Pain point 1</span><h3>Not enough accessible information</h3></li>
+                    <li class="st-card"><span class="st-card-kicker">Pain point 2</span><h3>A system that isn’t built for everyone</h3></li>
+                    <li class="st-card"><span class="st-card-kicker">Pain point 3</span><h3>Consumption-heavy habits</h3></li>
+                    <li class="st-card"><span class="st-card-kicker">Pain point 4</span><h3>A quick-turnover population</h3></li>
+                    <li class="st-card"><span class="st-card-kicker">Pain point 5</span><h3>No clear system for waste on the go</h3></li>
+                </ul>
+                <div class="st-hmw st-reveal">
+                    <span class="st-card-kicker">How might we</span>
+                    <p>How might we make recycling rewarding, easy to understand, and accessible to every New Yorker, with or without a smartphone?</p>
+                </div>
+            </section>
+
+            <!-- 02 Why LinkNYC -->
+            <section class="st-chapter" id="linknyc">
+                <div class="st-chapter-head st-reveal"><span>02</span><h2>Why LinkNYC<small>Access for everyone, including people without smartphones.</small></h2></div>
+                <div class="st-row st-reveal">
+                    <p class="st-quote">“Recycling help shouldn’t depend on owning a phone.”</p>
+                    <div>
+                        <p>A phone app alone would leave out the New Yorkers who most need simple, free access to information: older residents, people on limited incomes, people experiencing homelessness, and anyone whose phone is broken, out of data, or out of battery.</p>
+                        <p>LinkNYC kiosks were a natural fit. They’re already on sidewalks across the city, they’re free, and they’re designed for public use. Building Sircle into infrastructure the city already has means no new hardware and no download needed. Residents can log in at any kiosk to find drop-off spots, check the rules, and track their points.</p>
+                    </div>
+                </div>
+                <div class="st-row st-reveal">
+                    <h3 class="st-quote" style="font-size:1.6rem">How that changed the design</h3>
+                    <div>
+                        <p>Designing for a shared public screen changed my approach. The kiosk version uses larger tap targets and type, high-contrast visuals that stay readable outdoors, and shorter flows built for quick sessions while standing on the street.</p>
+                        <p>Logging in is fast (for example, with a phone number and a PIN), and accounts log out automatically to protect privacy on a shared device. The kiosk focuses on the most-needed features (the map, the recycling rules, and your points), while longer activities like the community page stay on the phone.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 03 Process -->
+            <section class="st-chapter" id="process">
+                <div class="st-chapter-head st-reveal"><span>03</span><h2>Process<small>From pain points to wireframes.</small></h2></div>
+                <ul class="cs-grid is-contain st-reveal">
+                    <li><figure><img src="assets/web/sircle/define.png" alt="Define stage: pain points and How Might We notes" loading="lazy"><figcaption><b>Define</b>Pain points and How Might We questions</figcaption></figure></li>
+                    <li><figure><img src="assets/web/sircle/ideate.png" alt="Ideate stage: solution ideas and an affinity diagram" loading="lazy"><figcaption><b>Ideate</b>Solution ideas and affinity diagram</figcaption></figure></li>
+                    <li><figure><img src="assets/web/sircle/prioritization.png" alt="Prioritization matrix: user value against effort" loading="lazy"><figcaption><b>Prioritize</b>Features by user value and effort</figcaption></figure></li>
+                    <li><figure><img src="assets/web/sircle/greybox-1.png" alt="Greybox screens, first round" loading="lazy"><figcaption><b>Greybox</b>First layout explorations</figcaption></figure></li>
+                    <li><figure><img src="assets/web/sircle/greybox-2.png" alt="Greybox screens, second round" loading="lazy"><figcaption><b>Greybox</b>Second round of layouts</figcaption></figure></li>
+                    <li><figure><img src="assets/web/sircle/wireframe.png" alt="Wireframe flow connecting every screen" loading="lazy"><figcaption><b>Wireframe</b>The full prototype flow</figcaption></figure></li>
+                </ul>
+            </section>
+
+            <!-- 04 Branding -->
+            <section class="st-chapter" id="branding">
+                <div class="st-chapter-head st-reveal"><span>04</span><h2>Branding<small>A calm, earthy identity built around the “S” mark.</small></h2></div>
+                <div class="st-tabs st-reveal">
+                    <div class="st-tablist" role="tablist" aria-label="Branding"><button type="button" class="st-tab" role="tab" id="branding-t0" aria-controls="branding-p0">Logo</button><button type="button" class="st-tab" role="tab" id="branding-t1" aria-controls="branding-p1">Colours</button><button type="button" class="st-tab" role="tab" id="branding-t2" aria-controls="branding-p2">Buttons</button></div>
+                    <div class="st-tabpanel" role="tabpanel" id="branding-p0" aria-labelledby="branding-t0" tabindex="0"><p>The name Sircle comes from “circle,” a nod to the cycle at the heart of recycling. I built the logo from two linked circles that form an S and also read as an infinity sign, which carries the idea of a loop that never ends.</p><div style="max-width:640px"><img src="assets/web/sircle/logo.png" alt="Logo sketches and the final S mark" loading="lazy"></div></div>
+                    <div class="st-tabpanel" role="tabpanel" id="branding-p1" aria-labelledby="branding-t1" tabindex="0"><img src="assets/web/sircle/colours.png" alt="Colour palette with tints and shades" loading="lazy"></div>
+                    <div class="st-tabpanel" role="tabpanel" id="branding-p2" aria-labelledby="branding-t2" tabindex="0"><div style="max-width:640px"><img src="assets/web/sircle/buttons.png" alt="Button and icon components" loading="lazy"></div></div>
+                </div>
+            </section>
+
+            <!-- 05 Final design -->
+            <section class="st-chapter" id="design">
+                <div class="st-chapter-head st-reveal"><span>05</span><h2>Final design<small>A walkthrough of the clickable prototype.</small></h2></div>
+                <div class="st-under-title st-reveal">
+                    <figure style="margin:0;max-width:300px"><video muted loop playsinline preload="metadata" src="assets/video/sircle-app-demo.mp4" style="width:100%;display:block;border-radius:36px"></video><figcaption style="font-size:0.9rem;color:#5b6358;margin-top:10px">Prototype walkthrough</figcaption></figure>
+                </div>
+                <h3 class="st-reveal" style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:#126889;margin:56px 0 14px">Key features</h3>
+                <ul class="st-cards is-3 st-reveal">
+                    <li class="st-card"><span class="st-card-kicker">Feature 01</span><h3>Onboarding</h3><p>Introduces Sircle’s purpose and gets new users set up quickly, so the first visit explains why recycling here is worth it.</p></li>
+                    <li class="st-card"><span class="st-card-kicker">Feature 02</span><h3>Loading animation</h3><p>A small branded moment that gives the app personality and makes waiting feel shorter.</p></li>
+                    <li class="st-card"><span class="st-card-kicker">Feature 03</span><h3>News and articles</h3><p>Keeps New Yorkers up to date on environmental news and changes to the city’s recycling system, which addresses the “not enough information” pain point.</p></li>
+                    <li class="st-card"><span class="st-card-kicker">Feature 04</span><h3>Map</h3><p>Shows nearby recycling and drop-off spots, so disposing of waste properly is easy wherever you are, including on the go.</p></li>
+                    <li class="st-card"><span class="st-card-kicker">Feature 05</span><h3>Community</h3><p>A space to ask questions and share tips about recycling, so learning the system doesn’t fall on one person alone.</p></li>
+                    <li class="st-card"><span class="st-card-kicker">Feature 06</span><h3>Recycling history</h3><p>A log of everything you’ve recycled, so your effort becomes something you can see.</p></li>
+                    <li class="st-card"><span class="st-card-kicker">Feature 07</span><h3>Points and rewards</h3><p>Points earned from recycling can be redeemed for New York merch or discounts at participating local businesses, an incentive aimed at the city’s younger, fast-moving residents.</p></li>
+                    <li class="st-card"><span class="st-card-kicker">Feature 08</span><h3>Monthly data viz</h3><p>Compares your recycling month to month and turns a habit into visible progress.</p></li>
+                    <li class="st-card"><span class="st-card-kicker">Feature 09</span><h3>Settings</h3><p>Lets users manage their account and preferences.</p></li>
+                </ul>
+            </section>
+
+            <!-- 06 Reflection -->
+            <section class="st-chapter" id="reflection">
+                <div class="st-chapter-head st-reveal"><span>06</span><h2>Reflection<small>What designing Sircle taught me, and what I’d do differently now.</small></h2></div>
+                <h3 class="st-reveal" style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:#126889;margin-bottom:12px">Key learnings</h3>
+                <ol class="st-learn st-reveal">
+                    <li><h3>Accessibility is a system decision, not a screen-level fix</h3><p>My first idea was a phone app. Asking who it left out moved Sircle onto LinkNYC kiosks. The most inclusive choice wasn’t a feature I added. It was changing where the product lives.</p></li>
+                    <li><h3>Building into existing infrastructure beats building from scratch</h3><p>Plugging into LinkNYC meant no new hardware and no download, and it reached people where they already are. I learned to look at what a city already has before designing something new.</p></li>
+                    <li><h3>Motivation has to be designed, not assumed</h3><p>Plenty of New Yorkers know recycling matters, but knowing doesn’t turn into habit. Points, rewards, and progress tracking gave people a reason to start. Education and the community page gave them a reason to keep going.</p></li>
+                    <li><h3>Designing for two contexts sharpens priorities</h3><p>Fitting Sircle onto a public kiosk made me decide which features were essential (the map, the rules, your points) and which could stay on the phone. That constraint made the whole product clearer.</p></li>
+                    <li><h3>Behavior change needs clarity before incentives</h3><p>The research kept pointing back to missing information. Rewards only work once people understand the rules, so clear, easy-to-reach guidance had to come first.</p></li>
+                </ol>
+                <div class="st-hmw st-reveal" style="margin-top:56px">
+                    <span class="st-card-kicker">Looking back</span>
+                    <p style="max-width:62ch;font-size:clamp(1.1rem,1.7vw,1.4rem);line-height:1.5">If I revisited Sircle today, I’d test the reward system with real users. In a later project, <a href="stroll-app.html" style="color:#EDED14">Stroll</a>, participants told me streak-based incentives felt stressful rather than motivating, and I’d want to make sure Sircle’s points feel like a bonus, not a chore.</p>
+                </div>
+            </section>
+
+            <a class="cs-next" href="dotmap.html"><div><small>Next project</small><strong>Dot Map</strong></div><span aria-hidden="true">→</span></a>
+        </main>
+
+        <div class="footerPlaceholder"></div>
+    </div>
+
+    <script src="site.js"></script>
+    <script src="case-study.js"></script>
+</body>
+</html>

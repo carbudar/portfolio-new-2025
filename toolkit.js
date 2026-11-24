@@ -17,7 +17,7 @@ const TOOLKIT_PROJECTS = {
     huehunter: { name: 'Hue Hunter',             href: 'project-info.html?project=Hue%20Hunter' },
     timekeeper:{ name: 'Time Keeper',            href: 'project-info.html?project=Time%20Keeper' },
     dataportrait: { name: 'Data Portrait',       href: 'project-info.html?project=Data%20Portrait' },
-    sircle:    { name: 'Sircle',                 href: 'project-info.html?project=Sircle' },
+    sircle:    { name: 'Sircle',                 href: 'sircle.html' },
     photos:    { name: 'Photo Archive',          href: 'project-info.html?project=Photo%20Archive' },
 };
 

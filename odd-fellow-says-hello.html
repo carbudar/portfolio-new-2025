@@ -4,336 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odd Fellow Says Hello · Carla Budar</title>
-    <meta name="description" content="GPT generates every round. The hard part was prompt design and parsing, so the model always returns consistent, playable puzzles.">
+    <meta name="description" content="An endless odd-one-out word game. GPT generates every round; the hard part was prompt design so puzzles stay consistent and playable.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="stylesheet" href="stroll.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="case-study.css">
 </head>
 <body>
+    <div class="page-container">
+        <div class="headerPlaceHolder"></div>
 
-    <div>
-        <div class="page-container">
-            <div class="headerPlaceHolder"></div>
-            <div class="backBtn"></div>
-<div id="ofsh-container">
-            <div id="stroll-header">
-                <div id="stroll-title" class="stroll-column-left"> 
+        <main class="st">
+            <header class="st-hero">
+                <video autoplay muted loop playsinline src="assets/video/odd-fellow-says-hello-video-mockup.mp4"></video>
+                <div class="st-hero-text">
+                    <span class="st-kicker">Web game · AI</span>
                     <h1>Odd Fellow Says Hello</h1>
+                    <p>An endless odd-one-out word game, where an LLM generates every round.</p>
                 </div>
-                <div id="stroll-date" class="stroll-column-right">
-                    <h3>November - December 2024</h3>
-                </div>
-                
-            </div>
-             <div id="ofsh-splash-video">
-                <video playsinline autoplay loop muted>
-                    <source src="assets/video/odd-fellow-says-hello-video-mockup.mp4">
-                </video>
-                </div>
+            </header>
 
-            <div id="stroll-general-info">
-                <div id="stroll-overview" class="stroll-column-left">
-                     <h3 >Responsibilities</h3>
-                    <p>Designer · Programmer </p>
-                    <br>
-                    <hr>
-          
+            <dl class="cs-meta is-4">
+                <div><dt>Timeline</dt><dd>November – December 2024</dd></div>
+                <div><dt>Role</dt><dd>Designer · Programmer</dd></div>
+                <div><dt>Tools</dt><dd><ul class="cs-tags"><li>TypeScript</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>Deno / Oak</li><li>OpenAI API</li><li>Bash</li></ul></dd></div>
+                <div><dt>Play it</dt><dd><a href="https://odd-fellow-says-hello.vercel.app/" target="_blank" rel="noopener" style="color:#126889">odd-fellow-says-hello.vercel.app ↗</a></dd></div>
+            </dl>
+
+            <nav class="st-bar" aria-label="Chapters">
+                <div class="backBtn"></div>
+                <div class="st-chapters">
+                    <a href="#overview"><small>01</small>Overview</a>
+                    <a href="#ai"><small>02</small>Why AI</a>
+                    <a href="#features"><small>03</small>Features</a>
+                    <a href="#process"><small>04</small>Process</a>
+                    <a href="#reflection"><small>05</small>Reflection</a>
                 </div>
-                <div id="stroll-details" class="stroll-column-right">
-            
-                    <h3 >Tools</h3>
-                    <p>Bash · OpenAI API · HTML · CSS · Javascript Typescript</p>
-                   <br>
-                    <hr>
+                <span class="st-progress" aria-hidden="true"></span>
+            </nav>
 
-
-                    
-                </div>
-            </div>
-
-           
-            <div id="dotMap-problem-statement">
-                <h1>One’s a little different—can you spot the Odd Fellow?</h1>
-                <br><br>
-                    <p>
-                        Put your wits to the test with Odd Fellow Says Hello, a game of wordplay and fun! In each round, you’ll face four words, but one doesn’t belong. Is it a trick of meaning or a subtle twist of context? Gather your friends or challenge yourself to find the Odd Fellow before time runs out. Perfect for quick thinkers, word lovers, and anyone who loves a clever challenge.<br> <br>Are you sharp enough to spot the odd fellow? Odd fellow says hello!
-                    </p>
-
-                </div>
-                    <div class="iframe-wrapper">
-                    <iframe 
-                        src="https://odd-one-out-game.deno.dev/" 
-                        loading="lazy"
-                        referrerpolicy="no-referrer"
-                    ></iframe>
-                    <p>Note: If the application is temporarily unavailable or not functioning as expected, it is likely due to an issue with the AI API connection or usage limits. I am actively working on resolving this and restoring full functionality as soon as possible.
-                        <br><br>
-                        In the meantime, please refer to the video walk through to understand the gameplay. Thank you!
-                    </p>
+            <!-- 01 Overview -->
+            <section class="st-chapter" id="overview">
+                <div class="st-chapter-head st-reveal"><span>01</span><h2>Overview<small>Four words, one doesn’t belong. Try it below.</small></h2></div>
+                <div class="st-row st-reveal">
+                    <p class="st-quote">One’s a little different. Can you spot the Odd Fellow?</p>
+                    <div>
+                        <p>Put your wits to the test with Odd Fellow Says Hello, a game of wordplay and fun! In each round, you’ll face four words, but one doesn’t belong. Is it a trick of meaning or a subtle twist of context? Gather your friends or challenge yourself to find the Odd Fellow before time runs out. Perfect for quick thinkers, word lovers, and anyone who loves a clever challenge.</p>
+                        <p>Are you sharp enough to spot the odd fellow? Odd fellow says hello!</p>
                     </div>
-
-
-                 <div id="ofsh-background">
-                    <h1>What was the inspiration?</h1>
-                    <p>I wanted to explore artificial intelligence in a way that felt purposeful rather than superficial, using it where it genuinely adds value instead of treating it as a novelty feature. This project became an opportunity to question what makes AI a meaningful tool in interactive systems and creative technology.
-
-                    <br><br>
-
-                    In Odd Fellow Says Hello, the OpenAI API functions as a word-generation engine that creates groups of four related terms while introducing a subtle “odd one out.” Each set is designed so that the difference is not obvious, encouraging players to think critically about categorization, language, and ambiguity. By embedding AI directly into the game’s core logic, the system can generate continuous, infinite rounds without requiring manually curated word sets, demonstrating a productive collaboration between human designers and machine intelligence.
-                    </p>
                 </div>
-
-                
-                <div id="key-feature-title">
-                    <h3 >Key Features</h3>
+                <h3 class="st-quote st-reveal" style="font-size:1.6rem;margin-bottom:6px">Test the game out</h3>
+                <p class="st-reveal" style="font-size:1.05rem;font-weight:300;margin-bottom:20px">It’s fully playable right here: press start, then find the word that doesn’t belong before time runs out.</p>
+                <!-- The game only loads when someone presses Start (each round calls the OpenAI API) -->
+                <div class="st-embed is-tall st-play st-reveal" style="margin-bottom:16px" data-src="https://odd-fellow-says-hello.vercel.app/" data-title="Odd Fellow Says Hello, playable">
+                    <img class="no-zoom" src="assets/web/ofsh/game-poster.jpg" alt="">
+                    <button type="button" class="st-play-start"><span aria-hidden="true">▶</span> Start the game</button>
+                    <button type="button" class="st-play-end" hidden>End game</button>
                 </div>
-                <div id="dot-map-outputs">
-                    <div class="ofsh-key-feature">
-                        <video playsinline src="assets/video/ofsh-countdown-timer.mp4" loop muted autoplay class="ofsh-key-feature-element"></video>
-                        <p>Countdown timer</p>
+                <p class="st-note st-reveal" style="margin-bottom:72px">Note: if the game is temporarily unavailable, it’s likely an issue with the AI API connection or usage limits. I’m working on restoring full functionality. In the meantime, the video at the top of the page walks through the gameplay.</p>
+            </section>
+
+            <!-- 02 Why AI -->
+            <section class="st-chapter" id="ai">
+                <div class="st-chapter-head st-reveal"><span>02</span><h2>Why AI<small>Using AI where it genuinely adds value, not as a novelty.</small></h2></div>
+                <div class="st-row st-reveal">
+                    <p class="st-quote">The OpenAI API is the game’s word engine: endless rounds, no hand-written word sets.</p>
+                    <div>
+                        <p>I wanted to explore artificial intelligence in a way that felt purposeful rather than superficial, using it where it genuinely adds value instead of treating it as a novelty feature. This project became an opportunity to question what makes AI a meaningful tool in interactive systems and creative technology.</p>
+                        <p>In Odd Fellow Says Hello, the OpenAI API functions as a word-generation engine that creates groups of four related terms while introducing a subtle “odd one out.” Each set is designed so that the difference is not obvious, encouraging players to think critically about categorization, language, and ambiguity. By embedding AI directly into the game’s core logic, the system can generate continuous, infinite rounds without requiring manually curated word sets, demonstrating a productive collaboration between human designers and machine intelligence.</p>
                     </div>
-
-                      <div class="ofsh-key-feature">
-                        <img src="assets/Documentation/ofsh_words.jpg" class="ofsh-key-feature-element" alt="Ofsh words" loading="lazy">
-                        <p>AI generated word group</p>
-                       
-                    </div>
-
-                    <div class="ofsh-key-feature">
-                        <img src="assets/Documentation/ofsh_point_counter.gif" class="ofsh-key-feature-element" alt="Ofsh point counter" loading="lazy">
-                        <p>Point counter</p>
-                    </div>
-
-                  
-
-                      <div class="ofsh-key-feature">
-                        <video playsinline src="assets/video/ofsh-hover-effect.mp4" loop muted autoplay class="ofsh-key-feature-element"></video>
-                        <p>Hover effect</p>
-                    </div>
-                    
-
-                
-
-                    <div class="ofsh-key-feature">
-                        <img src="assets/Documentation/ofsh_answer_message.gif" class="ofsh-key-feature-element" alt="Ofsh answer message" loading="lazy">
-                        <p>Right or wrong answer indicator</p>
-                        
-                    </div>
-                  
                 </div>
+            </section>
 
+            <!-- 03 Features -->
+            <section class="st-chapter" id="features">
+                <div class="st-chapter-head st-reveal"><span>03</span><h2>Key features<small>Small touches that add tension, reward and feedback.</small></h2></div>
+                <ul class="st-cards st-reveal">
+                    <li class="st-card is-feature"><video muted loop playsinline preload="metadata" src="assets/video/ofsh-countdown-timer.mp4"></video><h3>Countdown timer</h3><p>A sense of urgency in every round.</p></li>
+                    <li class="st-card is-feature"><img src="assets/Documentation/ofsh_words.jpg" alt="" loading="lazy"><h3>AI-generated word groups</h3><p>Four words, one odd fellow, new every round.</p></li>
+                    <li class="st-card is-feature"><img src="assets/Documentation/ofsh_point_counter.gif" alt="" loading="lazy"><h3>Point counter</h3><p>Keeps track of right answers.</p></li>
+                    <li class="st-card is-feature"><video muted loop playsinline preload="metadata" src="assets/video/ofsh-hover-effect.mp4"></video><h3>Hover effect</h3><p>Word boxes react as you choose.</p></li>
+                    <li class="st-card is-feature"><img src="assets/Documentation/ofsh_answer_message.gif" alt="" loading="lazy"><h3>Right or wrong indicator</h3><p>Instant feedback, with the reasoning.</p></li>
+                </ul>
+            </section>
 
-                <div id="ofsh-process">
-                    <h1>How was Odd Fellow Says Hello developed?</h1>
-
-                    <div id="ofsh-process-ideation">
-
-                    <h2>Phase 0: Ideation</h2>
-                    <p>I am interested in brain-teaser and word-based games, and this project explores how large language models can support the creation of these systems. It shows the intentional use of AI as a creative tool in designing generative word-game mechanics. </p>
-
-                    <br><br>
-                    
-                    <div id="ofsh_proof-of-concept">
-                        
-                        <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/Process/Odd Fellow Says Hello Flow Chart.png" alt="Odd Fellow Says Hello Flow Chart" loading="lazy">
-                            <p>Web-based game flow chart</p>
-
-                        </div>
-                        <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/Process/Odd Fellow Says Hello sketch.jpg" alt="Odd Fellow Says Hello sketch" loading="lazy">
-                            <p>Sketch and features</p>
-
-                        </div>
-                        <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/Process/Odd fellow says hello sketch + color map.png" alt="Odd fellow says hello sketch + color map" loading="lazy">
-                            <p>Color palette and low-fidelity mockup</p>
-
-                        </div>
-                        
-                    </div>
-                    </div>
-
-                    
-
-
-                    <div id="ofsh-process-poc">
-                        <h2>Phase 1: Proof of Concept</h2>
-                    <p>In this phase, I integrated the OpenAI API to test the viability of the concept. I developed structured prompts to enable consistent, continuous word generation and displayed the results directly within the interface.</p>
-                    <br><br>
-                    
-                    <div id="ofsh_proof-of-concept">
-                        
-                        <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/ofsh-poc-terminal.png" alt="Ofsh poc terminal" loading="lazy">
-                            <p>Generated words are shown in the terminal, it also separates teh odd one out.</p>
-
-                        </div>
-                        <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/ofsh-poc-web.png" alt="Ofsh poc web" loading="lazy">
-                            <p>Showing word options on the interface with buttons for users to choose.</p>
-
-                        </div>
-                        <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/ofsh-poc-answer-terminal.png" alt="Ofsh poc answer terminal" loading="lazy">
-                            <p>The LLM then checks if the user answer and the right answer is reflective. While also providing reasoning behind the answer.</p>
-
-                        </div>
-                        <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/ofsh-poc-answer-web.png" alt="Ofsh poc answer web" loading="lazy">
-                            <p>The reasoning is shown onto the interface after the users lock in their answers.</p>
-
-                        </div>
-
-                    </div>
-
-                    </div>
-
-                    <div id="ofsh-process-wip">
-                        <h2>Phase 2: Work in Progress</h2>
-                    <p>In this phase, I started building on my User Interface design. Keeping it simple, streamlined, yet fun to interact with. I was inspired by the New York Times game interfaces, which is reflected through my design here.</p>
-
-                    <br><br>
-                    
-                    <div id="ofsh_proof-of-concept">
-                        
-                        <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/ofsh-wip-web-default.png" alt="Ofsh wip web default" loading="lazy">
-                            <p>Word options are shown in the center of the screen as big boxes to be the main focus of the page.</p>
-
-                        </div>
-                        <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/ofsh-wip-web-answered.png" alt="Ofsh wip web answered" loading="lazy">
-                            <p>The answer reasonings are shown below the word options. I also added a button to generate a new set of words.</p>
-
-                        </div>
-                        <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/ofsh-wip-terminal.png" alt="Ofsh wip terminal" loading="lazy">
-                            <p>This terminal capture shows early iterations of the system, where some word groups appeared overly distinct (for example, Red, Blue, Green, Lemon). I refined the prompt to produce subtler and less predictable groupings.</p>
-
-                        </div>
-
-                    </div>
-
-                    </div>
-
-                    
-                    <div id="ofsh-process-final">
-
-                        <h2>Phase 3: Final Web App</h2>
-                    <p>Finally, after the system is proven to be working effectively, I designed the interface to be fun and playful, yet not too overwhelming, making it accessible to players of all ages.</p>
-
-                    <br><br>
-                    
-                    <div id="ofsh_proof-of-concept">
-                        
-                        <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/ofsh-final-landing-page.png" alt="Ofsh final landing page" loading="lazy">
-                            <p>Landing page with game title and tagline</p>
-
-                        </div>
-
-                         <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/ofsh-final-quiz-page.png" alt="Ofsh final quiz page" loading="lazy">
-                            <p>I added a countdown timer in the  main game section to add a sense of urgency, a point counter to keep track of right answers and to motivate users to be more competitive, and a hover effect on each word box to make the page feels more interactive and engaging.</p>
-
-                        </div>
-
-                        <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/ofsh-final-right.png" alt="Ofsh final right" loading="lazy">
-                            <p>When players chose the right answer, this indicator screen will pop up. A point will be added to the point counter as well as show why the chosen answer was the correct answer. </p>
-
-                        </div>
-                        <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/ofsh-final-wrong.png" alt="Ofsh final wrong" loading="lazy">
-                            <p>When players select an incorrect answer, a red overlay appears with feedback explaining the correct choice and the reasoning behind it. This feature supports learning by helping younger players expand their vocabulary and understand word groupings.
-                            </p>
-
-                        </div>
-                        <div class="ofsh_proof-of-concept-child">
-                            <img src="assets/Documentation/ofsh-final-timesup.png" alt="Ofsh final timesup" loading="lazy">
-                            <p>When a player fails to choose an option before the countdown timer runs out, this Time's Up screen will appear and resets the point counter to 0. This feature enhances the time-based rule, adding a fun yet thrilling feeling for the players.</p>
-
-                        </div>
-                    </div>
-
-                    </div>
-
-                  
-
-
+            <!-- 04 Process -->
+            <section class="st-chapter" id="process">
+                <div class="st-chapter-head st-reveal"><span>04</span><h2>Process<small>From a terminal proof of concept to the finished web app, in four phases.</small></h2></div>
+                <div class="st-tabs st-reveal">
+                    <div class="st-tablist" role="tablist" aria-label="Process phases"><button type="button" class="st-tab" role="tab" id="process-phases-t0" aria-controls="process-phases-p0">0 · Ideation</button><button type="button" class="st-tab" role="tab" id="process-phases-t1" aria-controls="process-phases-p1">1 · Proof of concept</button><button type="button" class="st-tab" role="tab" id="process-phases-t2" aria-controls="process-phases-p2">2 · Work in progress</button><button type="button" class="st-tab" role="tab" id="process-phases-t3" aria-controls="process-phases-p3">3 · Final web app</button></div>
+                    <div class="st-tabpanel" role="tabpanel" id="process-phases-p0" aria-labelledby="process-phases-t0" tabindex="0"><p>I am interested in brain-teaser and word-based games, and this project explores how large language models can support the creation of these systems. It shows the intentional use of AI as a creative tool in designing generative word-game mechanics.</p><div class="st-grid-2"><figure><img src="assets/Documentation/Process/Odd Fellow Says Hello Flow Chart.png" alt="Web-based game flow chart" loading="lazy"><figcaption>Web-based game flow chart</figcaption></figure><figure><img src="assets/web/ofsh/sketch.jpg" alt="Sketch and features" loading="lazy"><figcaption>Sketch and features</figcaption></figure><figure><img src="assets/Documentation/Process/Odd fellow says hello sketch + color map.png" alt="Colour palette and low-fidelity mockup" loading="lazy"><figcaption>Colour palette and low-fidelity mockup</figcaption></figure></div></div>
+                    <div class="st-tabpanel" role="tabpanel" id="process-phases-p1" aria-labelledby="process-phases-t1" tabindex="0"><p>I integrated the OpenAI API to test the viability of the concept. I developed structured prompts to enable consistent, continuous word generation and displayed the results directly within the interface.</p><div class="st-grid-2"><figure><img src="assets/Documentation/ofsh-poc-terminal.png" alt="Generated words in the terminal, with the odd one out separated" loading="lazy"><figcaption>Generated words in the terminal, with the odd one out separated</figcaption></figure><figure><img src="assets/Documentation/ofsh-poc-web.png" alt="Word options on the interface, with buttons to choose" loading="lazy"><figcaption>Word options on the interface, with buttons to choose</figcaption></figure><figure><img src="assets/Documentation/ofsh-poc-answer-terminal.png" alt="The LLM checks the player’s answer against the right one, and explains why" loading="lazy"><figcaption>The LLM checks the player’s answer against the right one, and explains why</figcaption></figure><figure><img src="assets/Documentation/ofsh-poc-answer-web.png" alt="The reasoning appears on the interface once the player locks in" loading="lazy"><figcaption>The reasoning appears on the interface once the player locks in</figcaption></figure></div></div>
+                    <div class="st-tabpanel" role="tabpanel" id="process-phases-p2" aria-labelledby="process-phases-t2" tabindex="0"><p>I started building the user interface: simple, streamlined, yet fun to interact with. I was inspired by The New York Times’ game interfaces, which is reflected in the design.</p><div class="st-grid-2"><figure><img src="assets/Documentation/ofsh-wip-web-default.png" alt="Word options as big boxes in the centre, the main focus of the page" loading="lazy"><figcaption>Word options as big boxes in the centre, the main focus of the page</figcaption></figure><figure><img src="assets/Documentation/ofsh-wip-web-answered.png" alt="Answer reasoning below the words, plus a button to generate a new set" loading="lazy"><figcaption>Answer reasoning below the words, plus a button to generate a new set</figcaption></figure><figure><img src="assets/Documentation/ofsh-wip-terminal.png" alt="Early word groups were too distinct (Red, Blue, Green, Lemon), so I refined the prompt for subtler groupings" loading="lazy"><figcaption>Early word groups were too distinct (Red, Blue, Green, Lemon), so I refined the prompt for subtler groupings</figcaption></figure></div></div>
+                    <div class="st-tabpanel" role="tabpanel" id="process-phases-p3" aria-labelledby="process-phases-t3" tabindex="0"><p>Once the system worked reliably, I designed the interface to be fun and playful, yet not overwhelming, making it accessible to players of all ages.</p><div class="st-grid-2"><figure><img src="assets/Documentation/ofsh-final-landing-page.png" alt="Landing page with the game title and tagline" loading="lazy"><figcaption>Landing page with the game title and tagline</figcaption></figure><figure><img src="assets/Documentation/ofsh-final-quiz-page.png" alt="Game screen: a countdown for urgency, a point counter for motivation, and hover effects on each word" loading="lazy"><figcaption>Game screen: a countdown for urgency, a point counter for motivation, and hover effects on each word</figcaption></figure><figure><img src="assets/Documentation/ofsh-final-right.png" alt="Right answer: a point is added, with why the answer was correct" loading="lazy"><figcaption>Right answer: a point is added, with why the answer was correct</figcaption></figure><figure><img src="assets/Documentation/ofsh-final-wrong.png" alt="Wrong answer: a red overlay explains the correct choice, helping younger players grow their vocabulary" loading="lazy"><figcaption>Wrong answer: a red overlay explains the correct choice, helping younger players grow their vocabulary</figcaption></figure><figure><img src="assets/Documentation/ofsh-final-timesup.png" alt="Time’s up: the point counter resets to 0, adding a fun, thrilling edge" loading="lazy"><figcaption>Time’s up: the point counter resets to 0, adding a fun, thrilling edge</figcaption></figure></div></div>
                 </div>
-                
-                <div>
-                     <div id="ofsh-splash-video">
-                <video playsinline autoplay loop muted>
-                    <source src="assets/video/odd-fellow-says-hello-video-mockup.mp4">
-                </video>
-                </div>
-                </div>
-                
-               
-                
+            </section>
 
+            <!-- 05 Reflection -->
+            <section class="st-chapter" id="reflection">
+                <div class="st-chapter-head st-reveal"><span>05</span><h2>Reflection<small>What building it taught me.</small></h2></div>
+                <h3 class="st-reveal" style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:#126889;margin:0px 0 14px">Key learnings</h3>
+                <ol class="st-learn st-reveal">
+                    <li><h3>Intentional use of AI</h3><p>Rather than relying on AI as a “must-have” feature, I treated it as a design material with its own specific and effective use.</p></li>
+                    <li><h3>Emotion-driven game design</h3><p>Visual feedback, timers and scoring systems were used deliberately to create tension, reward and momentum, shaping how players feel as they move through each round.</p></li>
+                    <li><h3>Accessible, all-ages interaction</h3><p>The interface was streamlined to reduce cognitive load while remaining playful, so the game is approachable for both younger players and adults.</p></li>
+                    <li><h3>Motion as a design tool</h3><p>Animations and hover states were integrated not just for decoration, but to guide attention, reinforce feedback and increase engagement.</p></li>
+                    <li><h3>Iterative prototyping with AI systems</h3><p>Continuous testing and prompt refinement were essential to achieving believable word groupings and keeping the game logic fair.</p></li>
+                    <li><h3>Educational feedback through play</h3><p>Incorrect answers trigger explanatory overlays, turning mistakes into learning opportunities and reinforcing vocabulary through gameplay.</p></li>
+                </ol>
+            </section>
 
+            <a class="cs-next" href="when-the-flower-stops-breathing.html"><div><small>Next project</small><strong>When The Flower Stops Breathing</strong></div><span aria-hidden="true">→</span></a>
+        </main>
 
-                <div id="dotmap-key-learnings">
-               
-                <div id="key-learning-cascading">
-                     <h1>Key Learnings</h1>
-                     
-                    <div class="key-learning">
-                    <h3>1. Intentional Use of AI</h3>
-                    <p class="dotmap-lineheight">Rather than relying on AI just as a "must-have" feature, I treated it as a design material, that has it's own specific and effective use.</p>
-         
-                </div>
-
-                 <div class="key-learning">
-                    <h3>2. Emotion-Driven Game Design</h3>
-                    <p class="dotmap-lineheight">Visual feedback, timers, and scoring systems were used deliberately to create tension, reward, and momentum, shaping how players feel as they move through each round.</p>
-                 
-                </div>
-
-                <div class="key-learning">
-                    <h3>3. Accessible, All-Ages Interaction</h3>
-                    <p class="dotmap-lineheight">The interface was streamlined to reduce cognitive load while remaining playful, ensuring the game is approachable for both younger players and adults.</p>
-                  
-                </div>
-                <div class="key-learning ">
-                    <h3>4. Motion as a Design Tool</h3>
-                    <p class="dotmap-lineheight">Animations and hover states were integrated not just for decoration, but to guide attention, reinforce feedback, and increase engagement.</p>
-                  
-                </div>
-                  <div class="key-learning ">
-                    <h3>5. Iterative Prototyping with AI Systems</h3>
-                    <p class="dotmap-lineheight">Continuous testing and prompt refinement were essential to achieving believable word groupings and maintaining fairness in the game logic.</p>
-                  
-                </div>
-                  <div class="key-learning ">
-                    <h3>6. Educational Feedback Through Play</h3>
-                    <p class="dotmap-lineheight">Incorrect answers triggered explanatory overlays, turning mistakes into learning opportunities and reinforcing vocabulary development through gameplay.</p>
-                  
-                </div>
-               
-                </div>
-                
-            </div>
-
-            
-
-               
-            
-                </div>
-                <h1 id="stroll-thank-you">Thank you for reading.</h1>
-                <div class="footerPlaceholder"></div>
-
-     </div>
+        <div class="footerPlaceholder"></div>
     </div>
-   
 
     <script src="site.js"></script>
+    <script src="case-study.js"></script>
 </body>
 </html>

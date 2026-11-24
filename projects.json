@@ -1,6 +1,61 @@
 {
     "highlight": {
         "Highlight1": {
+            "name": "Stroll",
+            "year": "2025",
+            "info": "",
+            "material": [
+                ""
+            ],
+            "link": "",
+            "haveLink": false,
+            "isPhysical": false,
+            "pageLink": "stroll-app.html",
+            "documentation": {
+                "thumbnail": "assets/Documentation/Stroll/Stroll Thumbnail.png",
+                "doc1": "",
+                "doc2": "",
+                "doc3": ""
+            },
+            "summary": "Making strolling the new scrolling",
+            "type": "UX / Product",
+            "categories": [
+                "ux"
+            ],
+            "role": "UX research · UI · brand · Figma",
+            "preview": "A walk-companion app shaped by user testing. Testers found streaks stressful, so the design moved from tracking to daily prompts and low-pressure tiers.",
+            "thumb": "assets/thumbs/stroll.jpg"
+        },
+        "Highlight2": {
+            "name": "Odd Fellow Says Hello",
+            "year": "2024",
+            "info": "Put your wits to the test with Odd Fellow Says Hello, a game of wordplay and fun! In each round, you’ll face four words—but one doesn’t belong. Is it a trick of meaning or a subtle twist of context? Gather your friends or challenge yourself to find the Odd Fellow before time runs out. Perfect for quick thinkers, word lovers, and anyone who loves a clever challenge. Are you sharp enough to spot the odd fellow? Odd fellow says hello!",
+            "material": [
+                "HTML",
+                "CSS",
+                "Javascript",
+                "Typescript"
+            ],
+            "link": "https://odd-fellow-says-hello.vercel.app/",
+            "haveLink": true,
+            "pageLink": "odd-fellow-says-hello.html",
+            "documentation": {
+                "thumbnail": "assets/Documentation/ofsh-thumbnail.png",
+                "doc1": "assets/Documentation/Process/Odd Fellow Says Hello sketch.jpg",
+                "doc2": "assets/Documentation/Process/Odd fellow says hello sketch + color map.png",
+                "doc3": "assets/Documentation/Process/Odd Fellow Says Hello Flow Chart.png"
+            },
+            "summary": "An endless odd-one-out game using AI as the core game mechanic",
+            "type": "Web",
+            "categories": [
+                "web",
+                "ct"
+            ],
+            "role": "Full-stack · TypeScript, Deno/Oak, GPT API",
+            "preview": "GPT generates every round. The hard part was prompt design and parsing, so the model always returns consistent, playable puzzles.",
+            "thumb": "assets/thumbs/odd-fellow-says-hello.jpg"
+        },
+        "Highlight3": {
             "name": "When The Flower Stops Breathing",
             "year": "2026",
             "info": "When The Flower Stops Breathing is an interactive kinetic sculpture composed of a cluster of mechanical flowers that continuously bloom and close, echoing the subtle rhythms of living ecosystems. It asks a simple but uneasy question: what happens to a system when it is constantly observed, approached, and disturbed?",
@@ -32,7 +87,37 @@
             "preview": "Sixteen servo-driven flowers bloom calmly at a respectful distance and start to stutter when people crowd in. OpenCV tracks the viewers. My senior thesis.",
             "thumb": "assets/thumbs/when-the-flower-stops-breathing.jpg"
         },
-        "Highlight2": {
+        "Highlight4": {
+            "name": "LABYRINTH",
+            "year": "2025",
+            "info": "Collaboration project with Ziye An, Jaiden Brown, and Eve",
+            "material": [
+                "Unity",
+                "LEAP Motion",
+                "Joystick",
+                "Arduino",
+                "Electronics",
+                "Hardware"
+            ],
+            "link": "",
+            "haveLink": false,
+            "pageLink": "labyrinth.html",
+            "documentation": {
+                "thumbnail": "assets/Documentation/Labyrinth9.jpg",
+                "doc1": "assets/Documentation/LabyrinthE.jpg",
+                "doc2": "assets/Documentation/Labyrinth8.jpg",
+                "doc3": "assets/Documentation/Labyrinth6.jpg"
+            },
+            "summary": "Joystick maze in a custom cabinet",
+            "type": "Creative tech",
+            "categories": [
+                "ct"
+            ],
+            "role": "Team project · Unity, Arduino, fabrication",
+            "preview": "A team game. I owned the game logic and the case build. 30+ playtesters; presented to a faculty board.",
+            "thumb": "assets/thumbs/labyrinth.jpg"
+        },
+        "Highlight5": {
             "name": "Mirror Selfie",
             "year": "2025",
             "info": "Through this project, I explored the interaction between people and mirrors. When walking by mirrors, I noticed that people tend to subconsciously stare at the mirrors back to themselves to check their own appearance or to take mirror pictures. However, after I learnt about spy two-way mirrors, I felt more cautious interacting with mirrors due to my paranoia of being spied on. For this project titled “Mirror-Selfie”, I am embodying my fear of being stared back at by the mirror or anything behind the mirror. Using a camera with the OpenCV Python library, I detect faces and print out a frame of the moment when anyone looks into the mirror.",
@@ -64,116 +149,29 @@
             "preview": "A two-way mirror installation. Face detection prints a frame the moment someone checks their reflection.",
             "thumb": "assets/thumbs/mirror-selfie.jpg"
         },
-        "Highlight3": {
-            "name": "Stroll",
-            "year": "2025",
-            "info": "",
+        "Highlight6": {
+            "name": "Sircle",
+            "year": "2022",
+            "info": "Mobile app concept and prototype to maximize the New York City waste management system.",
             "material": [
-                ""
+                "Figma",
+                "Adobe Illustrator",
+                "Adobe Photoshop"
             ],
             "link": "",
             "haveLink": false,
-            "isPhysical": false,
-            "pageLink": "stroll-app.html",
+            "pageLink": "sircle.html",
             "documentation": {
-                "thumbnail": "assets/Documentation/Stroll/Stroll Thumbnail.png",
-                "doc1": "",
-                "doc2": "",
-                "doc3": ""
+                "thumbnail": "assets/thumbs/sircle.jpg"
             },
-            "summary": "Making strolling the new scrolling",
+            "summary": "Making NYC recycling less confusing, for everyone",
             "type": "UX / Product",
             "categories": [
                 "ux"
             ],
             "role": "UX research · UI · brand · Figma",
-            "preview": "A walk-companion app shaped by user testing. Testers found streaks stressful, so the design moved from tracking to daily prompts and low-pressure tiers.",
-            "thumb": "assets/thumbs/stroll.jpg"
-        },
-        "Highlight4": {
-            "name": "Pinterest Case Study",
-            "year": "2025",
-            "info": "",
-            "material": [
-                ""
-            ],
-            "link": "",
-            "haveLink": false,
-            "isPhysical": false,
-            "pageLink": "pinterest-casestudy.html",
-            "documentation": {
-                "thumbnail": "assets/Documentation/Pinterest Case Study/Pinterest Web.png",
-                "doc1": "",
-                "doc2": "",
-                "doc3": ""
-            },
-            "summary": "Why the feed feels calm, and where it breaks",
-            "type": "UX / Product",
-            "categories": [
-                "ux"
-            ],
-            "role": "UX analysis",
-            "preview": "A teardown of Pinterest: its value proposition, key interactions and pain points such as video ads breaking the flow.",
-            "thumb": "assets/thumbs/pinterest-case-study.jpg"
-        },
-        "Highlight5": {
-            "name": "Odd Fellow Says Hello",
-            "year": "2024",
-            "info": "Put your wits to the test with Odd Fellow Says Hello, a game of wordplay and fun! In each round, you’ll face four words—but one doesn’t belong. Is it a trick of meaning or a subtle twist of context? Gather your friends or challenge yourself to find the Odd Fellow before time runs out. Perfect for quick thinkers, word lovers, and anyone who loves a clever challenge. Are you sharp enough to spot the odd fellow? Odd fellow says hello!",
-            "material": [
-                "HTML",
-                "CSS",
-                "Javascript",
-                "Typescript"
-            ],
-            "link": "https://odd-one-out-game.deno.dev/",
-            "haveLink": true,
-            "pageLink": "odd-fellow-says-hello.html",
-            "documentation": {
-                "thumbnail": "assets/Documentation/ofsh-thumbnail.png",
-                "doc1": "assets/Documentation/Process/Odd Fellow Says Hello sketch.jpg",
-                "doc2": "assets/Documentation/Process/Odd fellow says hello sketch + color map.png",
-                "doc3": "assets/Documentation/Process/Odd Fellow Says Hello Flow Chart.png"
-            },
-            "summary": "An endless odd-one-out word game",
-            "type": "Web",
-            "categories": [
-                "web",
-                "ct"
-            ],
-            "role": "Full-stack · TypeScript, Deno/Oak, GPT API",
-            "preview": "GPT generates every round. The hard part was prompt design and parsing, so the model always returns consistent, playable puzzles.",
-            "thumb": "assets/thumbs/odd-fellow-says-hello.jpg"
-        },
-        "Highlight6": {
-            "name": "LABYRINTH",
-            "year": "2025",
-            "info": "Collaboration project with Ziye An, Jaiden Brown, and Eve",
-            "material": [
-                "Unity",
-                "LEAP Motion",
-                "Joystick",
-                "Arduino",
-                "Electronics",
-                "Hardware"
-            ],
-            "link": "",
-            "haveLink": false,
-            "pageLink": "labyrinth.html",
-            "documentation": {
-                "thumbnail": "assets/Documentation/Labyrinth9.jpg",
-                "doc1": "assets/Documentation/LabyrinthE.jpg",
-                "doc2": "assets/Documentation/Labyrinth8.jpg",
-                "doc3": "assets/Documentation/Labyrinth6.jpg"
-            },
-            "summary": "Joystick maze in a custom cabinet",
-            "type": "Creative tech",
-            "categories": [
-                "ct"
-            ],
-            "role": "Team project · Unity, Arduino, fabrication",
-            "preview": "A team game. I owned the game logic and the case build. 30+ playtesters; presented to a faculty board.",
-            "thumb": "assets/thumbs/labyrinth.jpg"
+            "preview": "A recycling app concept for New Yorkers, designed to work on LinkNYC kiosks too, so it doesn’t depend on owning a smartphone.",
+            "thumb": "assets/thumbs/sircle.jpg"
         },
         "Highlight7": {
             "name": "Dot Map",
@@ -228,35 +226,6 @@
             "linkLabel": "Play sketch",
             "thumb": "assets/thumbs/archive/rock-paper-scissor.jpg"
         },
-        "Sircle": {
-            "name": "Sircle",
-            "year": "2022",
-            "info": "Mobile app concept and prototype to maximize the New York City waste management system.",
-            "material": [
-                "Figma",
-                "Adobe Illustrator",
-                "Adobe Photoshop"
-            ],
-            "link": "",
-            "haveLink": false,
-            "documentation": {
-                "thumbnail": "https://portfolio.newschool.edu/cbdr/files/2023/05/Screenshot-2023-05-14-at-6.39.38-AM.png",
-                "doc1": "assets/Documentation/Process/Sircle Color Palette.png",
-                "doc2": "assets/Documentation/Process/Sircle Buttons.png",
-                "doc3": "assets/Documentation/Process/Sircle Logo.png",
-                "doc4": "assets/Documentation/Process/Sircle App Define Stage.png",
-                "doc5": "assets/Documentation/Process/Sircle Ideate.png",
-                "doc6": "assets/Documentation/Process/Sircle Prioritation.png",
-                "doc7": "assets/Documentation/Process/Sircle Greybox 1.png",
-                "doc8": "assets/Documentation/Process/Sircle Greybox 2.png",
-                "doc9": "assets/Documentation/Process/Sircle wireframe.png",
-                "doc10": "assets/Documentation/Process/Sircle App Demo.mov"
-            },
-            "summary": "App concept that makes NYC recycling less confusing",
-            "type": "UX / Product",
-            "category": "ux",
-            "thumb": "assets/thumbs/archive/sircle.jpg"
-        },
         "Data Portrait": {
             "name": "Data Portrait",
             "year": "2023",
@@ -270,7 +239,7 @@
             "documentation": {
                 "thumbnail": "assets/Documentation/Data Portrait cover.png",
                 "doc1": "assets/Documentation/Process/Data Portrait Data.png",
-                "doc2": "assets/Documentation/Process/Data Portrait Sketch.png"
+                "doc2": "assets/web/archive/data-portrait-sketch.jpg"
             },
             "summary": "A week of my social habits, drawn as a self-portrait",
             "type": "Code sketch",
@@ -311,11 +280,11 @@
             "haveLink": true,
             "isPhysical": true,
             "documentation": {
-                "thumbnail": "assets/Documentation/Sunrise cover.png",
-                "doc1": "assets/Documentation/Sunrise demo.mov",
-                "doc2": "assets/Documentation/sun vid 3.MOV",
-                "doc3": "assets/Documentation/sun vid 4.mov",
-                "doc4": "assets/Documentation/Sunrise cover.png",
+                "thumbnail": "assets/web/archive/sunrise-cover.jpg",
+                "doc1": "assets/video/sunrise-demo.mp4",
+                "doc2": "assets/video/sunrise-test-1.mp4",
+                "doc3": "assets/video/sunrise-test-2.mp4",
+                "doc4": "assets/web/archive/sunrise-cover.jpg",
                 "doc5": "assets/Documentation/sun 3d1.png"
             },
             "summary": "An LED 'artificial sun' that brightens as the room gets dark",
@@ -337,7 +306,7 @@
             "haveLink": true,
             "documentation": {
                 "thumbnail": "assets/Documentation/hue hunter cover.png",
-                "doc1": "assets/Documentation/Process/Hue Hunter sketch.jpg",
+                "doc1": "assets/web/archive/hue-hunter-sketch.jpg",
                 "doc2": "assets/Documentation/Process/Hue Hunter color sketch.png"
             },
             "summary": "Find the red square by following colour and pitch",
@@ -389,6 +358,106 @@
             "category": "web",
             "linkLabel": "Visit site",
             "thumb": "assets/thumbs/archive/photo-archive.jpg"
+        },
+        "Pinterest Case Study": {
+            "name": "Pinterest Case Study",
+            "year": "2025",
+            "info": "A UX teardown of Pinterest: what makes it work, where it breaks, and how I would fix it.<br><br><b>Value proposition.</b> Pinterest is a discovery and search engine for visual inspiration. It connects people to a broader audience and lets them save, group, and organize ideas.<br><br><b>Why it beats its competitors.</b> The feed is curated to each user’s interests rather than what’s popular. Its masonry grid never breaks abruptly, so people keep scrolling and discovering, unlike Instagram or TikTok. Motion cues and animations keep it playful rather than overwhelming. It has one clear purpose, displaying images to organize into boards, which makes it easy for people of all ages to understand. And it isn’t about followers or likes, but personal discovery, collaboration, and visual brainstorming, which makes it a stress-free social media environment.<br><br>I found three pain points, each with a proposed fix below.",
+            "material": [
+                "Figma",
+                "UX research"
+            ],
+            "link": "",
+            "haveLink": false,
+            "documentation": {
+                "thumbnail": "assets/web/archive/pinterest-web.jpg",
+                "doc1": {
+                    "src": "assets/web/archive/pinterest-web.jpg",
+                    "caption": "Pinterest on the web",
+                    "group": "Current Pinterest"
+                },
+                "doc2": {
+                    "src": "assets/web/archive/pinterest-mobile.jpg",
+                    "caption": "Pinterest app",
+                    "group": "Current Pinterest"
+                },
+                "doc3": {
+                    "src": "assets/Documentation/Pinterest Case Study/Ad Solution 1.png",
+                    "caption": "Shown in relation to the content, with a similar size and format",
+                    "group": "Fix 1 · Ads"
+                },
+                "doc4": {
+                    "src": "assets/Documentation/Pinterest Case Study/Ad Solution 2.png",
+                    "caption": "A subscription option to remove them completely",
+                    "group": "Fix 1 · Ads"
+                },
+                "doc5": {
+                    "src": "assets/Documentation/Pinterest Case Study/Temperature 1.png",
+                    "caption": "A temperature scale on every page to change how relevant the content is",
+                    "group": "Fix 2 · Discovery"
+                },
+                "doc6": {
+                    "src": "assets/Documentation/Pinterest Case Study/Temperature 2a.png",
+                    "caption": "The menu at the top right",
+                    "group": "Fix 2 · Discovery"
+                },
+                "doc7": {
+                    "src": "assets/Documentation/Pinterest Case Study/Temperature 2b.png",
+                    "caption": "Advanced settings to adjust several parameters",
+                    "group": "Fix 2 · Discovery"
+                },
+                "doc8": {
+                    "src": "assets/Documentation/Pinterest Case Study/Temperature 3a.png",
+                    "caption": "A movable temperature button that doesn’t clutter the interface",
+                    "group": "Fix 2 · Discovery"
+                },
+                "doc9": {
+                    "src": "assets/Documentation/Pinterest Case Study/Temperature 3b.png",
+                    "caption": "The temperature button expanded",
+                    "group": "Fix 2 · Discovery"
+                },
+                "doc10": {
+                    "src": "assets/Documentation/Pinterest Case Study/Collab 1.png",
+                    "caption": "Sticky notes for leaving comments on a board",
+                    "group": "Fix 3 · Collaboration"
+                },
+                "doc11": {
+                    "src": "assets/Documentation/Pinterest Case Study/Collab 2.png",
+                    "caption": "The existing board tools",
+                    "group": "Fix 3 · Collaboration"
+                },
+                "doc12": {
+                    "src": "assets/Documentation/Pinterest Case Study/Collab 2a.png",
+                    "caption": "A new “Annotate” tool for writing anywhere on the screen",
+                    "group": "Fix 3 · Collaboration"
+                },
+                "doc13": {
+                    "src": "assets/Documentation/Pinterest Case Study/Collab 2b.png",
+                    "caption": "A new “Sort Mode” for swiping through pins left and right",
+                    "group": "Fix 3 · Collaboration"
+                }
+            },
+            "summary": "Why the feed feels calm, and where it breaks",
+            "type": "UX case study",
+            "category": "ux",
+            "thumb": "assets/thumbs/archive/pinterest-case-study.jpg",
+            "groups": {
+                "Current Pinterest": {
+                    "text": "The web and app as they are today: a masonry feed of images to save into boards."
+                },
+                "Fix 1 · Ads": {
+                    "text": "<b>Problem:</b> random video ads break the flow of exploring. <b>Fix:</b> keep ads image-based, less frequent, and related to what you’re searching for, so they blend into the feed, plus a subscription option to remove them completely.",
+                    "layout": "phones"
+                },
+                "Fix 2 · Discovery": {
+                    "text": "<b>Problem:</b> once Pinterest learns what you like, similar content keeps showing up, creating a bubble that restricts discovery. <b>Fix:</b> a “temperature” control to choose how random or specific the feed is.",
+                    "layout": "phones"
+                },
+                "Fix 3 · Collaboration": {
+                    "text": "<b>Problem:</b> boards can be shared, but there are no notes or stickers to comment or vote, so collaborators go back and forth with another product. <b>Fix:</b> FigJam-style tools on boards.",
+                    "layout": "phones"
+                }
+            }
         }
     }
 }

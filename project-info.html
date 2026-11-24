@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archive project · Carla Budar</title>
     <meta name="description" content="An archived project by Carla Budar.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -9,58 +10,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="case-study.css">
 </head>
 <body>
     <div class="page-container">
         <div class="headerPlaceHolder"></div>
-        <div class="backBtn"></div>
-    
-        <div id="project-info-container">
-            <div id="projectPhotoBanner">
-                <img class="projectThumbnail" alt="" loading="lazy">
-            </div>
-            <div id="content">
-                <h1 class="content-left"></h1>
-                <h2 class="content-center"></h2>
-                <div class="content-right"></div>
-            </div>
 
-            <div class="progress">
-                <h1 class="progressTitle"></h1>
-                <div class="progressPhoto"></div>
-            </div>
+        <!-- Filled in by site.js (archiveProjectPage) from the "archive" list in projects.json -->
+        <main class="st ap" id="archive-project">
+            <div class="ap-top"><div class="backBtn"></div><a class="ap-crumb" href="archive.html">Archive</a></div>
+            <p class="ap-loading">Loading…</p>
+        </main>
 
-            <div class="reflection">
-                <h1 class="reflectionTitle"></h1>
-                <div class="reflectionText"></div>
-            </div>
-
-
-            <div id="content-buttons">
-                <div class="button-left">
-                    <div class="buttonLeft"></div>
-                </div>
-                <div class="button-center">
-                    <div class="content-backToTop"></div>
-                </div>
-                <div class="button-right">
-                    <div class="visitSite"></div>
-              
-                </div>
-                
-                
-            </div>
-        </div>
-
-    <div class="footerPlaceholder"></div>
+        <div class="footerPlaceholder"></div>
     </div>
-        
-    </div>
-    
 
     <script src="site.js"></script>
 </body>
 </html>
-
-       

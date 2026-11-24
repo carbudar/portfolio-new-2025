@@ -6,373 +6,157 @@
     <title>When The Flower Stops Breathing · Carla Budar</title>
     <meta name="description" content="Sixteen servo-driven flowers bloom calmly at a respectful distance and start to stutter when people crowd in. OpenCV tracks the viewers. My senior thesis.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="stylesheet" href="stroll.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="case-study.css">
 </head>
 <body>
+    <div class="page-container">
+        <div class="headerPlaceHolder"></div>
 
-    <div>
-        <div class="page-container">
-            <div class="headerPlaceHolder"></div>
-            <div class="backBtn"></div>
-<div id="thesis-container">
-            <div id="stroll-header">
-                <div id="stroll-title" class="stroll-column-left"> 
+        <main class="st">
+            <header class="st-hero">
+                <video autoplay muted loop playsinline src="assets/video/thesis-video.mp4"></video>
+                <div class="st-hero-text">
+                    <span class="st-kicker">Senior thesis · Interactive kinetic sculpture</span>
                     <h1>When The Flower Stops Breathing</h1>
+                    <p>Sixteen servo-driven flowers bloom calmly at a respectful distance, and start to stutter when people crowd in.</p>
                 </div>
-                <div id="stroll-date" class="stroll-column-right">
-                    <h3>August 2025 - May 2026</h3>
+            </header>
+
+            <dl class="cs-meta">
+                <div><dt>Timeline</dt><dd>August 2025 – May 2026</dd></div>
+                <div><dt>Role</dt><dd>Designer · Programmer · Engineer · Fabricator</dd></div>
+                <div><dt>Tools</dt><dd><ul class="cs-tags"><li>Python</li><li>OpenCV</li><li>Raspberry Pi</li><li>Bash</li><li>C++</li><li>Webcam</li><li>Electronics</li><li>3D printing</li></ul></dd></div>
+            </dl>
+
+            <nav class="st-bar" aria-label="Chapters">
+                <div class="backBtn"></div>
+                <div class="st-chapters">
+                    <a href="#why"><small>01</small>Why</a>
+                    <a href="#how"><small>02</small>How it works</a>
+                    <a href="#making"><small>03</small>Making</a>
+                    <a href="#result"><small>04</small>Result</a>
+                    <a href="#future"><small>05</small>Future</a>
+                    <a href="#reflection"><small>06</small>Reflection</a>
                 </div>
-                
-            </div>
-             <div id="ofsh-splash-video">
-                <video playsinline autoplay loop muted>
-                    <source src="assets/video/thesis-video.mp4">
-                </video>
-                </div>
+                <span class="st-progress" aria-hidden="true"></span>
+            </nav>
 
-            <div id="stroll-general-info">
-                <div id="stroll-overview" class="stroll-column-left">
-                     <h3 >Responsibilities</h3>
-                    <p>Designer · Programmer · Engineer · Fabricator</p>
-                    <br>
-                    <hr>
-          
-                </div>
-                <div id="stroll-details" class="stroll-column-right">
-            
-                    <h3 >Tools</h3>
-                    <p>Python · Open CV · Raspberry Pi · Bash · Webcam · Electronics · 3D Printed Mechanism · C++</p>
-                   <br>
-                    <hr>
-
-
-                    
-                </div>
-            </div>
-
-           
-            <div id="thesis-problem-statement">
-                <h3>
-                    How can humans recognize their presence within nature as an active force rather than a distant observer?
-                    <br>
-                    How do humans coexist with the living environment in a way that creates balance rather than destruction?
-                </h3>
-                <p>These are the two main question that based my college senior thesis project.
-                </p>
-                
-                <br><br>
-
-                <div id="thesis-background-statement">
-                    <div class="thesis-background-statement-child">
-                        <p>
-                            We damage habitats and prioritize growth at the expense of long-term stability. Yet, our survival is tied directly to a healthy environment: when the ecosystem suffers, human life suffers with it.
-                        </p>
-                    </div>
-
-                    <div class="thesis-problem-statement-child">
-                        <p>
-                             Modern life often creates the illusion that environmental destruction exists somewhere distant and disconnected from our daily actions. Through kinetic movement and responsive interaction, this project reveals how human presence can alter surrounding systems, emphasizing the delicate balance between coexistence and disruption.
-                        </p>
-                    </div>
-
-                </div>
-             </div>
-
-
-                <div id="stroll-splash-image" class="thesis-breather-image">
-                <img src="assets/Documentation/thesis_breather image.png" alt="Thesis breather image" loading="lazy">
-                </div>
-
-                <div id="thesis-problem-statement">
-                    <p>
-                        When The Flower Stops Breathing is an interactive kinetic sculpture composed of a cluster of mechanical flowers that continuously bloom and close, echoing the subtle rhythms of living ecosystems. It asks a simple but uneasy question:<b> what happens to a system when it is constantly observed, approached, and disturbed?</b>
-                        <br><br>
-                        The sculpture responds to human presence: when viewers observe from a respectful distance, the flowers move harmoniously, but prolonged or overwhelming interaction begins to disrupt their motion and behavior. As viewers attempt to understand what affects the sculpture’s behavior, they are invited into conversation and collective observation. The goal is not to prevent interaction, but to encourage a balance where people can engage closely with the work without disrupting the ecosystem it represents.
-                    </p>
-
-                </div>
-
-                    
-                <div class="thesis-technical-illustration">
-
-                    <div class="thesis-technical-illustration-child">
-                        <img src="assets/Documentation/thesis_tech stack.png" alt="Thesis tech stack" loading="lazy">
-                    </div>
-
-                     <div class="thesis-technical-illustration-child">
-                        <img src="assets/Documentation/thesis_tech stack explanation.png" alt="Thesis tech stack explanation" loading="lazy">
-                    </div>
-
-                </div>
-
-                <div class="thesis-mechanical-parts">
-                    
-                        <img src="assets/Documentation/thesis_parts breakdown.png" alt="Thesis parts breakdown" loading="lazy">
-          
-                </div>
-
-                <div class="thesis-interaction">
+            <!-- 01 Why -->
+            <section class="st-chapter" id="why">
+                <div class="st-chapter-head st-reveal"><span>01</span><h2>Why<small>The questions behind my senior thesis.</small></h2></div>
+                <div class="st-row st-reveal">
                     <div>
-                        <h2>The Interaction</h2>
-                    </div>
-                    
-                    <div class="thesis-interaction-3columns"> 
-                        <div class="thesis-interaction-child">
-                            <p>
-                                The sculpture
-                                responds to human
-                                proximity and
-                                duration of
-                                engagement. At a
-                                balanced distance, the
-                                flowers move in a
-                                calm, rhythmic
-                                cycle-open, close,
-                                breathe.
-                            </p>
-                        </div>
-                        <div class="thesis-interaction-child">
-                            <p>
-                                But when presence
-                                becomes prolonged
-                                or too intense, the
-                                system begins to
-                                shift. Movement
-                                becomes irregular.
-                                Timing slips. The
-                                "breathing" loses
-                                stability.
-                            </p>
-                        </div>
-                        <div class="thesis-interaction-child">
-                            <p>
-                                Interaction is not a
-                            trigger, it is a condition.
-                            The environment
-                            changes based on how it
-                            is occupied.
-                            </p>
-                        </div>
-                    </div>
-                  
-                </div>
-           
-                <div id="stroll-splash-image">
-                <img src="assets/Documentation/thesis_documentation2.jpg" alt="Thesis documentation2" loading="lazy">
-                </div>
-
-        
-
-                <div class="dot-map-progress-container">
-                  
-                    <h3>Process</h3>
-            
-                <div id="dot-map-progress-carousel">
-                     <div>
-                        <video playsinline src="assets/video/thesis-prototype1.mp4" muted autoplay loop></video>
-                        <p>First prototype 3D model (petal movements controlled by tension)</p>
-                    </div>
-
-                    <div>
-                        <img src="assets/Documentation/thesis_process_1.jpeg" alt="Thesis process 1" loading="lazy">
-                        <p>First prototype user testing</p>
-                    </div>
-
-                      <div>
-                        <img src="assets/Documentation/thesis_small flower.png" alt="Thesis small flower" loading="lazy">
-                        <p class="text-center">Prototype 10 3D model. <br>for detailed breakdown, please refer to zine documentation</p>
-                    </div>
-
-
-                    <div>
-                        <img src="assets/Documentation/thesis_process_2.jpeg" alt="Thesis process 2" loading="lazy">
-                        <p>Early stage of rack + pinion mechanism for petal movement</p>
-                    </div>
-
-                       <div>
-                        <video playsinline src="assets/video/thesis-prototype-movement.mp4" muted autoplay loop></video>
-                        <p>Prototype 10 + cardboard reinforcements after troubleshooting</p>
-                    </div>
-
-                       <div>
-                        <video playsinline src="assets/video/thesis-mechanism.mp4" muted autoplay loop></video>
-                        <p>First working automated prototype + glimpse of the mechanism</p>
-                    </div>
-
-    
-
-                     <div>
-                        <img src="assets/Documentation/thesis_big flower.png" alt="Thesis big flower" loading="lazy">
-                        <p>3D model of big flower, inspired by the endangered Rafflesia Arnoldii</p>
-                    </div>
-
-                    <div>
-                        <video playsinline src="assets/video/thesis-big-flower.mp4" muted autoplay loop></video>
-                        <p>Big flower</p>
-                    </div>
-
-
-
-                     <div>
-                        <img src="assets/Documentation/thesis_big petal process.jpeg" alt="Thesis big petal process" loading="lazy">
-                        <p>Painted flower petals</p>
-                    </div>
-                     <div>
-                        <img src="assets/Documentation/thesis_setup process.jpeg"
-" alt="Thesis setup process" loading="lazy">
-                        <p>Setting up, wiring, coding the flowers as a group</p>
+                        <p class="st-quote">How can humans recognize their presence within nature as an active force rather than a distant observer?</p>
+                        <p class="st-quote">How do humans coexist with the living environment in a way that creates balance rather than destruction?</p>
                     </div>
                     <div>
-                        <img src="assets/Documentation/thesis_process.png"
-" alt="Thesis process" loading="lazy">
-                        <p>In progress flower cluster</p>
+                        <p>We damage habitats and prioritize growth at the expense of long-term stability. Yet, our survival is tied directly to a healthy environment: when the ecosystem suffers, human life suffers with it.</p>
+                        <p>Modern life often creates the illusion that environmental destruction exists somewhere distant and disconnected from our daily actions. Through kinetic movement and responsive interaction, this project reveals how human presence can alter surrounding systems, emphasizing the delicate balance between coexistence and disruption.</p>
                     </div>
-
+                </div>
+                <figure class="st-full st-reveal"><img src="assets/web/flower/breather.jpg" alt="Three flower silhouettes, from pale to dark green" loading="lazy"></figure>
+                <div class="st-row st-reveal">
+                    <h3 class="st-quote" style="font-size:1.6rem">What happens to a system when it is constantly observed, approached, and disturbed?</h3>
                     <div>
-                        <video playsinline src="assets/video/thesis-steup-video1.mp4" muted autoplay loop></video>
-                        <p>First look of the cohesive movement + interaction testing</p>
-                    </div>
-            
+                        <p>When The Flower Stops Breathing is an interactive kinetic sculpture composed of a cluster of mechanical flowers that continuously bloom and close, echoing the subtle rhythms of living ecosystems.</p>
+                        <p>The sculpture responds to human presence: when viewers observe from a respectful distance, the flowers move harmoniously, but prolonged or overwhelming interaction begins to disrupt their motion and behavior. As viewers attempt to understand what affects the sculpture’s behavior, they are invited into conversation and collective observation. The goal is not to prevent interaction, but to encourage a balance where people can engage closely with the work without disrupting the ecosystem it represents.</p>
                     </div>
                 </div>
+            </section>
 
-                <div class="thesis-big-documentation">
-                    <h1>
-                        Documentation
-                    </h1>
-                     <div>
-                        <video playsinline src="assets/video/thesis-setup-video-2.mp4" muted autoplay loop></video>
-                 </div>
+            <!-- 02 How it works -->
+            <section class="st-chapter" id="how">
+                <div class="st-chapter-head st-reveal"><span>02</span><h2>How it works<small>A webcam feeds a Raspberry Pi running OpenCV, which tracks how many people are near and how long they stay. It sends that to an Arduino that drives sixteen servos through a servo driver, while addressable LEDs light each flower as it blooms.</small></h2></div>
+                <div class="st-strip st-reveal">
+                    <figure style="--ar: 0.715"><img src="assets/Documentation/thesis_tech stack.png" alt="Wiring diagram of the system's parts" loading="lazy"></figure>
+                    <figure style="--ar: 0.822"><img src="assets/Documentation/thesis_tech stack explanation.png" alt="Numbered explanation of each part: power supply, Raspberry Pi, Arduino Uno, camera, servo driver, servo motors, LED light, 3D printed parts" loading="lazy"></figure>
+                    <figure style="--ar: 1.269"><img src="assets/web/flower/parts-breakdown.jpg" alt="Exploded view of one flower: petal, rack, pinion, lid and centre axle, housing base" loading="lazy"></figure>
+                </div>
+                <p class="st-note st-reveal">Each flower: a rack and pinion inside the housing turns the servo’s rotation into the petals opening and closing.</p>
+            </section>
 
-                 <div>
-                        <video playsinline src="assets/video/thesis-video.mp4" muted autoplay loop></video>
-                 </div>
+            <!-- 03 Making -->
+            <section class="st-chapter" id="making">
+                <div class="st-chapter-head st-reveal"><span>03</span><h2>Making<small>Ten prototypes, a new mechanism, and sixteen flowers moving as one.</small></h2></div>
+                <ul class="cs-grid st-reveal">
+                    <li><figure><video muted loop playsinline preload="metadata" src="assets/video/thesis-prototype1.mp4"></video><figcaption><b>Prototype 1</b>3D model, petals moved by tension</figcaption></figure></li>
+                    <li><figure><img src="assets/web/flower/process-1.jpg" alt="" loading="lazy"><figcaption><b>Prototype 1</b>First user testing</figcaption></figure></li>
+                    <li><figure><img src="assets/web/flower/small-flower-model.jpg" alt="" loading="lazy"><figcaption><b>Prototype 10</b>3D model (full breakdown in the zine)</figcaption></figure></li>
+                    <li><figure><img src="assets/web/flower/process-2.jpg" alt="" loading="lazy"><figcaption><b>Mechanism</b>Early rack + pinion for petal movement</figcaption></figure></li>
+                    <li><figure><video muted loop playsinline preload="metadata" src="assets/video/thesis-prototype-movement.mp4"></video><figcaption><b>Prototype 10</b>Cardboard reinforcements after troubleshooting</figcaption></figure></li>
+                    <li><figure><video muted loop playsinline preload="metadata" src="assets/video/thesis-mechanism.mp4"></video><figcaption><b>Milestone</b>First working automated prototype, with a glimpse of the mechanism</figcaption></figure></li>
+                    <li><figure><img src="assets/web/flower/big-flower-model.jpg" alt="" loading="lazy"><figcaption><b>Big flower</b>3D model inspired by the endangered Rafflesia arnoldii</figcaption></figure></li>
+                    <li><figure><video muted loop playsinline preload="metadata" src="assets/video/thesis-big-flower.mp4"></video><figcaption><b>Big flower</b>Printed and moving</figcaption></figure></li>
+                    <li><figure><img src="assets/web/flower/big-petal-process.jpg" alt="" loading="lazy"><figcaption><b>Finishing</b>Painted flower petals</figcaption></figure></li>
+                    <li><figure><img src="assets/web/flower/setup-process.jpg" alt="" loading="lazy"><figcaption><b>Assembly</b>Setting up, wiring and coding the flowers as a group</figcaption></figure></li>
+                    <li><figure><img src="assets/web/flower/flower-cluster-process.jpg" alt="" loading="lazy"><figcaption><b>Assembly</b>The flower cluster in progress</figcaption></figure></li>
+                    <li><figure><video muted loop playsinline preload="metadata" src="assets/video/thesis-steup-video1.mp4"></video><figcaption><b>Testing</b>First look at the cohesive movement and interaction</figcaption></figure></li>
+                </ul>
+            </section>
 
-
-                 <div>
-                        <img src="assets/Documentation/IMG_7239.JPG"
-" alt="IMG 7239" loading="lazy">
-                        <p>Center pieces added</p>
+            <!-- 04 Result -->
+            <section class="st-chapter" id="result">
+                <div class="st-chapter-head st-reveal"><span>04</span><h2>Result<small>The finished installation.</small></h2></div>
+                <figure class="st-full st-reveal"><video muted loop playsinline preload="metadata" src="assets/video/thesis-setup-video-2.mp4"></video></figure>
+                <div class="st-strip st-reveal">
+                    <figure style="--ar: 1.781"><img src="assets/web/flower/center-pieces.jpg" alt="" loading="lazy"><figcaption>Centre pieces added</figcaption></figure>
+                    <figure style="--ar: 1.778"><img src="assets/Documentation/thesis-documentation-3.jpg" alt="" loading="lazy"><figcaption>Flowers in bloom</figcaption></figure>
+                    <figure style="--ar: 0.571"><img src="assets/web/flower/installation-diagram.png" alt="Installation diagram" loading="lazy" style="background:#fff"><figcaption>Installation diagram</figcaption></figure>
+                </div>
+                <figure class="st-full st-reveal" style="margin-top:48px"><video muted loop playsinline preload="metadata" src="assets/video/thesis-video.mp4"></video></figure>
+                <div class="st-row st-reveal" style="margin-top:72px">
+                    <div>
+                        <h3 style="font-size:1.5rem;font-weight:400;color:#126889;margin-bottom:10px">Read more in the zines</h3>
+                        <p>The inspiration, goals, artist statement and sketches, in two booklets.</p>
                     </div>
-
-                      <div>
-                        <img src="assets/Documentation/thesis-documentation-3.jpg"
-" alt="Thesis documentation 3" loading="lazy">
-                    </div>
-
-                     <div>
-                        <img src="assets/Documentation/thesis-installation diagram.png" alt="Thesis installation diagram" loading="lazy">
-                        <p>Show installation diagram</p>
+                    <div class="st-zines">
+                        <a class="st-zine" href="assets/Documentation/Thesis2 Documentation.pdf" target="_blank" rel="noopener"><img src="assets/web/flower/zine-documentation-cover.jpg" alt=""><div><strong>Documentation zine ↗</strong><span>Inspiration, goals and artist statement</span></div></a>
+                        <a class="st-zine" href="assets/Documentation/Thesis Documentation Sketch.pdf" target="_blank" rel="noopener"><img src="assets/web/flower/zine-sketches-cover.jpg" alt=""><div><strong>Appendix A: Sketches ↗</strong><span>Sketches and prototyping process</span></div></a>
                     </div>
                 </div>
-                
+            </section>
 
-
-                <div id="thesis-documentation-title">
-                 <h2>Documentation and Write up </h2>
-                 <br>
-                <p >Read further about the inspiration, goals, artist statement, and sketches in these zines.</p>
-
-            </div>
-            
-            <div id="thesis-documentation">
-           
-                <div>
-                 <embed class="thesis-pdf" 
-                     src="assets/Documentation/Thesis2 Documentation.pdf"
-                     width="800" height="500">
-                     <br>
-                       <br>
-                     <p>
-                        Documentation booklet/ zine
-                     </p>
+            <!-- 05 Future -->
+            <section class="st-chapter" id="future">
+                <div class="st-chapter-head st-reveal"><span>05</span><h2>Future<small>Imagining the flowers as a permanent wall installation, at home in a living space.</small></h2></div>
+                <div class="st-strip st-reveal">
+                    <figure style="--ar: 1.25"><div class="st-render"><img src="assets/web/flower/future-render-living-room.jpg" alt="Render: the moss-and-flower wall installed above a velvet sofa in a dark, warm living room" loading="lazy"><span class="st-render-tag">Render</span></div><figcaption>Render, generated with ChatGPT</figcaption></figure>
+                    <figure style="--ar: 1.5"><div class="st-render"><img src="assets/web/flower/future-render-wall.jpg" alt="Render: the moss-and-flower wall in a bright, minimal living room, with two close-up views" loading="lazy"><span class="st-render-tag">Render</span></div><figcaption>Render, generated with ChatGPT</figcaption></figure>
                 </div>
+            </section>
 
-                <div>
-                 <embed class="thesis-pdf" 
-                     src="assets/Documentation/Thesis Documentation Sketch.pdf"
-                     width="800" height="500">
-                      <br> <br>
-                       <p>
-                        Appendix A: Sketches and prototyping process
-                     </p>
+            <!-- 06 Reflection -->
+            <section class="st-chapter" id="reflection">
+                <div class="st-chapter-head st-reveal"><span>06</span><h2>Reflection<small>What building it taught me.</small></h2></div>
+                <div class="st-row st-reveal">
+                    <p class="st-quote">The most challenging part was not the construction of motion, but the calibration of response: finding the point where interaction becomes disruption.</p>
+                    <div>
+                        <p>Through building this project, I became more aware of how easily systems lose stability when scaled into interaction. What began as a simple mechanical flower quickly turned into a study of sensitivity, how small inputs accumulate into larger behavioral shifts.</p>
+                        <p>It was also challenging to communicate the project’s intention clearly. A recurring point of feedback centered around the use of manmade materials while discussing themes of environmental fragility and human impact on nature. However, that contrast became an important part of the work itself. The combination of organic floral forms with mechanical movement and plastic materials acts as commentary on the irony of the topic, how something visually delicate and beautiful can still be constructed from artificial materials tied to human advancement and consumption. I wanted the piece to create a sense of discomfort and reflection around that contradiction, while also being mindful that the work itself is preserved rather than treated as something disposable.</p>
+                        <p>This project sits between observation and participation. It made me rethink what it means for something to feel “alive,” and how perception changes when behavior is no longer fixed.</p>
+                    </div>
                 </div>
-            </div>
-                
+                <h3 class="st-reveal" style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:#126889;margin-bottom:12px">Key learnings</h3>
+                <ol class="st-learn st-reveal">
+                    <li><h3>Interaction requires careful balance</h3><p>Designing responsive systems taught me that even small user inputs can significantly affect behavior, making calibration as important as the physical construction itself.</p></li>
+                    <li><h3>Motion can drive the user experience</h3><p>Through programming rhythmic “breathing,” I explored how subtle movement can make an artificial object feel emotionally and biologically alive, which is relevant in this project to communicate an emotional effect through mechanical forms.</p></li>
+                    <li><h3>Participation creates responsibility</h3><p>Allowing viewers to influence the flower’s behavior transformed them from passive observers into active participants, encouraging reflection on how human actions impact fragile ecosystems.</p></li>
+                </ol>
+            </section>
 
+            <figure class="st-full st-closing st-reveal"><img src="assets/Documentation/thesis_documentation2.jpg" alt="The flower cluster in moss, lit from below" loading="lazy"></figure>
 
-                <div id="dotMap-problem-statement">
-                <h2>My Experience Programming the System</h2>
-                <p>
-                    Through building this project, I became more aware of how easily
-                    systems lose stability when scaled into interaction. What began as a simple
-                    mechanical flower quickly turned into a study of sensitivity, how small inputs
-                    accumulate into larger behavioral shifts. The most challenging part was not
-                    the construction of motion, but the calibration of response: finding the point
-                    where interaction becomes disruption.
-                </p>
+            <a class="cs-next" href="labyrinth.html"><div><small>Next project</small><strong>LABYRINTH</strong></div><span aria-hidden="true">→</span></a>
+        </main>
 
-                <p>
-                   It was also challenging to communicate the project's intention clearly.
-                    A recurring point of feedback centered around the use of manmade materials
-                    while discussing themes of environmental fragility and human impact on
-                    nature. However, that contrast became an important part of the work itself.
-                    The combination of organic floral forms with mechanical movement and
-                    plastic materials acts as commentary on the irony of the topic, how something
-                    visually delicate and beautiful can still be constructed from artificial materials
-                    tied to human advancement and consumption. I wanted the piece to create a
-                    sense of discomfort and reflection around that contradiction, while also being
-                    mindful that the work itself is preserved rather than treated as something
-                    disposable.
-                </p>
-
-                <p>
-                    This project sits between observation and participation. It made me
-                    rethink what it means for something to feel "alive," and how perception
-                    changes when behavior is no longer fixed.                </p>
-              
-            </div>
-            
-                <div id="dotmap-key-learnings">
-               
-                <div id="key-learning-cascading">
-                     <h1>Key Learnings</h1>
-                     
-                    <div class="key-learning">
-                    <h3>1. Interaction requires careful balance</h3>
-                    <p class="dotmap-lineheight">Designing responsive systems taught me that even small user inputs can significantly affect behavior, making calibration as important as the physical construction itself.</p>
-         
-                </div>
-
-                 <div class="key-learning">
-                    <h3>2. Motion can drive the user experience</h3>
-                    <p class="dotmap-lineheight">Through programming rhythmic "breathing," I explored how subtle movement can make an artificial object feel emotionally and biologically alive, which is relevant in this project to communicate an emotional effect through mechanical forms.</p>
-                 
-                </div>
-
-                <div class="key-learning">
-                    <h3>3. Participation creates responsibility</h3>
-                    <p class="dotmap-lineheight">Allowing viewers to influence the flower's behavior transformed them from passive observers into active participants, encouraging reflection on how human actions impact fragile ecosystems.</p>
-                </div>
-                </div>
-                
-            </div>
-                </div>
-
-                <h1 id="stroll-thank-you">Thank you for reading.</h1>
-                <div class="footerPlaceholder"></div>
-
-     </div>
+        <div class="footerPlaceholder"></div>
     </div>
-   
 
     <script src="site.js"></script>
-    <script src="dot-map-carousel-scroll.js"></script>
+    <script src="case-study.js"></script>
 </body>
 </html>

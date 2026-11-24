@@ -183,43 +183,25 @@ function backButton() {
 }
 
 function backToTopButtons() {
-    const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    const scrollTop = () => window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+
+    // Pages without their own Back to Top get one at the very end of the page content, above the footer.
+    if (!document.querySelector('.backToTop')) {
+        const holder = document.createElement('div');
+        holder.className = 'page-backToTop';
+        const content = document.querySelector('main') || document.querySelector('.page-container');
+        if (content) {
+            // before the "Next project" bar when there is one, otherwise at the end of the content
+            const spot = content.querySelector('.cs-next') || content.querySelector(':scope > .footerPlaceholder');
+            spot ? spot.before(holder) : content.appendChild(holder);
+            createButton('h3', 'Back to Top', 'page-backToTop', SITE.yellow, SITE.teal, { onClick: scrollTop, parent: holder });
+        }
+    }
+
     createButton('h1', 'Back to Top', 'backToTop', SITE.pink, SITE.pink, { onClick: scrollTop });
-    createButton('h3', 'Back To Top', 'content-backToTop', SITE.yellow, SITE.teal, { onClick: scrollTop });
 }
 
 /* ---------- Small page features ---------- */
-
-// Click any image to open it full size (add class="noEnlarge" to opt out).
-function enlargeMedia(root = document) {
-    root.querySelectorAll('.progressPhoto img:not(.noEnlarge), .documentationElement:not(video)').forEach(img => {
-        img.style.cursor = 'zoom-in';
-        img.addEventListener('click', () => window.open(img.src, '_blank'));
-    });
-}
-
-function customCursor() {
-    const cursors = {
-        'stroll-container': 'assets/Documentation/Stroll/Flower Pink.png',
-        'dotmap-container': 'assets/Documentation/dotmap-cursor.png',
-    };
-    const id = Object.keys(cursors).find(key => document.getElementById(key));
-    if (!id || matchMedia('(pointer: coarse)').matches) return;
-
-    document.body.style.cursor = 'none';
-    const cursor = document.createElement('img');
-    cursor.src = cursors[id];
-    cursor.alt = '';
-    Object.assign(cursor.style, {
-        position: 'fixed', pointerEvents: 'none', width: 'auto', height: '34px',
-        borderRadius: '0px', zIndex: '10000', transform: 'translate(-50%, -50%)',
-    });
-    document.body.appendChild(cursor);
-    document.addEventListener('mousemove', e => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
-}
 
 function dotMapGenerator() {
     createButton('h3', 'Generate new Dot Map', 'generateNewDotMap', SITE.yellow, SITE.teal, {
@@ -245,65 +227,104 @@ function isVideo(path) {
     return /\.(mp4|mov|webm|ogg)$/i.test(path);
 }
 
-/* ---------- project-info.html?project=Name (archive projects) ---------- */
+/* ---------- project-info.html?project=Name (archive projects) ----------
+   Built from the "archive" list in projects.json. Sections: Description (info),
+   Process (documentation images/videos), Reflection (only if "reflection" is set). */
 
 async function archiveProjectPage() {
-    const container = document.querySelector('#project-info-container');
-    if (!container) return;
+    const main = document.querySelector('#archive-project');
+    if (!main) return;
 
     const name = new URLSearchParams(location.search).get('project');
     const data = await loadProjects();
     const project = data.archive?.[name];
+    const loading = main.querySelector('.ap-loading');
     if (!project) {
-        container.querySelector('#content').innerHTML = '<h2>Project not found. <a href="archive.html">Back to the archive</a></h2>';
+        loading.innerHTML = 'Project not found. <a href="archive.html">Back to the archive</a>';
         return;
     }
-
     document.title = `${project.name} · Carla Budar`;
-    container.querySelector('.content-left').innerHTML = `<h2>${project.name}</h2><h3>${project.year}</h3>`;
-    container.querySelector('.content-center').textContent = project.info;
-    container.querySelector('.content-right').innerHTML = (project.material || []).filter(Boolean).map(m => `<li>${m}</li>`).join('') || '<li>Not specified</li>';
 
-    const thumbnail = container.querySelector('.projectThumbnail');
-    thumbnail.classList.add('noEnlarge');
-    thumbnail.src = project.documentation.thumbnail;
-    thumbnail.alt = project.name;
-    if (project.link) {
-        thumbnail.style.cursor = 'pointer';
-        thumbnail.addEventListener('click', () => window.open(project.link, '_blank'));
+    // same order as the archive page: by group, newest first
+    const groupOrder = ['sketch', 'web', 'ux', 'physical'];
+    const ordered = Object.values(data.archive).sort((a, b) =>
+        (groupOrder.indexOf(a.category) - groupOrder.indexOf(b.category)) || (b.year - a.year));
+    const at = ordered.findIndex(p => p.name === project.name);
+    const prev = ordered[(at - 1 + ordered.length) % ordered.length];
+    const next = ordered[(at + 1) % ordered.length];
+    const href = p => p.pageLink || `project-info.html?project=${encodeURIComponent(p.name)}`;
+
+    const paragraphs = text => (text || '').split(/<br\s*\/?>\s*(?:<br\s*\/?>)?/i).map(t => t.trim()).filter(Boolean).map(t => `<p>${t}</p>`).join('');
+    const tools = (project.material || []).filter(Boolean);
+    // each documentation entry is a path, or { "src": path, "caption": text, "group": name }.
+    // With groups, Process is split into labelled sets; "groups" in the project can add a line of
+    // context per group, and "layout": "phones" for tall phone screens.
+    const docs = Object.entries(project.documentation || {})
+        .filter(([key, doc]) => key !== 'thumbnail' && doc)
+        .map(([, doc]) => typeof doc === 'string' ? { src: doc } : doc)
+        .filter(doc => doc.src !== project.documentation.thumbnail || doc.caption); // the cover is already at the top
+    const item = ({ src, caption }) => `<li><figure>${isVideo(src)
+        ? `<video muted loop playsinline preload="metadata" src="${src}"></video>`
+        : `<img src="${src}" alt="${caption || project.name + ', process'}" loading="lazy">`}${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure></li>`;
+    let media = '';
+    if (docs.some(doc => doc.group)) {
+        const names = [...new Set(docs.map(doc => doc.group || 'More'))];
+        media = names.map(name => {
+            const info = project.groups?.[name] || {};
+            const grid = info.layout === 'phones' ? 'ap-phones' : 'cs-grid is-contain';
+            return `<div class="ap-group">
+                <h3>${name}</h3>${info.text ? `<p>${info.text}</p>` : ''}
+                <ul class="${grid}">${docs.filter(doc => (doc.group || 'More') === name).map(item).join('')}</ul>
+            </div>`;
+        }).join('');
+    } else if (docs.length) {
+        media = `<ul class="cs-grid is-contain">${docs.map(item).join('')}</ul>`;
     }
 
-    container.querySelector('.progressTitle').textContent = 'Progress';
-    container.querySelector('.reflectionTitle').textContent = 'Reflection';
+    let n = 0;
+    const section = (id, title, body) => `
+        <section class="st-chapter" id="${id}">
+            <div class="st-chapter-head"><span>${String(++n).padStart(2, '0')}</span><h2>${title}</h2></div>
+            ${body}
+        </section>`;
 
-    if (project.link) {
-        createButton('h3', 'Visit Site', 'visitSite', SITE.yellow, SITE.teal, { href: project.link, newTab: true });
-    }
+    loading.remove();
+    main.insertAdjacentHTML('beforeend', `
+        <header class="ap-intro">
+            <figure class="ap-media"><img src="${project.thumb || project.documentation.thumbnail}" alt="${project.name}"></figure>
+            <div>
+                <span class="ap-kicker">Archive · ${project.type || ''}</span>
+                <h1>${project.name}</h1>
+                ${project.summary ? `<p class="ap-summary">${project.summary}</p>` : ''}
+                <dl class="ap-facts">
+                    <dt>Year</dt><dd>${project.year}</dd>
+                    ${tools.length ? `<dt>Tools</dt><dd><ul class="cs-tags">${tools.map(t => `<li>${t}</li>`).join('')}</ul></dd>` : ''}
+                </dl>
+                ${project.link ? `<a class="ap-live" href="${project.link}" target="_blank" rel="noopener">${project.linkLabel || 'View live'} <span aria-hidden="true">↗</span><span class="sr-only"> (opens in new tab)</span></a>` : ''}
+            </div>
+        </header>
+        ${project.info ? section('description', 'Description', `<div class="ap-text">${paragraphs(project.info)}</div>`) : ''}
+        ${media ? section('process', 'Process', media) : ''}
+        ${project.reflection ? section('reflection', 'Reflection', `<div class="ap-text">${paragraphs(project.reflection)}</div>`) : ''}
+        <nav class="ap-nav" aria-label="More from the archive">
+            <a href="${href(prev)}"><small>← Previous</small><strong>${prev.name}</strong></a>
+            <a href="${href(next)}"><small>Next →</small><strong>${next.name}</strong></a>
+        </nav>`);
 
-    const gallery = container.querySelector('.progressPhoto');
-    gallery.innerHTML = '';
-    Object.entries(project.documentation).forEach(([key, src]) => {
-        if (key === 'thumbnail' || !src) return;
-        let media;
-        if (isVideo(src)) {
-            media = document.createElement('video');
-            Object.assign(media, { src, controls: true, autoplay: true, loop: true, muted: true, playsInline: true });
-        } else {
-            media = document.createElement('img');
-            media.src = src;
-            media.alt = `${project.name} documentation`;
-            media.loading = 'lazy';
-        }
-        media.classList.add('documentationElement');
-        gallery.appendChild(media);
-    });
-    enlargeMedia(container);
+    // Back to Top goes above the previous/next links
+    const top = document.querySelector('.page-backToTop');
+    if (top) main.querySelector('.ap-nav').before(top);
+
+    // shared case-study behaviour: click media to open full size, play videos only while visible
+    const script = document.createElement('script');
+    script.src = 'case-study.js';
+    document.body.appendChild(script);
 }
 
 /* ---------- Start ---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
-    const features = [makeHeader, makeFooter, backButton, backToTopButtons, customCursor, dotMapGenerator, archiveProjectPage];
+    const features = [makeHeader, makeFooter, backButton, backToTopButtons, dotMapGenerator, archiveProjectPage];
     // Each feature runs on its own, so one failing can't take the others down.
     features.forEach(feature => {
         try {

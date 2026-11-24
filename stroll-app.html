@@ -2,341 +2,164 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stroll · Carla Budar</title>
-    <meta name="description" content="A walk-companion app shaped by user testing. Testers found streaks stressful, so the design moved from tracking to daily prompts and low-pressure tiers.">
+    <meta name="description" content="Stroll, a walk-companion app shaped by user testing: daily prompts and low-pressure tiers instead of streaks and stats.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="stroll.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="case-study.css">
 </head>
 <body>
+    <div class="page-container">
+        <div class="headerPlaceHolder"></div>
 
-    <div>
-        <div class="page-container">
-            <div class="headerPlaceHolder"></div>
-            <div class="backBtn"></div>
-<div id="stroll-container">
-            <div id="stroll-header">
-                <div id="stroll-title" class="stroll-column-left orange" > 
+        <main class="st">
+            <header class="st-hero">
+                <img src="assets/web/stroll/mockup.jpg" alt="Stroll app screens on phones">
+                <div class="st-hero-text">
+                    <span class="st-kicker">UX / Product · Mobile app</span>
                     <h1>Stroll</h1>
+                    <p>Making strolling the new scrolling: a walk companion that gives everyday walks a purpose, without the pressure of fitness tracking.</p>
                 </div>
-                <div id="stroll-date" class="stroll-column-right">
-                    <h3>August - December 2025</h3>
-                </div>
-                
-            </div>
-            <div id="stroll-splash-image">
-                <img src="assets/Documentation/Stroll/Stroll mockup1.png" alt="Stroll mockup1" loading="lazy">
+            </header>
 
-            </div>
-            <div id="stroll-general-info">
-                <div id="stroll-overview" class="stroll-column-left">
-                    <h3 class="orange">Vision</h3>
-                    <p>To make strolling the new scrolling</p>
-                    <br>
-                    <hr>
-                    <br>
-                    <h3 class="orange">Mission</h3>
-                    <p>Turning screen time into real-world time, sparking true joy one stroll at a time.</p>
-                </div>
-                <div id="stroll-details" class="stroll-column-right">
-                    <h3 class="orange">Responsibilities</h3>
-                    <p>UX Designer · UI Designer · IxD Designer · Brand Identity Designer · User Researcher · Brand Strategist</p>
-                    <br>
-                    <hr>
-                    <br>
-                    <h3 class="orange">Tools</h3>
-                    <p>Figma · Adobe Photoshop · Adobe Illustrator · Jitter Video · Brainstormed with Claude AI and ChatGPT</p>
-                   <br>
-                    <hr>
-                    <br>
-                    <h3 class="orange">Supervisor</h3>
-                    <p>Prof. Sally Chung</p>
-                </div>
-            </div>
+            <dl class="cs-meta is-4">
+                <div><dt>Timeline</dt><dd>August – December 2025</dd></div>
+                <div><dt>Role</dt><dd>UX · UI · Interaction design · Brand identity · User research · Brand strategy</dd></div>
+                <div><dt>Tools</dt><dd><ul class="cs-tags"><li>Figma</li><li>Photoshop</li><li>Illustrator</li><li>Jitter</li><li>Claude</li><li>ChatGPT</li></ul></dd></div>
+                <div><dt>Supervisor</dt><dd>Prof. Sally Chung</dd></div>
+            </dl>
 
-            <div id="stroll-marketing-video">
-                <iframe width="1120" height="630" src="https://www.youtube.com/embed/3NzSOZ2FXiA?si=B5Lb0d5Cei2R81Ad" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div id="stroll-problem-statement">
-                    <h3>Here's the problem... <br>
-                    Many young people don’t go out simply because walking feels purposeless when there’s no destination or errand attached. At the same time, they’re busy and often unable to commit to structured exercise routines. Popular fitness trends tend to be high-effort and competitive, making them overwhelming to start and difficult to maintain. This leaves a gap for simple, accessible ways to stay active.</h3>
+            <nav class="st-bar" aria-label="Chapters">
+                <div class="backBtn"></div>
+                <div class="st-chapters">
+                    <a href="#overview"><small>01</small>Overview</a>
+                    <a href="#research"><small>02</small>Research</a>
+                    <a href="#strategy"><small>03</small>Strategy</a>
+                    <a href="#testing"><small>04</small>Testing</a>
+                    <a href="#branding"><small>05</small>Branding</a>
+                    <a href="#design"><small>06</small>Final design</a>
+                    <a href="#reflection"><small>07</small>Reflection</a>
+                </div>
+                <span class="st-progress" aria-hidden="true"></span>
+            </nav>
 
-                </div>
-                <div id="stroll-solution">
-                    <div id="stroll-value-proposition" class="stroll-column-left">
-                        <h3 class="orange">Value Proposition</h3>
-                        <p>Stroll is the walk companion app that allows the productive age group to find purpose in walking by gamifying daily walks. Turning walks into non-competitive entertainments.</p>
+            <!-- 01 Overview -->
+            <section class="st-chapter" id="overview">
+                <div class="st-chapter-head st-reveal"><span>01</span><h2>Overview<small>Why young people don’t go for walks, and what would get them out.</small></h2></div>
+                <div class="st-row st-reveal">
+                    <p class="st-quote">Walking feels purposeless when there’s no destination or errand attached.</p>
+                    <div>
+                        <p>Many young people don’t go out simply because walking feels purposeless when there’s no destination or errand attached. At the same time, they’re busy and often unable to commit to structured exercise routines.</p>
+                        <p>Popular fitness trends tend to be high-effort and competitive, making them overwhelming to start and difficult to maintain. This leaves a gap for simple, accessible ways to stay active.</p>
                     </div>
+                </div>
+                <ul class="st-cards st-reveal">
+                    <li class="st-card"><span class="st-card-kicker">How might we</span><p>How might we motivate the younger generation to stay active in order to maintain social and mental wellbeing?</p></li>
+                    <li class="st-card"><span class="st-card-kicker">Value proposition</span><p>Stroll is the walk companion app that allows the productive age group to find purpose in walking by gamifying daily walks, turning walks into non-competitive entertainment.</p></li>
+                    <li class="st-card"><span class="st-card-kicker">Vision</span><p>To make strolling the new scrolling.</p></li>
+                    <li class="st-card"><span class="st-card-kicker">Mission</span><p>Turning screen time into real-world time, sparking true joy one stroll at a time.</p></li>
+                </ul>
+            </section>
 
-                    <div id="stroll-how-might-we" class="stroll-column-right">
-                        <h3 class="orange">How Might We</h3>
-                        <p>How might we motivate the younger generation to stay active in order to maintain social and mental wellbeing?</p>
-                    </div>
+            <!-- 02 Research -->
+            <section class="st-chapter" id="research">
+                <div class="st-chapter-head st-reveal"><span>02</span><h2>Research<small>Who I designed for, and what already exists. Pick a tab to see each piece.</small></h2></div>
+                <div class="st-tabs st-reveal">
+                    <div class="st-tablist" role="tablist" aria-label="Research"><button type="button" class="st-tab" role="tab" id="Research-t0" aria-controls="Research-p0">Competitor analysis</button><button type="button" class="st-tab" role="tab" id="Research-t1" aria-controls="Research-p1">Personas</button><button type="button" class="st-tab" role="tab" id="Research-t2" aria-controls="Research-p2">Empathy maps</button><button type="button" class="st-tab" role="tab" id="Research-t3" aria-controls="Research-p3">User journey</button></div>
+                    <div class="st-tabpanel" role="tabpanel" id="Research-p0" aria-labelledby="Research-t0" tabindex="0"><img src="assets/web/stroll/competitor-analysis.png" alt="Competitor analysis of walking and fitness apps" loading="lazy"></div>
+                    <div class="st-tabpanel" role="tabpanel" id="Research-p1" aria-labelledby="Research-t1" tabindex="0"><div class="st-grid-2"><img src="assets/web/stroll/persona-xavier.png" alt="Persona 1: Xavier" loading="lazy"><img src="assets/web/stroll/persona-isla.png" alt="Persona 2: Isla" loading="lazy"></div></div>
+                    <div class="st-tabpanel" role="tabpanel" id="Research-p2" aria-labelledby="Research-t2" tabindex="0"><div class="st-grid-2"><img src="assets/web/stroll/empathy-xavier.png" alt="Empathy map for Xavier" loading="lazy"><img src="assets/web/stroll/empathy-isla.png" alt="Empathy map for Isla" loading="lazy"></div></div>
+                    <div class="st-tabpanel" role="tabpanel" id="Research-p3" aria-labelledby="Research-t3" tabindex="0"><img src="assets/web/stroll/user-journey.png" alt="User journey map" loading="lazy"></div>
                 </div>
+            </section>
 
-                <div id="key-feature-title">
-                    <h3 class="orange">Key Features</h3>
-                    <br>
+            <!-- 03 Strategy -->
+            <section class="st-chapter" id="strategy">
+                <div class="st-chapter-head st-reveal"><span>03</span><h2>Strategy<small>Turning the research into a plan: the business, the brand’s personality, and what to build first.</small></h2></div>
+                <div class="st-tabs st-reveal">
+                    <div class="st-tablist" role="tablist" aria-label="Strategy"><button type="button" class="st-tab" role="tab" id="Strategy-t0" aria-controls="Strategy-p0">Business plan</button><button type="button" class="st-tab" role="tab" id="Strategy-t1" aria-controls="Strategy-p1">Brand personality</button><button type="button" class="st-tab" role="tab" id="Strategy-t2" aria-controls="Strategy-p2">Design principles</button><button type="button" class="st-tab" role="tab" id="Strategy-t3" aria-controls="Strategy-p3">Information architecture</button></div>
+                    <div class="st-tabpanel" role="tabpanel" id="Strategy-p0" aria-labelledby="Strategy-t0" tabindex="0"><img src="assets/web/stroll/business-plan.png" alt="Business plan" loading="lazy"></div>
+                    <div class="st-tabpanel" role="tabpanel" id="Strategy-p1" aria-labelledby="Strategy-t1" tabindex="0"><img src="assets/web/stroll/brand-personality.png" alt="Brand personality" loading="lazy"></div>
+                    <div class="st-tabpanel" role="tabpanel" id="Strategy-p2" aria-labelledby="Strategy-t2" tabindex="0"><img src="assets/web/stroll/design-principles.png" alt="Design principles" loading="lazy"></div>
+                    <div class="st-tabpanel" role="tabpanel" id="Strategy-p3" aria-labelledby="Strategy-t3" tabindex="0"><div class="st-strip"><figure style="--ar: 0.797"><img src="assets/Documentation/Stroll/Information Architecture.png" alt="Information architecture" loading="lazy"><figcaption>Information architecture</figcaption></figure><figure style="--ar: 0.942"><img src="assets/Documentation/Stroll/2x2.png" alt="Feature ranking: value against effort" loading="lazy"><figcaption>Feature ranking: value against effort</figcaption></figure></div></div>
                 </div>
-                <div id="stroll-key-features">
-                    <div id="key-feature-1" class="key-feature">
-                        <img src="assets/Documentation/Stroll/Feature-prompt.jpg" class="key-feature-images" alt="Feature prompt" loading="lazy">
-                        <h3 class="orange">Daily Prompts</h3>
-                        <p>Different prompts to make your strolls fresh and fun.</p>
-                    </div>
+            </section>
 
-                    <div id="key-feature-2" class="key-feature">
-                        <img src="assets/Documentation/Stroll/Feature-gallery.jpg" class="key-feature-images" alt="Feature gallery" loading="lazy">
-                        <h3 class="orange">Photo Gallery</h3>
-                        <p>Turning your strolls into a visual gallery that you can revisit.</p>
-                    </div>
+            <figure class="st-full st-closing st-reveal" style="margin-top:0"><img src="assets/web/stroll/breather-2.jpg" alt="Stroll illustration" loading="lazy"></figure>
 
-                    <div id="key-feature-3" class="key-feature">
-                        <img src="assets/Documentation/Stroll/Feature-tier list.jpg" class="key-feature-images" alt="Feature tier list" loading="lazy">
-                        <h3 class="orange">Tier List</h3>
-                        <p>Low pressure motivation that gently pushes you forward.</p>
-                    </div>
+            <!-- 04 Testing -->
+            <section class="st-chapter" id="testing">
+                <div class="st-chapter-head st-reveal"><span>04</span><h2>User testing<small>Five testers ranked the features and walked me through what felt fun, and what felt like a chore.</small></h2></div>
+                <ul class="st-people st-reveal" aria-label="User testers"><li><img class="no-zoom" src="assets/Documentation/Stroll/Profile Orange.png" alt=""><div><strong>HZ</strong><span>20, student</span></div></li><li><img class="no-zoom" src="assets/Documentation/Stroll/Profile Green.png" alt=""><div><strong>SL</strong><span>21, student</span></div></li><li><img class="no-zoom" src="assets/Documentation/Stroll/Profile Pink.png" alt=""><div><strong>NS</strong><span>19, student</span></div></li><li><img class="no-zoom" src="assets/Documentation/Stroll/Profile Yellow.png" alt=""><div><strong>JL</strong><span>22, student</span></div></li><li><img class="no-zoom" src="assets/Documentation/Stroll/Profile Blue.png" alt=""><div><strong>CB</strong><span>23, young professional</span></div></li></ul>
+                <div class="st-strip st-reveal">
+                    <figure style="--ar: 1.432"><img src="assets/Documentation/Stroll/Feature Ranking.png" alt="Feature ranking by testers" loading="lazy"><figcaption>Feature ranking</figcaption></figure>
+                    <figure style="--ar: 1.778"><img src="assets/web/stroll/synthesized-data.png" alt="Synthesized observations from testing" loading="lazy"><figcaption>Synthesized observations</figcaption></figure>
+                </div>
+                <h3 class="st-reveal" style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:#126889;margin:48px 0 14px">What changed after testing</h3>
+                <ul class="st-cards st-reveal">
+                    <li class="st-card"><span class="st-card-kicker">Change 1</span><h3>Less emphasis on activity tracking</h3><p>Multiple testers said activity tracking made the app feel like a health-improvement app, taking away the fun and making it feel dreadful to use. Despite it being one of the main features before, I shifted the focus from logging statistics to walking for fun.</p></li>
+                    <li class="st-card"><span class="st-card-kicker">Change 2</span><h3>Adding a community feature</h3><p>In the first pitch, the idea was to download Stroll galleries and post them on other social media to share with friends. Many testers said in-app connections with friends, to collaborate and motivate each other, would be motivating, so I added a Stroll community feature.</p></li>
+                    <li class="st-card"><span class="st-card-kicker">Change 3</span><h3>Entertainment first, not health first</h3><p>Unlike its competitors, Stroll is made to be a healthier form of entertainment for people who don’t like being active. Most health apps are competitive and focus on number-based improvement; Stroll takes that stress away as a starting point for a healthier choice.</p></li>
+                </ul>
+            </section>
 
-                    <div id="key-feature-4" class="key-feature">
-                        <img src="assets/Documentation/Stroll/Feature-community.jpg" class="key-feature-images" alt="Feature community" loading="lazy">
-                        <h3 class="orange">Stroll Community</h3>
-                        <p>Connect with others, share walks, feel connected.</p>
-                    </div>
+            <!-- 05 Branding -->
+            <section class="st-chapter" id="branding">
+                <div class="st-chapter-head st-reveal"><span>05</span><h2>Branding<small>A calm, playful identity, built from looking at how competitors present themselves.</small></h2></div>
+                <div class="st-tabs st-reveal">
+                    <div class="st-tablist" role="tablist" aria-label="Branding"><button type="button" class="st-tab" role="tab" id="Branding-t0" aria-controls="Branding-p0">Brand competitors</button><button type="button" class="st-tab" role="tab" id="Branding-t1" aria-controls="Branding-p1">Stylescapes</button><button type="button" class="st-tab" role="tab" id="Branding-t2" aria-controls="Branding-p2">Brand system</button></div>
+                    <div class="st-tabpanel" role="tabpanel" id="Branding-p0" aria-labelledby="Branding-t0" tabindex="0"><div class="st-grid-2"><img src="assets/web/stroll/brand-color.png" alt="Brand competitor analysis: colour" loading="lazy"><img src="assets/web/stroll/brand-imagery.png" alt="Brand competitor analysis: imagery" loading="lazy"><img src="assets/web/stroll/brand-logo.png" alt="Brand competitor analysis: logo" loading="lazy"><img src="assets/web/stroll/brand-typography.png" alt="Brand competitor analysis: typography" loading="lazy"></div></div>
+                    <div class="st-tabpanel" role="tabpanel" id="Branding-p1" aria-labelledby="Branding-t1" tabindex="0"><div class="st-stack"><img src="assets/web/stroll/stylescape-1.jpg" alt="Stylescape 1" loading="lazy"><img src="assets/web/stroll/stylescape-2.jpg" alt="Stylescape 2" loading="lazy"><img src="assets/web/stroll/stylescape-3.jpg" alt="Stylescape 3" loading="lazy"></div></div>
+                    <div class="st-tabpanel" role="tabpanel" id="Branding-p2" aria-labelledby="Branding-t2" tabindex="0"><div style="max-width:640px"><img src="assets/web/stroll/brand-system.jpg" alt="Stroll brand system: logo, colours and type" loading="lazy"></div></div>
+                </div>
+            </section>
 
-                    <div id="key-feature-5" class="key-feature">
-                        <img src="assets/Documentation/Stroll/Feature-challenges.jpg" class="key-feature-images" alt="Feature challenges" loading="lazy">
-                        <h3 class="orange">Challenges</h3>
-                        <p>Little missions for longer-term goals.</p>
-                    </div>
-                  
+            <!-- 06 Final design -->
+            <section class="st-chapter" id="design">
+                <div class="st-chapter-head st-reveal"><span>06</span><h2>Final design<small>Five features that make walks feel fresh, without the pressure.</small></h2></div>
+                <ul class="st-cards st-reveal">
+                    <li class="st-card is-feature"><img src="assets/Documentation/Stroll/Feature-prompt.jpg" alt="" loading="lazy"><h3>Daily Prompts</h3><p>Different prompts to make your strolls fresh and fun.</p></li>
+                    <li class="st-card is-feature"><img src="assets/Documentation/Stroll/Feature-gallery.jpg" alt="" loading="lazy"><h3>Photo Gallery</h3><p>Turning your strolls into a visual gallery that you can revisit.</p></li>
+                    <li class="st-card is-feature"><img src="assets/web/stroll/feature-tier-list.jpg" alt="" loading="lazy"><h3>Tier List</h3><p>Low-pressure motivation that gently pushes you forward.</p></li>
+                    <li class="st-card is-feature"><img src="assets/Documentation/Stroll/Feature-community.jpg" alt="" loading="lazy"><h3>Stroll Community</h3><p>Connect with others, share walks, feel connected.</p></li>
+                    <li class="st-card is-feature"><img src="assets/Documentation/Stroll/Feature-challenges.jpg" alt="" loading="lazy"><h3>Challenges</h3><p>Little missions for longer-term goals.</p></li>
+                </ul>
+                <div class="st-phones st-reveal">
+                    <figure><img src="assets/Documentation/Stroll/Stroll Homepage.png" alt="Stroll home screen" loading="lazy"><figcaption>Home</figcaption></figure>
+                    <figure><img src="assets/Documentation/Stroll/Stroll Challenges page.png" alt="Stroll challenges screen" loading="lazy"><figcaption>Challenges</figcaption></figure>
+                    <figure><img src="assets/web/stroll/screen-community.png" alt="Stroll community screen" loading="lazy"><figcaption>Community</figcaption></figure>
+                    <figure><img src="assets/Documentation/Stroll/Stroll Profile page.png" alt="Stroll profile screen" loading="lazy"><figcaption>Profile</figcaption></figure>
                 </div>
+                <div class="st-embed st-reveal">
+                    <iframe src="https://www.youtube.com/embed/3NzSOZ2FXiA" title="Stroll promo video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </section>
 
-                <div id="stroll-competitor-analysis">
-                    <h3 class="orange">Competitor Analysis</h3>
-                    <br>
-                    <div id="stroll-competitor-analysis-image">
-                        <img src="assets/Documentation/Stroll/Competitor Analysis.png" alt="Competitor Analysis" loading="lazy">
+            <!-- 07 Reflection -->
+            <section class="st-chapter" id="reflection">
+                <div class="st-chapter-head st-reveal"><span>07</span><h2>Reflection<small>What designing Stroll taught me.</small></h2></div>
+                <h3 class="st-reveal" style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:#126889;margin-bottom:12px">Key takeaways</h3>
+                <ol class="st-learn st-reveal">
+                    <li><h3>Understanding motivation beyond fitness</h3><p>Through the user interviews, I realized that people aren’t avoiding being active. They’re avoiding experiences that feel purposeless, or they don’t have enough time to squeeze in another activity. This pushed me to design features that use walking, a low-effort physical activity, and give it a sense of meaning.</p></li>
+                    <li><h3>Designing for low-pressure engagement</h3><p>I learnt how to create gentle entry points that encourage consistency without adding stress or expectations, to avoid overwhelming users.</p></li>
+                    <li><h3>Balancing gamification with calm</h3><p>This helped me practice using playful mechanics in a way that boosts enjoyment while still keeping the experience streamlined.</p></li>
+                    <li><h3>Designing for real-life context</h3><p>I learnt to account for users’ concerns, like short attention spans, accessibility differences and preferences. Taking user feedback, I refined the interfaces to support the user experience.</p></li>
+                </ol>
+            </section>
 
-                    </div>
-                    <br>
-                    <!-- <h3>Summary</h3>
-                    <p></p> -->
-                </div>
-                <div id="user-persona-title">
-                    <h3 class="orange">User Persona</h3>
-                </div>
-                
-                <br>
-                <div id="stroll-user-persona">
-                    <div id="stroll-user-xavier">
-                        <img src="assets/Documentation/Stroll/Persona 1 Xavier.png" alt="Persona 1 Xavier" loading="lazy">
-                    </div>
-                    <div id="stroll-user-isla">
-                        <img src="assets/Documentation/Stroll/Persona 2 Isla.png" alt="Persona 2 Isla" loading="lazy">
-                        
-                    </div>
-                </div>
+            <figure class="st-full st-closing st-reveal"><img src="assets/web/stroll/breather-1.jpg" alt="Stroll illustration" loading="lazy"></figure>
 
-                <div id="empathy-map-title">
-                    <h3 class="orange">Empathy Map</h3>
-                </div>
-                <div id="stroll-empathy-map">
-                    <div id="stroll-empathy-xavier">
-                        <img src="assets/Documentation/Stroll/Empathy Map 1 Xavier.png" alt="Empathy Map 1 Xavier" loading="lazy">
-                    </div>
-                    <div id="stroll-empathy-isla">
-                        <img src="assets/Documentation/Stroll/Empathy Map 2 Isla.png" alt="Empathy Map 2 Isla" loading="lazy">
-                        
-                    </div>
-                </div>
-            
-                <div id="stroll-user-journey">
-                    <h3 class="orange">User Journey</h3>
-                    <img src="assets/Documentation/Stroll/User Journey.png" alt="User Journey" loading="lazy">
-                </div>
+            <a class="cs-next" href="odd-fellow-says-hello.html"><div><small>Next project</small><strong>Odd Fellow Says Hello</strong></div><span aria-hidden="true">→</span></a>
+        </main>
 
-                 <div id="stroll-business-carousel">
-                    <div id="carousel-business-plan">
-                        <h3>Business Plan</h3>
-                        <br>
-                    <img src="assets/Documentation/Stroll/Business Plan.png" alt="Business Plan" loading="lazy">
-                    </div>
-                      <div id="carousel-brand-personality">
-                        <h3>Brand Personality</h3>
-                        <br>
-                    <img src="assets/Documentation/Stroll/Brand Personality_Brand Personality.png" alt="Brand Personality Brand Personality" loading="lazy">
-                    </div>
-                      <div id="carousel-Design-Principles">
-                        <h3>Design Principles</h3>
-                        <br>
-                    <img src="assets/Documentation/Stroll/Design Principles.png" alt="Design Principles" loading="lazy">
-                    </div>
-                </div>
-                <br><br>
-
-                <div class="stroll-breather-1">
-                    <img src="assets/Documentation/Stroll/Breather 2.png" alt="Breather 2" loading="lazy">
-
-                </div>
-
-                <div id="stroll-ia-feature-title">
-                    <h3 class="orange">Information Architecture + Feature Ranking</h3>
-                    <br>
-                </div>
-                <div id="stroll-ia-feature">
-                    <div id="stroll-ia">
-                        <img src="assets/Documentation/Stroll/Information Architecture.png" alt="Information Architecture" loading="lazy">
-                    </div>
-                    <div id="stroll-feature">
-                        <img src="assets/Documentation/Stroll/2x2.png" alt="2x2" loading="lazy">
-                    </div>
-                </div>
-                <div id="stroll-user-testing-title">
-                    <h3 class="orange">User Testing</h3>
-                </div>
-                <div id="stroll-user-testers">
-                     <div id="stroll-user-tester-1" class="user-testers">
-                        <div class="user-tester-profile"></div>
-                        <img src="assets/Documentation/Stroll/Profile Orange.png" class="user-tester-profile" alt="Profile Orange" loading="lazy">
-                        <br>
-                         <br>
-                        <h3 class="orange">HZ</h3>
-                        <p>20, Student</p>
-                    </div>
-                     <div id="stroll-user-tester-2" class="user-testers">
-                        <img src="assets/Documentation/Stroll/Profile Green.png" class="user-tester-profile" alt="Profile Green" loading="lazy">
-                        <br>
-                         <br>
-                        <h3 class="orange">SL</h3>
-                        <p>21, Student</p>
-                    </div>
-                     <div id="stroll-user-tester-3" class="user-testers">
-                        <img src="assets/Documentation/Stroll/Profile Pink.png" class="user-tester-profile" alt="Profile Pink" loading="lazy">
-                        <br>
-                         <br>
-                        <h3 class="orange">NS</h3>
-                        <p>19, Student</p>
-                    </div>
-                     <div id="stroll-user-tester-4" class="user-testers">
-                        <img src="assets/Documentation/Stroll/Profile Yellow.png" class="user-tester-profile" alt="Profile Yellow" loading="lazy">
-                        <br>
-                         <br>
-                        <h3 class="orange">JL</h3>
-                        <p>22, Student</p>
-                    </div>
-                     <div id="stroll-user-tester-5" class="user-testers">
-                        <img src="assets/Documentation/Stroll/Profile Blue.png" class="user-tester-profile" alt="Profile Blue" loading="lazy">
-                        <br>
-                         <br>
-                        <h3 class="orange">CB</h3>
-                        <p>23, Young professional</p>
-                    </div>
-                </div>
-
-                <div id="stroll-user-ranking-stats-title">
-                   <h3 class="orange">Feature Ranking + Observation</h3>
-                   <br>
-                </div>
-                <div id="stroll-user-ranking-stats">
-                    <div id="stroll-user-ranking">
-                        <img src="assets/Documentation/Stroll/Feature Ranking.png" alt="Feature Ranking" loading="lazy">
-                    </div>
-                    <div id="stroll-testing-observation">
-                        <img src="assets/Documentation/Stroll/Synthesized Data.png" alt="Synthesized Data" loading="lazy">
-                    </div>
-
-                </div>
-                <div id="stroll-testing-solutions">
-                    <div id="stroll-solution-1" class="testing-solution">
-                        <h3 class="orange">Not puting emphasis on activity tracking</h3>
-                        <p>Multiple user testers mentioned that the activity tracking feature makes the app feels more like a health improvement app, taking away the fun and feels dreadful to use. Despite it being one of the main features previously, I took the focus away from logging statistic to mainly walking for fun.</p>
-                    </div>
-                     <div id="stroll-solution-2" class="testing-solution">
-                        <h3 class="orange">Adding community feature</h3>
-                        <p>Though in the first pitch, the idea is to download the Stroll galleries and post it on other social medias to share with friends, a lot of the user testers mentioned that it could be motiating to have in-app connections with friends to collaborate and motivate each other. So i added a Stroll community feature.</p>
-                    </div>
-                     <div id="stroll-solution-3" class="testing-solution">
-                        <h3 class="orange">Making Stroll's objective more entertaining than health-based</h3>
-                        <p>Compared to Stroll's competitors, Stroll is different because it is made to be a healthier form of entertainment for people who do not like to be active. Since most health-based app are very competitive and focuses on number-based improvements, Stroll wants to takeaway that stress as a starting point of a healthier choice.</p>
-                    </div>
-                </div>
-
-                <div id="stroll-brand-competitor-analysis-title">
-                    <h3>Brand Competitor Analysis</h3>
-                </div>
-                <div id="stroll-brand-competitor-analysis">
-                    <img src="assets/Documentation/Stroll/Brand Competitor Analysis_Color.png"class="competitor-analysis-1" alt="Brand Competitor Analysis Color" loading="lazy">
-                    <img src="assets/Documentation/Stroll/Brand Competitor Analysis_Imagery.png"class="competitor-analysis-1" alt="Brand Competitor Analysis Imagery" loading="lazy">
-                    <img src="assets/Documentation/Stroll/Brand Competitor Analysis_Logo-01.png"class="competitor-analysis-1" alt="Brand Competitor Analysis Logo 01" loading="lazy">
-                    <img src="assets/Documentation/Stroll/Brand Competitor Analysis_Typography.png"class="competitor-analysis-1" alt="Brand Competitor Analysis Typography" loading="lazy">
-
-                </div>
-                <div id="stroll-branding">
-                    <br>
-                    <H2 id="stroll-branding-title" class="orange">Branding</H2>
-                    <div id="stylescapes">
-                        <H2>Stylescapes</H2>
-                    <img src="assets/Documentation/Stroll/Stylescape 1.png" alt="Stylescape 1" loading="lazy">
-                    <img src="assets/Documentation/Stroll/Stylescape 2.png" alt="Stylescape 2" loading="lazy">
-                    <img src="assets/Documentation/Stroll/Stylescape 3.png" alt="Stylescape 3" loading="lazy">
-                    <h2>Brand System</h2>
-                    <img src="assets/Documentation/Stroll/Brand System.png" alt="Brand System" loading="lazy">
-                    </div>
-                    <div id="stroll-wireframes-title">
-                        <h2>Wireframes</h2>
-                    </div>
-                    <div id="stroll-wireframes">
-                        <img src="assets/Documentation/Stroll/Stroll Homepage.png" class="wireframe" alt="Stroll Homepage" loading="lazy">
-                        <img src="assets/Documentation/Stroll/Stroll Challenges page.png" class="wireframe" alt="Stroll Challenges page" loading="lazy">
-                        <img src="assets/Documentation/Stroll/Stroll community.png" class="wireframe" alt="Stroll community" loading="lazy">
-                        <img src="assets/Documentation/Stroll/Stroll Profile page.png" class="wireframe" alt="Stroll Profile page" loading="lazy">
-
-                    </div>
-
-
-                </div>
-               
-                <div id="sroll-key-takeaways">
-                    <h2 class="orange">Key Takeaways</h2>
-                    <br>
-                    <div class="takeaway-child-element">
-                        <h2 class="orange">1. Understanding motivation beyond fitness</h2>
-                        <p>Through the user interviews, I realized that people aren’t avoiding being active. They’re avoiding experiences that feel purposeless or mainly do not have enough time to squeeze in another activity. This pushed me to design features that utilizes walking, a low-effort physical activity, and giving it a sense of meaning.</p>
-                    </div>
-                    <br><hr><br>
-                     <div class="takeaway-child-element">
-                        <h2 class="orange">2. Designing for low-pressure engagement</h2>
-                        <p>I learnt how to create gentle entry points that encourage consistency without adding stress or expectations to avoid making users overwhelmed.</p>
-                    </div>
-                    <br><hr><br>
-                     <div class="takeaway-child-element">
-                        <h2 class="orange">3. Balancing gamification with calm</h2>
-                        <p>This helped me practice using playful mechanics in a way that boosts enjoyment while still keeping the experience streamlined.</p>
-                    </div>
-                    <br><hr><br>
-                     <div class="takeaway-child-element">
-                        <h2 class="orange">4. Designing for real-life context</h2>
-                        <p>I learnt to account for some of the user's concerns,like: short attention spans, accessibility differences, preference. Taking user feedbacks, I refined the interfaces to supports the user experience.</p>
-                    </div>
-                </div>
-                 <div class="stroll-breather-1">
-                    <img src="assets/Documentation/Stroll/Breather 1.png" alt="Breather 1" loading="lazy">
-
-                </div>
-                <h1 id="stroll-thank-you">Thank you for reading.</h1>
-                <div class="footerPlaceholder"></div>
-
-     </div>
+        <div class="footerPlaceholder"></div>
     </div>
-            
-        </div>
-    </div>
-   
 
     <script src="site.js"></script>
+    <script src="case-study.js"></script>
 </body>
 </html>

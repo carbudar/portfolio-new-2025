@@ -122,7 +122,8 @@
             const projects = Object.values(data.archive).sort((a, b) => b.year - a.year);
 
             function card(p) {
-                const detail = `project-info.html?project=${encodeURIComponent(p.name)}`;
+                // projects with their own page (like the Pinterest case study) link straight to it
+                const detail = p.pageLink || `project-info.html?project=${encodeURIComponent(p.name)}`;
                 const tools = (p.material || []).filter(Boolean).map(t => `<li>${t}</li>`).join('');
                 const demo = p.link
                     ? `<a class="arc-demo" href="${p.link}" target="_blank" rel="noopener">${p.linkLabel || 'View live'} <span aria-hidden="true">↗</span><span class="sr-only"> (opens in new tab)</span></a>`

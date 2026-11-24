@@ -4,248 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dot Map · Carla Budar</title>
-    <meta name="description" content="A JavaScript algorithm fills a 25 × 25 grid with randomized color circles, so every output is a new piece.">
+    <meta name="description" content="A generative artwork conceived as an NFT: every mint produces a different map of dots, exploring how code can extend the life of art.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="stylesheet" href="stroll.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="case-study.css">
 </head>
 <body>
+    <div class="page-container">
+        <div class="headerPlaceHolder"></div>
 
-    <div>
-        <div class="page-container">
-            <div class="headerPlaceHolder"></div>
-            <div class="backBtn"></div>
-<div id="dotmap-container">
-            <div id="stroll-header">
-                <div id="stroll-title" class="stroll-column-left"> 
+        <main class="st">
+            <header class="st-hero">
+                <img src="assets/web/dotmap/mockup.jpg" alt="">
+                <div class="st-hero-text">
+                    <span class="st-kicker">Generative art · Conceptual NFT</span>
                     <h1>Dot Map</h1>
+                    <p>A generative artwork where every mint produces a new, one-of-a-kind map of dots.</p>
                 </div>
-                <div id="stroll-date" class="stroll-column-right">
-                    <h3>October 2024</h3>
-                </div>
-                
-            </div>
-             <div id="dotmap-breather">
-                     <img src="assets/Documentation/Dot Map Mockup 2.png" alt="Dot Map Mockup 2" loading="lazy">
-                </div>
+            </header>
 
-            <div id="stroll-general-info">
-                <div id="stroll-overview" class="stroll-column-left">
-                     <h3 >Responsibilities</h3>
-                    <p>Designer · Programmer · Writter · Researcher</p>
-                    <br>
-                    <hr>
-          
+            <dl class="cs-meta">
+                <div><dt>Timeline</dt><dd>October 2024</dd></div>
+                <div><dt>Role</dt><dd>Designer · Programmer · Writer · Researcher</dd></div>
+                <div><dt>Tools</dt><dd><ul class="cs-tags"><li>p5.js</li><li>JavaScript</li><li>iMovie</li><li>Photoshop</li></ul></dd></div>
+            </dl>
+
+            <nav class="st-bar" aria-label="Chapters">
+                <div class="backBtn"></div>
+                <div class="st-chapters">
+                    <a href="#why"><small>01</small>Why</a>
+                    <a href="#how"><small>02</small>How it works</a>
+                    <a href="#process"><small>03</small>Process</a>
+                    <a href="#result"><small>04</small>Result</a>
+                    <a href="#reflection"><small>05</small>Reflection</a>
                 </div>
-                <div id="stroll-details" class="stroll-column-right">
-            
-                    <h3 >Tools</h3>
-                    <p>P5JS · IMovie · Adobe Photoshop</p>
-                   <br>
-                    <hr>
-               
-                    
-                </div>
-            </div>
+                <span class="st-progress" aria-hidden="true"></span>
+            </nav>
 
-           
-            <div id="dotMap-problem-statement">
-                    <h3><i>
-                        Blockchain enables generative artworks to exist as persistent systems rather than static objects, where ownership means possessing access to an algorithm that continuously produces new visual states.
-                    </i></h3>
-
-                </div>
-
-                <div class="dot-map-progress-container">
-                  
-                    <h3>Process</h3>
-            
-                <div id="dot-map-progress-carousel">
-                     <div>
-                        <img src="assets/Documentation/Dot Map Sketch.jpeg" alt="Dot Map Sketch" loading="lazy">
-                        <p>Initial Sketch</p>
-                    </div>
-
+            <!-- 01 Why -->
+            <section class="st-chapter" id="why">
+                <div class="st-chapter-head st-reveal"><span>01</span><h2>Why<small>Can an artwork keep living after it’s made?</small></h2></div>
+                <div class="st-row st-reveal">
+                    <p class="st-quote">Blockchain lets generative art exist as a living system, not a static object.</p>
                     <div>
-                        <img src="assets/Documentation/Dot Map Iteration 1.png" alt="Dot Map Iteration 1" loading="lazy">
-                        <p>Basic working output, grid with random colors</p>
-                    </div>
-
-                      <div>
-                        <img src="assets/Documentation/Dot Map Iteration 2.png" alt="Dot Map Iteration 2" loading="lazy">
-                        <p>Added dots to grid</p>
-                    </div>
-
-                    
-                     <div>
-                        <img src="assets/Documentation/Dot Map Iteration 3.png" alt="Dot Map Iteration 3" loading="lazy">
-                        <p>Integrated gradient, but same color output every time</p>
-                    </div>
-                    </div>
-                    
-
-                </div>
-
-
-                <div id="stroll-solution">
-                    <div id="stroll-value-proposition" class="stroll-column-left dotmap-lineheight" >
-                        <h3 >Why generative blockchain-based art?</h3>
-                        <p>Dot Map was programmed as a way to explore how generative systems and on-chain code might extend the lifespan of an artwork beyond a single static output. 
-                    Conceived as a conceptual NFT project, the piece investigates how art can behave as a living system through the blockchain infrastructure, allowing each mint to produce a distinct and unexpected visual configuration. This also raises questions about what it means to own and create art within the NFT ecosystem.</p>
-                    </div>
-
-                    <div id="stroll-how-might-we" class="stroll-column-right dotmap-lineheight">
-                        <h3 >How was Dot Map created?</h3>
-                        <p>Dot Map is a long-form generative art that uses a Javascript algorithm to create a 25 x 25 matrix that puts colors in random circles within the squares. This art explores how pseudo-randomness, structure, and computation collaborate to create uniqueness. Using the modulo operator, each circle is assigned with a random number. The system decides which circles in the grid becomes colored, and which ones stays white. This rule creates a pattern that feels random while still following a consistent logic. 
-                        Every generated Dot Map becomes a snapshot of computational chance. Instead of a fixed output, Dot Map embraces the variation within the pattern. With the pre-determined parameters, this artwork allows order and unpredictability to coexist, inviting viewers to consider the variety of output that a system can produce. 
-                        </p>
+                        <p>Blockchain enables generative artworks to exist as persistent systems rather than static objects, where ownership means possessing access to an algorithm that continuously produces new visual states.</p>
+                        <p>Dot Map was programmed as a way to explore how generative systems and on-chain code might extend the lifespan of an artwork beyond a single static output. Conceived as a conceptual NFT project, the piece investigates how art can behave as a living system through the blockchain infrastructure, allowing each mint to produce a distinct and unexpected visual configuration. This also raises questions about what it means to own and create art within the NFT ecosystem.</p>
                     </div>
                 </div>
+            </section>
 
-          
-            <div id="dotMapSplashScreen">
-                <video playsinline autoplay muted>
-                    <source src="assets/video/dot-map-screen-mockup.mp4">
-                </video>
-            </div>
-                
-
-
-                <div id="key-feature-title">
-                    <h3 >Outputs</h3>
-                    <br>
+            <!-- 02 How it works -->
+            <section class="st-chapter" id="how">
+                <div class="st-chapter-head st-reveal"><span>02</span><h2>How it works<small>A 25 × 25 grid, a modulo rule, and computational chance.</small></h2></div>
+                <div class="st-row st-reveal">
+                    <p class="st-quote">Order and unpredictability coexist: every output is a snapshot of computational chance.</p>
+                    <div>
+                        <p>Dot Map is a long-form generative artwork that uses a JavaScript algorithm to create a 25 × 25 matrix, placing colours in random circles within the squares. It explores how pseudo-randomness, structure and computation collaborate to create uniqueness.</p>
+                        <p>Using the modulo operator, each circle is assigned a random number. The system decides which circles in the grid become coloured and which stay white. This rule creates a pattern that feels random while still following a consistent logic.</p>
+                        <p>Every generated Dot Map becomes a snapshot of computational chance. Instead of a fixed output, Dot Map embraces the variation within the pattern. With the pre-determined parameters, the artwork lets order and unpredictability coexist, inviting viewers to consider the variety of outputs a system can produce.</p>
+                    </div>
                 </div>
-                <div id="dot-map-outputs">
-                    <div id="key-feature-1" class="key-feature">
-                        <img src="assets/Documentation/Dot Map Output 1.png" class="key-feature-images" alt="Dot Map Output 1" loading="lazy">
-                    </div>
-
-                    <div id="key-feature-2" class="key-feature">
-                        <img src="assets/Documentation/Dot Map Output 2.png" class="key-feature-images" alt="Dot Map Output 2" loading="lazy">
-                    </div>
-
-                    <div id="key-feature-3" class="key-feature">
-                        <img src="assets/Documentation/Dot Map Output 3.png" class="key-feature-images" alt="Dot Map Output 3" loading="lazy">
-                       
-                    </div>
-
-                    <div id="key-feature-4" class="key-feature">
-                        <img src="assets/Documentation/Dot Map Output 4.png" class="key-feature-images" alt="Dot Map Output 4" loading="lazy">
-                        
-                    </div>
-
-                    <div id="key-feature-5" class="key-feature">
-                        <img src="assets/Documentation/Dot Map Output 5.png" class="key-feature-images" alt="Dot Map Output 5" loading="lazy">
-                        
-                    </div>
-                  
-                </div>
-
-                
-            
-                <br><br>
-
-                
-            <div class="dotmap-mint-and-feature">
-                
-             <div id="dotMapIframeContainer">
-                <h2>Mint your own Dot Map!</h2>
-        
-                <iframe src="https://editor.p5js.org/carbudar/full/ikVkKfFTn" id="dotMapIFrame"></iframe>
-            </div>
-
-            <div id="dotmap-key-features">
-                <h2>Key Features</h2>
-
-                <ul>
-                    <li>
-                        Randomized color gradient 
-                    </li>
-                     <li>
-                        Interactive mouse hover scaling behavior
-                    </li>
-                     <li>
-                        Time-based generative rendering sequence
-                    </li>
-                     <li>
-                        System-based pseudo-random dot placement
-                    </li>
-                     <li>
-                        On-chain storage of generative source code
-                    </li>
-                     <li>
-                        Implemented using p5.js
-                    </li>
+                <ul class="st-cards st-reveal">
+                    <li class="st-card"><span class="st-card-kicker">Feature</span><h3>Randomized colour gradient</h3></li>
+                    <li class="st-card"><span class="st-card-kicker">Feature</span><h3>Mouse-hover scaling</h3></li>
+                    <li class="st-card"><span class="st-card-kicker">Feature</span><h3>Time-based rendering sequence</h3></li>
+                    <li class="st-card"><span class="st-card-kicker">Feature</span><h3>Pseudo-random dot placement</h3></li>
+                    <li class="st-card"><span class="st-card-kicker">Feature</span><h3>Source code stored on-chain</h3></li>
+                    <li class="st-card"><span class="st-card-kicker">Built with</span><h3>p5.js</h3></li>
                 </ul>
-             
-            
+            </section>
 
-                 <div class="generateNewDotMap"></div>
+            <!-- 03 Process -->
+            <section class="st-chapter" id="process">
+                <div class="st-chapter-head st-reveal"><span>03</span><h2>Process<small>From a sketch to a working generator, one rule at a time.</small></h2></div>
+                <ul class="cs-grid is-4 st-reveal">
+                    <li><figure><img src="assets/web/dotmap/sketch.jpg" alt="" loading="lazy"><figcaption><b>Sketch</b>Initial sketch</figcaption></figure></li>
+                    <li><figure><img src="assets/Documentation/Dot Map Iteration 1.png" alt="" loading="lazy"><figcaption><b>Iteration 1</b>Basic working output: a grid with random colours</figcaption></figure></li>
+                    <li><figure><img src="assets/Documentation/Dot Map Iteration 2.png" alt="" loading="lazy"><figcaption><b>Iteration 2</b>Added dots to the grid</figcaption></figure></li>
+                    <li><figure><img src="assets/Documentation/Dot Map Iteration 3.png" alt="" loading="lazy"><figcaption><b>Iteration 3</b>Integrated a gradient, but the same colours every time</figcaption></figure></li>
+                </ul>
+            </section>
 
-            </div>
-        
-            
-                
-            </div>
-            
-            <div id="dotmap-key-learnings">
-               
-                <div id="key-learning-cascading">
-                     <h1>Key Learnings</h1>
-                     
-                    <div class="key-learning">
-                    <h3>1. Generative art shifts authorship from artist to structure</h3>
-                    <p class="dotmap-lineheight">Designing Dot Map showed that once parameters are established, the system becomes a co-author. Instead of composing a single final image, the focus becomes  crafting constraints that produces consistent variation.</p>
-         
+            <!-- 04 Result -->
+            <section class="st-chapter" id="result">
+                <div class="st-chapter-head st-reveal"><span>04</span><h2>Result<small>Five mints, five different maps. Make your own below.</small></h2></div>
+                <figure class="st-full st-reveal"><video muted loop playsinline preload="metadata" src="assets/video/dot-map-screen-mockup.mp4"></video></figure>
+                <div class="st-strip st-reveal" style="margin-bottom:72px"><figure style="--ar: 1"><img src="assets/Documentation/Dot Map Output 1.png" alt="Dot Map output 1" loading="lazy"></figure><figure style="--ar: 1"><img src="assets/Documentation/Dot Map Output 2.png" alt="Dot Map output 2" loading="lazy"></figure><figure style="--ar: 1"><img src="assets/Documentation/Dot Map Output 3.png" alt="Dot Map output 3" loading="lazy"></figure><figure style="--ar: 1"><img src="assets/Documentation/Dot Map Output 4.png" alt="Dot Map output 4" loading="lazy"></figure><figure style="--ar: 1"><img src="assets/Documentation/Dot Map Output 5.png" alt="Dot Map output 5" loading="lazy"></figure></div>
+                <div class="st-row st-reveal">
+                    <div>
+                        <h3 class="st-quote" style="font-size:1.6rem">Mint your own Dot Map</h3>
+                        <p style="margin-top:12px">Each run draws a new map. Hover over it to see the dots scale.</p>
+                        <div class="generateNewDotMap" style="margin-top:20px"></div>
+                    </div>
+                    <div class="st-sketch" data-w="600" data-h="600" data-top="42"><iframe src="https://editor.p5js.org/carbudar/full/ikVkKfFTn" id="dotMapIFrame" title="Dot Map generator" loading="lazy" scrolling="no"></iframe></div>
                 </div>
+            </section>
 
-                 <div class="key-learning">
-                    <h3>2. Blockchain reframes ownership as participation</h3>
-                    <p class="dotmap-lineheight">Treating the work as a conceptual NFT highlighted how minting and on-chain generative art transform ownership into access to an evolving system. Owners now can become part of the creator too, where collectors receive a one-of-a-kind system output as art instead of a static file.</p>
-                 
-                </div>
+            <!-- 05 Reflection -->
+            <section class="st-chapter" id="reflection">
+                <div class="st-chapter-head st-reveal"><span>05</span><h2>Reflection<small>What making it taught me, plus the essay behind it.</small></h2></div>
+                <h3 class="st-reveal" style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:#126889;margin:0px 0 14px">Key learnings</h3>
+                <ol class="st-learn st-reveal">
+                    <li><h3>Generative art shifts authorship from artist to structure</h3><p>Designing Dot Map showed that once parameters are established, the system becomes a co-author. Instead of composing a single final image, the focus becomes crafting constraints that produce consistent variation.</p></li>
+                    <li><h3>Blockchain reframes ownership as participation</h3><p>Treating the work as a conceptual NFT highlighted how minting and on-chain generative art turn ownership into access to an evolving system. Collectors become part of the creation, receiving a one-of-a-kind output instead of a static file.</p></li>
+                    <li><h3>Simple rules can create complex visual behavior</h3><p>Using modulo-based logic within a fixed grid, I learned how minimal mathematical conditions can generate patterns that feel organic.</p></li>
+                    <li><h3>Time and interaction change how artwork is perceived</h3><p>Letting the piece unfold gradually, and stay interactive after completion, showed how duration and viewer input can become central to immersive, unique work.</p></li>
+                </ol>
+                <h3 class="st-reveal" style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:#126889;margin:48px 0 14px">Read the essay</h3>
+                <a class="st-doc st-reveal" href="assets/Documentation/How  Blockchain Extends the Life of Art - Dot Map - Carla Budar 2025.pdf" target="_blank" rel="noopener"><img src="assets/web/dotmap/essay-cover.jpg" alt=""><div><strong>How Blockchain Extends the Life of Art</strong><span>My essay on the inspiration behind Dot Map.</span><br><em>Open PDF ↗</em></div></a>
+            </section>
 
-                <div class="key-learning">
-                    <h3>3. Simple rules can create complex visual behavior</h3>
-                    <p class="dotmap-lineheight">By using a modulo-based logic within a fixed grid, I learned how minimal mathematical conditions can generate patterns that feel organic.</p>
-                  
-                </div>
-                <div class="key-learning ">
-                    <h3>4. Time and interaction change how artwork is perceived</h3>
-                    <p class="dotmap-lineheight">Allowing the piece to unfold gradually, and remain interactive after completion, demonstrated how duration and viewer input can become central components to making immersive and unique works.</p>
-                  
-                </div>
-               
-                </div>
-                
-            </div>
-            
-            <div id="dotmap-paper">
-                    <h2>Read my essay on how blockchain extends the life of art, the inspiration behind the creation of Dot Map 👇</h2>
-            
+            <a class="cs-next" href="stroll-app.html"><div><small>Next project</small><strong>Stroll</strong></div><span aria-hidden="true">→</span></a>
+        </main>
 
-                 <embed class="pdf" 
-                     src="assets/Documentation/How  Blockchain Extends the Life of Art - Dot Map - Carla Budar 2025.pdf"
-                     width="800" height="500">
-                </div>
-
-
-               
-            
-                </div>
-                <h1 id="stroll-thank-you">Thank you for reading.</h1>
-                <div class="footerPlaceholder"></div>
-
-     </div>
+        <div class="footerPlaceholder"></div>
     </div>
-   
 
     <script src="site.js"></script>
-    <script src="dot-map-carousel-scroll.js"></script>
+    <script src="case-study.js"></script>
 </body>
 </html>
